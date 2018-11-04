@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "E:/Academics/5th sem(my collection)/COA lab/xilinx/ass_5_coaa/kgprisc/register_file.xst" -ofn "E:/Academics/5th sem(my collection)/COA lab/xilinx/ass_5_coaa/kgprisc/register_file.syr" 
+xst -intstyle ise -ifn "E:/Academics/5th sem(my collection)/COA lab/xilinx/ass_5_coaa/kgprisc/register_file.xst" -ofn "E:/Academics/5th sem(my collection)/COA lab/xilinx/ass_5_coaa/kgprisc/register_file.syr" 

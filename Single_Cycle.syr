@@ -1,0 +1,997 @@
+Release 12.4 - xst M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: Single_Cycle.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Single_Cycle.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Single_Cycle"
+Output Format                      : NGC
+Target Device                      : xc3s400-5-pq208
+
+---- Source Options
+Top Module Name                    : Single_Cycle
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "ipcore_dir/kgpriscmemory.v" in library work
+Compiling verilog file "half_adder.v" in library work
+Module <kgpriscmemory> compiled
+Compiling verilog file "full_adder.v" in library work
+Module <half_adder> compiled
+Compiling verilog file "alu_logic.v" in library work
+Module <full_adder> compiled
+Compiling verilog file "adder.v" in library work
+Module <alu_logic> compiled
+Compiling verilog file "reg_file.v" in library work
+Module <adder> compiled
+Compiling verilog file "next_address.v" in library work
+Module <reg_file> compiled
+Compiling verilog file "ipcore_dir/KGPRISC.v" in library work
+Module <next_address> compiled
+Compiling verilog file "control_file.v" in library work
+Module <KGPRISC> compiled
+Compiling verilog file "alu.v" in library work
+Module <control_file> compiled
+Compiling verilog file "Single_Cycle.v" in library work
+Module <alu> compiled
+Module <Single_Cycle> compiled
+No errors in compilation
+Analysis of file <"Single_Cycle.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Single_Cycle> in library <work>.
+
+Analyzing hierarchy for module <control_file> in library <work>.
+
+Analyzing hierarchy for module <reg_file> in library <work>.
+
+Analyzing hierarchy for module <alu> in library <work>.
+
+Analyzing hierarchy for module <next_address> in library <work>.
+
+Analyzing hierarchy for module <adder> in library <work>.
+
+Analyzing hierarchy for module <alu_logic> in library <work>.
+
+Analyzing hierarchy for module <full_adder> in library <work>.
+
+Analyzing hierarchy for module <half_adder> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Single_Cycle>.
+Module <Single_Cycle> is correct for synthesis.
+ 
+Analyzing module <control_file> in library <work>.
+Module <control_file> is correct for synthesis.
+ 
+Analyzing module <reg_file> in library <work>.
+Module <reg_file> is correct for synthesis.
+ 
+Analyzing module <alu> in library <work>.
+Module <alu> is correct for synthesis.
+ 
+Analyzing module <adder> in library <work>.
+Module <adder> is correct for synthesis.
+ 
+Analyzing module <full_adder> in library <work>.
+Module <full_adder> is correct for synthesis.
+ 
+Analyzing module <half_adder> in library <work>.
+Module <half_adder> is correct for synthesis.
+ 
+Analyzing module <alu_logic> in library <work>.
+Module <alu_logic> is correct for synthesis.
+ 
+Analyzing module <next_address> in library <work>.
+Module <next_address> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <sign_extended_address<31>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<30>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<29>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<28>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<27>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<26>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<25>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<24>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<23>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<22>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<21>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<20>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<19>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<18>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<17>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <sign_extended_address<16>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <jmp_label_extended<1>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <jmp_label_extended<0>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <control_file>.
+    Related source file is "control_file.v".
+WARNING:Xst:737 - Found 2-bit latch for signal <reg_dst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg_write>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 2-bit latch for signal <alu_imm>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <fn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 3-bit latch for signal <logic_fn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <fn_class>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <data_read>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <data_write>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 2-bit latch for signal <regin_data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 3-bit latch for signal <br_type>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 2-bit latch for signal <pc_sel>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+Unit <control_file> synthesized.
+
+
+Synthesizing Unit <reg_file>.
+    Related source file is "reg_file.v".
+    Found 32-bit 32-to-1 multiplexer for signal <rs_val>.
+    Found 32-bit 32-to-1 multiplexer for signal <rt_val>.
+    Found 1024-bit register for signal <registers>.
+INFO:Xst:738 - HDL ADVISOR - 1024 flip-flops were inferred for signal <registers>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 1024 D-type flip-flop(s).
+	inferred  64 Multiplexer(s).
+Unit <reg_file> synthesized.
+
+
+Synthesizing Unit <next_address>.
+    Related source file is "next_address.v".
+WARNING:Xst:646 - Signal <sign_extended_address> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pseudo_adder_input_1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <mux_2_input_1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <jmp_label_extended> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <incr_pc>.
+    Found 32-bit 4-to-1 multiplexer for signal <incr_pc$mux0000> created at line 63.
+    Found 1-bit register for signal <mux_1_output>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 Multiplexer(s).
+Unit <next_address> synthesized.
+
+
+Synthesizing Unit <alu_logic>.
+    Related source file is "alu_logic.v".
+WARNING:Xst:737 - Found 32-bit latch for signal <logic_output>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 32-bit 5-to-1 multiplexer for signal <logic_output$mux0000>.
+    Found 32-bit shifter logical left for signal <logic_output$shift0003> created at line 33.
+    Found 32-bit shifter logical right for signal <logic_output$shift0004> created at line 34.
+    Found 32-bit shifter arithmetic right for signal <logic_output$shift0005> created at line 35.
+    Found 32-bit xor2 for signal <logic_output$xor0000> created at line 32.
+    Summary:
+	inferred  32 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <alu_logic> synthesized.
+
+
+Synthesizing Unit <half_adder>.
+    Related source file is "half_adder.v".
+    Found 1-bit xor2 for signal <s>.
+Unit <half_adder> synthesized.
+
+
+Synthesizing Unit <full_adder>.
+    Related source file is "full_adder.v".
+Unit <full_adder> synthesized.
+
+
+Synthesizing Unit <adder>.
+    Related source file is "adder.v".
+Unit <adder> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "alu.v".
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <Single_Cycle>.
+    Related source file is "Single_Cycle.v".
+WARNING:Xst:1780 - Signal <write_addr> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <addr<31:11>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <Single_Cycle> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Registers                                            : 34
+ 1-bit register                                        : 1
+ 32-bit register                                       : 33
+# Latches                                              : 12
+ 1-bit latch                                           : 5
+ 2-bit latch                                           : 4
+ 3-bit latch                                           : 2
+ 32-bit latch                                          : 1
+# Multiplexers                                         : 4
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 4-to-1 multiplexer                             : 1
+ 32-bit 5-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 32-bit shifter arithmetic right                       : 1
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 65
+ 1-bit xor2                                            : 64
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/KGPRISC.ngc>.
+Loading core <KGPRISC> for timing and area information for instance <instr_cache>.
+Loading core <KGPRISC> for timing and area information for instance <data_cache>.
+INFO:Xst:2261 - The FF/Latch <registers_2_15> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_15> <registers_4_15> <registers_5_15> <registers_6_15> <registers_7_15> <registers_8_15> <registers_9_15> <registers_10_15> <registers_11_15> <registers_12_15> <registers_13_15> <registers_14_15> <registers_15_15> <registers_16_15> <registers_19_15> <registers_17_15> <registers_18_15> <registers_20_15> <registers_21_15> <registers_22_15> <registers_23_15> <registers_24_15> <registers_25_15> <registers_26_15> <registers_27_15> <registers_28_15> <registers_29_15> <registers_30_15> <registers_31_15> 
+INFO:Xst:2261 - The FF/Latch <registers_2_20> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_20> <registers_4_20> <registers_5_20> <registers_6_20> <registers_7_20> <registers_8_20> <registers_9_20> <registers_10_20> <registers_11_20> <registers_12_20> <registers_13_20> <registers_14_20> <registers_15_20> <registers_16_20> <registers_19_20> <registers_17_20> <registers_18_20> <registers_20_20> <registers_21_20> <registers_22_20> <registers_23_20> <registers_24_20> <registers_25_20> <registers_26_20> <registers_27_20> <registers_28_20> <registers_29_20> <registers_30_20> <registers_31_20> 
+INFO:Xst:2261 - The FF/Latch <registers_2_10> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_10> <registers_4_10> <registers_5_10> <registers_6_10> <registers_7_10> <registers_8_10> <registers_9_10> <registers_10_10> <registers_11_10> <registers_12_10> <registers_13_10> <registers_14_10> <registers_15_10> <registers_16_10> <registers_19_10> <registers_17_10> <registers_18_10> <registers_20_10> <registers_21_10> <registers_22_10> <registers_23_10> <registers_24_10> <registers_25_10> <registers_26_10> <registers_27_10> <registers_28_10> <registers_29_10> <registers_30_10> <registers_31_10> 
+INFO:Xst:2261 - The FF/Latch <registers_2_29> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_29> <registers_4_29> <registers_5_29> <registers_6_29> <registers_7_29> <registers_8_29> <registers_9_29> <registers_10_29> <registers_11_29> <registers_12_29> <registers_13_29> <registers_14_29> <registers_15_29> <registers_16_29> <registers_19_29> <registers_17_29> <registers_18_29> <registers_20_29> <registers_21_29> <registers_22_29> <registers_23_29> <registers_24_29> <registers_25_29> <registers_26_29> <registers_27_29> <registers_28_29> <registers_29_29> <registers_30_29> <registers_31_29> 
+INFO:Xst:2261 - The FF/Latch <registers_2_6> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_6> <registers_4_6> <registers_5_6> <registers_6_6> <registers_7_6> <registers_8_6> <registers_9_6> <registers_10_6> <registers_11_6> <registers_12_6> <registers_13_6> <registers_14_6> <registers_15_6> <registers_16_6> <registers_19_6> <registers_17_6> <registers_18_6> <registers_20_6> <registers_21_6> <registers_22_6> <registers_23_6> <registers_24_6> <registers_25_6> <registers_26_6> <registers_27_6> <registers_28_6> <registers_29_6> <registers_30_6> <registers_31_6> 
+INFO:Xst:2261 - The FF/Latch <registers_2_19> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_19> <registers_4_19> <registers_5_19> <registers_6_19> <registers_7_19> <registers_8_19> <registers_9_19> <registers_10_19> <registers_11_19> <registers_12_19> <registers_13_19> <registers_14_19> <registers_15_19> <registers_16_19> <registers_19_19> <registers_17_19> <registers_18_19> <registers_20_19> <registers_21_19> <registers_22_19> <registers_23_19> <registers_24_19> <registers_25_19> <registers_26_19> <registers_27_19> <registers_28_19> <registers_29_19> <registers_30_19> <registers_31_19> 
+INFO:Xst:2261 - The FF/Latch <registers_2_24> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_24> <registers_4_24> <registers_5_24> <registers_6_24> <registers_7_24> <registers_8_24> <registers_9_24> <registers_10_24> <registers_11_24> <registers_12_24> <registers_13_24> <registers_14_24> <registers_15_24> <registers_16_24> <registers_19_24> <registers_17_24> <registers_18_24> <registers_20_24> <registers_21_24> <registers_22_24> <registers_23_24> <registers_24_24> <registers_25_24> <registers_26_24> <registers_27_24> <registers_28_24> <registers_29_24> <registers_30_24> <registers_31_24> 
+INFO:Xst:2261 - The FF/Latch <registers_2_1> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_1> <registers_4_1> <registers_5_1> <registers_6_1> <registers_7_1> <registers_8_1> <registers_9_1> <registers_10_1> <registers_11_1> <registers_12_1> <registers_13_1> <registers_14_1> <registers_15_1> <registers_16_1> <registers_19_1> <registers_17_1> <registers_18_1> <registers_20_1> <registers_21_1> <registers_22_1> <registers_23_1> <registers_24_1> <registers_25_1> <registers_26_1> <registers_27_1> <registers_28_1> <registers_29_1> <registers_30_1> <registers_31_1> 
+INFO:Xst:2261 - The FF/Latch <registers_2_14> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_14> <registers_4_14> <registers_5_14> <registers_6_14> <registers_7_14> <registers_8_14> <registers_9_14> <registers_10_14> <registers_11_14> <registers_12_14> <registers_13_14> <registers_14_14> <registers_15_14> <registers_16_14> <registers_19_14> <registers_17_14> <registers_18_14> <registers_20_14> <registers_21_14> <registers_22_14> <registers_23_14> <registers_24_14> <registers_25_14> <registers_26_14> <registers_27_14> <registers_28_14> <registers_29_14> <registers_30_14> <registers_31_14> 
+INFO:Xst:2261 - The FF/Latch <registers_2_28> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_28> <registers_4_28> <registers_5_28> <registers_6_28> <registers_7_28> <registers_8_28> <registers_9_28> <registers_10_28> <registers_11_28> <registers_12_28> <registers_13_28> <registers_14_28> <registers_15_28> <registers_16_28> <registers_19_28> <registers_17_28> <registers_18_28> <registers_20_28> <registers_21_28> <registers_22_28> <registers_23_28> <registers_24_28> <registers_25_28> <registers_26_28> <registers_27_28> <registers_28_28> <registers_29_28> <registers_30_28> <registers_31_28> 
+INFO:Xst:2261 - The FF/Latch <registers_2_5> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_5> <registers_4_5> <registers_5_5> <registers_6_5> <registers_7_5> <registers_8_5> <registers_9_5> <registers_10_5> <registers_11_5> <registers_12_5> <registers_13_5> <registers_14_5> <registers_15_5> <registers_16_5> <registers_19_5> <registers_17_5> <registers_18_5> <registers_20_5> <registers_21_5> <registers_22_5> <registers_23_5> <registers_24_5> <registers_25_5> <registers_26_5> <registers_27_5> <registers_28_5> <registers_29_5> <registers_30_5> <registers_31_5> 
+INFO:Xst:2261 - The FF/Latch <registers_2_18> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_18> <registers_4_18> <registers_5_18> <registers_6_18> <registers_7_18> <registers_8_18> <registers_9_18> <registers_10_18> <registers_11_18> <registers_12_18> <registers_13_18> <registers_14_18> <registers_15_18> <registers_16_18> <registers_19_18> <registers_17_18> <registers_18_18> <registers_20_18> <registers_21_18> <registers_22_18> <registers_23_18> <registers_24_18> <registers_25_18> <registers_26_18> <registers_27_18> <registers_28_18> <registers_29_18> <registers_30_18> <registers_31_18> 
+INFO:Xst:2261 - The FF/Latch <registers_2_23> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_23> <registers_4_23> <registers_5_23> <registers_6_23> <registers_7_23> <registers_8_23> <registers_9_23> <registers_10_23> <registers_11_23> <registers_12_23> <registers_13_23> <registers_14_23> <registers_15_23> <registers_16_23> <registers_19_23> <registers_17_23> <registers_18_23> <registers_20_23> <registers_21_23> <registers_22_23> <registers_23_23> <registers_24_23> <registers_25_23> <registers_26_23> <registers_27_23> <registers_28_23> <registers_29_23> <registers_30_23> <registers_31_23> 
+INFO:Xst:2261 - The FF/Latch <registers_2_0> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_0> <registers_4_0> <registers_5_0> <registers_6_0> <registers_7_0> <registers_8_0> <registers_9_0> <registers_10_0> <registers_11_0> <registers_12_0> <registers_13_0> <registers_14_0> <registers_15_0> <registers_16_0> <registers_19_0> <registers_17_0> <registers_18_0> <registers_20_0> <registers_21_0> <registers_22_0> <registers_23_0> <registers_24_0> <registers_25_0> <registers_26_0> <registers_27_0> <registers_28_0> <registers_29_0> <registers_30_0> <registers_31_0> 
+INFO:Xst:2261 - The FF/Latch <registers_2_13> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_13> <registers_4_13> <registers_5_13> <registers_6_13> <registers_7_13> <registers_8_13> <registers_9_13> <registers_10_13> <registers_11_13> <registers_12_13> <registers_13_13> <registers_14_13> <registers_15_13> <registers_16_13> <registers_19_13> <registers_17_13> <registers_18_13> <registers_20_13> <registers_21_13> <registers_22_13> <registers_23_13> <registers_24_13> <registers_25_13> <registers_26_13> <registers_27_13> <registers_28_13> <registers_29_13> <registers_30_13> <registers_31_13> 
+INFO:Xst:2261 - The FF/Latch <registers_2_9> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_9> <registers_4_9> <registers_5_9> <registers_6_9> <registers_7_9> <registers_8_9> <registers_9_9> <registers_10_9> <registers_11_9> <registers_12_9> <registers_13_9> <registers_14_9> <registers_15_9> <registers_16_9> <registers_19_9> <registers_17_9> <registers_18_9> <registers_20_9> <registers_21_9> <registers_22_9> <registers_23_9> <registers_24_9> <registers_25_9> <registers_26_9> <registers_27_9> <registers_28_9> <registers_29_9> <registers_30_9> <registers_31_9> 
+INFO:Xst:2261 - The FF/Latch <registers_2_27> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_27> <registers_4_27> <registers_5_27> <registers_6_27> <registers_7_27> <registers_8_27> <registers_9_27> <registers_10_27> <registers_11_27> <registers_12_27> <registers_13_27> <registers_14_27> <registers_15_27> <registers_16_27> <registers_19_27> <registers_17_27> <registers_18_27> <registers_20_27> <registers_21_27> <registers_22_27> <registers_23_27> <registers_24_27> <registers_25_27> <registers_26_27> <registers_27_27> <registers_28_27> <registers_29_27> <registers_30_27> <registers_31_27> 
+INFO:Xst:2261 - The FF/Latch <registers_2_4> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_4> <registers_4_4> <registers_5_4> <registers_6_4> <registers_7_4> <registers_8_4> <registers_9_4> <registers_10_4> <registers_11_4> <registers_12_4> <registers_13_4> <registers_14_4> <registers_15_4> <registers_16_4> <registers_19_4> <registers_17_4> <registers_18_4> <registers_20_4> <registers_21_4> <registers_22_4> <registers_23_4> <registers_24_4> <registers_25_4> <registers_26_4> <registers_27_4> <registers_28_4> <registers_29_4> <registers_30_4> <registers_31_4> 
+INFO:Xst:2261 - The FF/Latch <registers_2_17> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_17> <registers_4_17> <registers_5_17> <registers_6_17> <registers_7_17> <registers_8_17> <registers_9_17> <registers_10_17> <registers_11_17> <registers_12_17> <registers_13_17> <registers_14_17> <registers_15_17> <registers_16_17> <registers_19_17> <registers_17_17> <registers_18_17> <registers_20_17> <registers_21_17> <registers_22_17> <registers_23_17> <registers_24_17> <registers_25_17> <registers_26_17> <registers_27_17> <registers_28_17> <registers_29_17> <registers_30_17> <registers_31_17> 
+INFO:Xst:2261 - The FF/Latch <registers_2_22> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_22> <registers_4_22> <registers_5_22> <registers_6_22> <registers_7_22> <registers_8_22> <registers_9_22> <registers_10_22> <registers_11_22> <registers_12_22> <registers_13_22> <registers_14_22> <registers_15_22> <registers_16_22> <registers_19_22> <registers_17_22> <registers_18_22> <registers_20_22> <registers_21_22> <registers_22_22> <registers_23_22> <registers_24_22> <registers_25_22> <registers_26_22> <registers_27_22> <registers_28_22> <registers_29_22> <registers_30_22> <registers_31_22> 
+INFO:Xst:2261 - The FF/Latch <registers_2_12> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_12> <registers_4_12> <registers_5_12> <registers_6_12> <registers_7_12> <registers_8_12> <registers_9_12> <registers_10_12> <registers_11_12> <registers_12_12> <registers_13_12> <registers_14_12> <registers_15_12> <registers_16_12> <registers_19_12> <registers_17_12> <registers_18_12> <registers_20_12> <registers_21_12> <registers_22_12> <registers_23_12> <registers_24_12> <registers_25_12> <registers_26_12> <registers_27_12> <registers_28_12> <registers_29_12> <registers_30_12> <registers_31_12> 
+INFO:Xst:2261 - The FF/Latch <registers_2_8> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_8> <registers_4_8> <registers_5_8> <registers_6_8> <registers_7_8> <registers_8_8> <registers_9_8> <registers_10_8> <registers_11_8> <registers_12_8> <registers_13_8> <registers_14_8> <registers_15_8> <registers_16_8> <registers_19_8> <registers_17_8> <registers_18_8> <registers_20_8> <registers_21_8> <registers_22_8> <registers_23_8> <registers_24_8> <registers_25_8> <registers_26_8> <registers_27_8> <registers_28_8> <registers_29_8> <registers_30_8> <registers_31_8> 
+INFO:Xst:2261 - The FF/Latch <registers_2_26> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_26> <registers_4_26> <registers_5_26> <registers_6_26> <registers_7_26> <registers_8_26> <registers_9_26> <registers_10_26> <registers_11_26> <registers_12_26> <registers_13_26> <registers_14_26> <registers_15_26> <registers_16_26> <registers_19_26> <registers_17_26> <registers_18_26> <registers_20_26> <registers_21_26> <registers_22_26> <registers_23_26> <registers_24_26> <registers_25_26> <registers_26_26> <registers_27_26> <registers_28_26> <registers_29_26> <registers_30_26> <registers_31_26> 
+INFO:Xst:2261 - The FF/Latch <registers_2_31> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_31> <registers_4_31> <registers_5_31> <registers_6_31> <registers_7_31> <registers_8_31> <registers_9_31> <registers_10_31> <registers_11_31> <registers_12_31> <registers_13_31> <registers_14_31> <registers_15_31> <registers_16_31> <registers_19_31> <registers_17_31> <registers_18_31> <registers_20_31> <registers_21_31> <registers_22_31> <registers_23_31> <registers_24_31> <registers_25_31> <registers_26_31> <registers_27_31> <registers_28_31> <registers_29_31> <registers_30_31> <registers_31_31> 
+INFO:Xst:2261 - The FF/Latch <registers_2_3> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_3> <registers_4_3> <registers_5_3> <registers_6_3> <registers_7_3> <registers_8_3> <registers_9_3> <registers_10_3> <registers_11_3> <registers_12_3> <registers_13_3> <registers_14_3> <registers_15_3> <registers_16_3> <registers_19_3> <registers_17_3> <registers_18_3> <registers_20_3> <registers_21_3> <registers_22_3> <registers_23_3> <registers_24_3> <registers_25_3> <registers_26_3> <registers_27_3> <registers_28_3> <registers_29_3> <registers_30_3> <registers_31_3> 
+INFO:Xst:2261 - The FF/Latch <registers_2_16> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_16> <registers_4_16> <registers_5_16> <registers_6_16> <registers_7_16> <registers_8_16> <registers_9_16> <registers_10_16> <registers_11_16> <registers_12_16> <registers_13_16> <registers_14_16> <registers_15_16> <registers_16_16> <registers_19_16> <registers_17_16> <registers_18_16> <registers_20_16> <registers_21_16> <registers_22_16> <registers_23_16> <registers_24_16> <registers_25_16> <registers_26_16> <registers_27_16> <registers_28_16> <registers_29_16> <registers_30_16> <registers_31_16> 
+INFO:Xst:2261 - The FF/Latch <registers_2_21> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_21> <registers_4_21> <registers_5_21> <registers_6_21> <registers_7_21> <registers_8_21> <registers_9_21> <registers_10_21> <registers_11_21> <registers_12_21> <registers_13_21> <registers_14_21> <registers_15_21> <registers_16_21> <registers_19_21> <registers_17_21> <registers_18_21> <registers_20_21> <registers_21_21> <registers_22_21> <registers_23_21> <registers_24_21> <registers_25_21> <registers_26_21> <registers_27_21> <registers_28_21> <registers_29_21> <registers_30_21> <registers_31_21> 
+INFO:Xst:2261 - The FF/Latch <registers_2_11> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_11> <registers_4_11> <registers_5_11> <registers_6_11> <registers_7_11> <registers_8_11> <registers_9_11> <registers_10_11> <registers_11_11> <registers_12_11> <registers_13_11> <registers_14_11> <registers_15_11> <registers_16_11> <registers_19_11> <registers_17_11> <registers_18_11> <registers_20_11> <registers_21_11> <registers_22_11> <registers_23_11> <registers_24_11> <registers_25_11> <registers_26_11> <registers_27_11> <registers_28_11> <registers_29_11> <registers_30_11> <registers_31_11> 
+INFO:Xst:2261 - The FF/Latch <registers_2_7> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_7> <registers_4_7> <registers_5_7> <registers_6_7> <registers_7_7> <registers_8_7> <registers_9_7> <registers_10_7> <registers_11_7> <registers_12_7> <registers_13_7> <registers_14_7> <registers_15_7> <registers_16_7> <registers_19_7> <registers_17_7> <registers_18_7> <registers_20_7> <registers_21_7> <registers_22_7> <registers_23_7> <registers_24_7> <registers_25_7> <registers_26_7> <registers_27_7> <registers_28_7> <registers_29_7> <registers_30_7> <registers_31_7> 
+INFO:Xst:2261 - The FF/Latch <registers_2_25> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_25> <registers_4_25> <registers_5_25> <registers_6_25> <registers_7_25> <registers_8_25> <registers_9_25> <registers_10_25> <registers_11_25> <registers_12_25> <registers_13_25> <registers_14_25> <registers_15_25> <registers_16_25> <registers_19_25> <registers_17_25> <registers_18_25> <registers_20_25> <registers_21_25> <registers_22_25> <registers_23_25> <registers_24_25> <registers_25_25> <registers_26_25> <registers_27_25> <registers_28_25> <registers_29_25> <registers_30_25> <registers_31_25> 
+INFO:Xst:2261 - The FF/Latch <registers_2_30> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_30> <registers_4_30> <registers_5_30> <registers_6_30> <registers_7_30> <registers_8_30> <registers_9_30> <registers_10_30> <registers_11_30> <registers_12_30> <registers_13_30> <registers_14_30> <registers_15_30> <registers_16_30> <registers_19_30> <registers_17_30> <registers_18_30> <registers_20_30> <registers_21_30> <registers_22_30> <registers_23_30> <registers_24_30> <registers_25_30> <registers_26_30> <registers_27_30> <registers_28_30> <registers_29_30> <registers_30_30> <registers_31_30> 
+INFO:Xst:2261 - The FF/Latch <registers_2_2> in Unit <register> is equivalent to the following 29 FFs/Latches, which will be removed : <registers_3_2> <registers_4_2> <registers_5_2> <registers_6_2> <registers_7_2> <registers_8_2> <registers_9_2> <registers_10_2> <registers_11_2> <registers_12_2> <registers_13_2> <registers_14_2> <registers_15_2> <registers_16_2> <registers_19_2> <registers_17_2> <registers_18_2> <registers_20_2> <registers_21_2> <registers_22_2> <registers_23_2> <registers_24_2> <registers_25_2> <registers_26_2> <registers_27_2> <registers_28_2> <registers_29_2> <registers_30_2> <registers_31_2> 
+WARNING:Xst:1710 - FF/Latch <registers_1_7> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_6> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_5> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_4> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_3> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_2> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_1> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_31> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_30> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_29> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_28> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_27> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_26> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_25> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_24> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_23> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_22> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_21> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_20> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_19> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_18> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_17> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_16> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_31> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_30> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_29> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_28> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_27> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_26> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_25> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_24> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_23> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_22> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_21> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_20> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_19> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_18> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_17> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_16> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_15> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_14> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_13> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_12> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_11> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_10> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_9> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_1_8> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_22> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_21> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_20> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_19> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_18> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_17> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_16> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_15> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_14> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_13> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_12> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_11> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_10> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_9> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_8> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_7> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_6> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_5> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_4> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_3> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_2> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_1> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_0> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_15> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_14> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_13> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_12> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_11> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_10> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_9> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_8> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_7> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_6> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_5> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_4> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_3> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_2> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_0_1> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_31> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_30> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_29> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_28> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_27> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_26> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_25> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_24> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registers_2_23> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <0>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <1>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <2>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <3>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <4>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <5>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <6>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <7>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <8>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <9>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <10>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <11>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <12>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <13>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <14>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <15>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <16>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <17>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <18>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <19>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <20>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <21>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <22>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <23>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <24>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <25>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <26>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <27>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <28>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <29>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <30>.
+WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <31>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Registers                                            : 1057
+ Flip-Flops                                            : 1057
+# Latches                                              : 12
+ 1-bit latch                                           : 5
+ 2-bit latch                                           : 4
+ 3-bit latch                                           : 2
+ 32-bit latch                                          : 1
+# Multiplexers                                         : 97
+ 1-bit 32-to-1 multiplexer                             : 64
+ 1-bit 4-to-1 multiplexer                              : 32
+ 32-bit 5-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 32-bit shifter arithmetic right                       : 1
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 65
+ 1-bit xor2                                            : 64
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <registers_29_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_29_2> <registers_29_3> <registers_29_4> <registers_29_5> <registers_29_6> <registers_29_7> <registers_29_8> <registers_29_9> <registers_29_10> <registers_29_11> <registers_29_12> <registers_29_13> <registers_29_14> <registers_29_15> <registers_29_16> <registers_29_17> <registers_29_18> <registers_29_19> <registers_29_20> <registers_29_21> <registers_29_22> <registers_29_23> <registers_29_24> <registers_29_25> <registers_29_26> <registers_29_27> <registers_29_28> <registers_29_29> <registers_29_30> <registers_29_31> 
+INFO:Xst:2261 - The FF/Latch <registers_16_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_16_2> <registers_16_3> <registers_16_4> <registers_16_5> <registers_16_6> <registers_16_7> <registers_16_8> <registers_16_9> <registers_16_10> <registers_16_11> <registers_16_12> <registers_16_13> <registers_16_14> <registers_16_15> <registers_16_16> <registers_16_17> <registers_16_18> <registers_16_19> <registers_16_20> <registers_16_21> <registers_16_22> <registers_16_23> <registers_16_24> <registers_16_25> <registers_16_26> <registers_16_27> <registers_16_28> <registers_16_29> <registers_16_30> <registers_16_31> 
+INFO:Xst:2261 - The FF/Latch <registers_21_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_21_2> <registers_21_3> <registers_21_4> <registers_21_5> <registers_21_6> <registers_21_7> <registers_21_8> <registers_21_9> <registers_21_10> <registers_21_11> <registers_21_12> <registers_21_13> <registers_21_14> <registers_21_15> <registers_21_16> <registers_21_17> <registers_21_18> <registers_21_19> <registers_21_20> <registers_21_21> <registers_21_22> <registers_21_23> <registers_21_24> <registers_21_25> <registers_21_26> <registers_21_27> <registers_21_28> <registers_21_29> <registers_21_30> <registers_21_31> 
+INFO:Xst:2261 - The FF/Latch <registers_8_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_8_2> <registers_8_3> <registers_8_4> <registers_8_5> <registers_8_6> <registers_8_7> <registers_8_8> <registers_8_9> <registers_8_10> <registers_8_11> <registers_8_12> <registers_8_13> <registers_8_14> <registers_8_15> <registers_8_16> <registers_8_17> <registers_8_18> <registers_8_19> <registers_8_20> <registers_8_21> <registers_8_22> <registers_8_23> <registers_8_24> <registers_8_25> <registers_8_26> <registers_8_27> <registers_8_28> <registers_8_29> <registers_8_30> <registers_8_31> 
+INFO:Xst:2261 - The FF/Latch <registers_0_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_0_2> <registers_0_3> <registers_0_4> <registers_0_5> <registers_0_6> <registers_0_7> <registers_0_8> <registers_0_9> <registers_0_10> <registers_0_11> <registers_0_12> <registers_0_13> <registers_0_14> <registers_0_15> <registers_0_16> <registers_0_17> <registers_0_18> <registers_0_19> <registers_0_20> <registers_0_21> <registers_0_22> <registers_0_23> <registers_0_24> <registers_0_25> <registers_0_26> <registers_0_27> <registers_0_28> <registers_0_29> <registers_0_30> <registers_0_31> 
+INFO:Xst:2261 - The FF/Latch <registers_27_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_27_2> <registers_27_3> <registers_27_4> <registers_27_5> <registers_27_6> <registers_27_7> <registers_27_8> <registers_27_9> <registers_27_10> <registers_27_11> <registers_27_12> <registers_27_13> <registers_27_14> <registers_27_15> <registers_27_16> <registers_27_17> <registers_27_18> <registers_27_19> <registers_27_20> <registers_27_21> <registers_27_22> <registers_27_23> <registers_27_24> <registers_27_25> <registers_27_26> <registers_27_27> <registers_27_28> <registers_27_29> <registers_27_30> <registers_27_31> 
+INFO:Xst:2261 - The FF/Latch <registers_14_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_14_2> <registers_14_3> <registers_14_4> <registers_14_5> <registers_14_6> <registers_14_7> <registers_14_8> <registers_14_9> <registers_14_10> <registers_14_11> <registers_14_12> <registers_14_13> <registers_14_14> <registers_14_15> <registers_14_16> <registers_14_17> <registers_14_18> <registers_14_19> <registers_14_20> <registers_14_21> <registers_14_22> <registers_14_23> <registers_14_24> <registers_14_25> <registers_14_26> <registers_14_27> <registers_14_28> <registers_14_29> <registers_14_30> <registers_14_31> 
+INFO:Xst:2261 - The FF/Latch <registers_6_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_6_2> <registers_6_3> <registers_6_4> <registers_6_5> <registers_6_6> <registers_6_7> <registers_6_8> <registers_6_9> <registers_6_10> <registers_6_11> <registers_6_12> <registers_6_13> <registers_6_14> <registers_6_15> <registers_6_16> <registers_6_17> <registers_6_18> <registers_6_19> <registers_6_20> <registers_6_21> <registers_6_22> <registers_6_23> <registers_6_24> <registers_6_25> <registers_6_26> <registers_6_27> <registers_6_28> <registers_6_29> <registers_6_30> <registers_6_31> 
+INFO:Xst:2261 - The FF/Latch <registers_30_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_30_2> <registers_30_3> <registers_30_4> <registers_30_5> <registers_30_6> <registers_30_7> <registers_30_8> <registers_30_9> <registers_30_10> <registers_30_11> <registers_30_12> <registers_30_13> <registers_30_14> <registers_30_15> <registers_30_16> <registers_30_17> <registers_30_18> <registers_30_19> <registers_30_20> <registers_30_21> <registers_30_22> <registers_30_23> <registers_30_24> <registers_30_25> <registers_30_26> <registers_30_27> <registers_30_28> <registers_30_29> <registers_30_30> <registers_30_31> 
+INFO:Xst:2261 - The FF/Latch <registers_25_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_25_2> <registers_25_3> <registers_25_4> <registers_25_5> <registers_25_6> <registers_25_7> <registers_25_8> <registers_25_9> <registers_25_10> <registers_25_11> <registers_25_12> <registers_25_13> <registers_25_14> <registers_25_15> <registers_25_16> <registers_25_17> <registers_25_18> <registers_25_19> <registers_25_20> <registers_25_21> <registers_25_22> <registers_25_23> <registers_25_24> <registers_25_25> <registers_25_26> <registers_25_27> <registers_25_28> <registers_25_29> <registers_25_30> <registers_25_31> 
+INFO:Xst:2261 - The FF/Latch <registers_12_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_12_2> <registers_12_3> <registers_12_4> <registers_12_5> <registers_12_6> <registers_12_7> <registers_12_8> <registers_12_9> <registers_12_10> <registers_12_11> <registers_12_12> <registers_12_13> <registers_12_14> <registers_12_15> <registers_12_16> <registers_12_17> <registers_12_18> <registers_12_19> <registers_12_20> <registers_12_21> <registers_12_22> <registers_12_23> <registers_12_24> <registers_12_25> <registers_12_26> <registers_12_27> <registers_12_28> <registers_12_29> <registers_12_30> <registers_12_31> 
+INFO:Xst:2261 - The FF/Latch <registers_4_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_4_2> <registers_4_3> <registers_4_4> <registers_4_5> <registers_4_6> <registers_4_7> <registers_4_8> <registers_4_9> <registers_4_10> <registers_4_11> <registers_4_12> <registers_4_13> <registers_4_14> <registers_4_15> <registers_4_16> <registers_4_17> <registers_4_18> <registers_4_19> <registers_4_20> <registers_4_21> <registers_4_22> <registers_4_23> <registers_4_24> <registers_4_25> <registers_4_26> <registers_4_27> <registers_4_28> <registers_4_29> <registers_4_30> <registers_4_31> 
+INFO:Xst:2261 - The FF/Latch <registers_18_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_18_2> <registers_18_3> <registers_18_4> <registers_18_5> <registers_18_6> <registers_18_7> <registers_18_8> <registers_18_9> <registers_18_10> <registers_18_11> <registers_18_12> <registers_18_13> <registers_18_14> <registers_18_15> <registers_18_16> <registers_18_17> <registers_18_18> <registers_18_19> <registers_18_20> <registers_18_21> <registers_18_22> <registers_18_23> <registers_18_24> <registers_18_25> <registers_18_26> <registers_18_27> <registers_18_28> <registers_18_29> <registers_18_30> <registers_18_31> 
+INFO:Xst:2261 - The FF/Latch <registers_23_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_23_2> <registers_23_3> <registers_23_4> <registers_23_5> <registers_23_6> <registers_23_7> <registers_23_8> <registers_23_9> <registers_23_10> <registers_23_11> <registers_23_12> <registers_23_13> <registers_23_14> <registers_23_15> <registers_23_16> <registers_23_17> <registers_23_18> <registers_23_19> <registers_23_20> <registers_23_21> <registers_23_22> <registers_23_23> <registers_23_24> <registers_23_25> <registers_23_26> <registers_23_27> <registers_23_28> <registers_23_29> <registers_23_30> <registers_23_31> 
+INFO:Xst:2261 - The FF/Latch <registers_10_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_10_2> <registers_10_3> <registers_10_4> <registers_10_5> <registers_10_6> <registers_10_7> <registers_10_8> <registers_10_9> <registers_10_10> <registers_10_11> <registers_10_12> <registers_10_13> <registers_10_14> <registers_10_15> <registers_10_16> <registers_10_17> <registers_10_18> <registers_10_19> <registers_10_20> <registers_10_21> <registers_10_22> <registers_10_23> <registers_10_24> <registers_10_25> <registers_10_26> <registers_10_27> <registers_10_28> <registers_10_29> <registers_10_30> <registers_10_31> 
+INFO:Xst:2261 - The FF/Latch <registers_2_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_2_2> <registers_2_3> <registers_2_4> <registers_2_5> <registers_2_6> <registers_2_7> <registers_2_8> <registers_2_9> <registers_2_10> <registers_2_11> <registers_2_12> <registers_2_13> <registers_2_14> <registers_2_15> <registers_2_16> <registers_2_17> <registers_2_18> <registers_2_19> <registers_2_20> <registers_2_21> <registers_2_22> <registers_2_23> <registers_2_24> <registers_2_25> <registers_2_26> <registers_2_27> <registers_2_28> <registers_2_29> <registers_2_30> <registers_2_31> 
+INFO:Xst:2261 - The FF/Latch <registers_13_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_13_2> <registers_13_3> <registers_13_4> <registers_13_5> <registers_13_6> <registers_13_7> <registers_13_8> <registers_13_9> <registers_13_10> <registers_13_11> <registers_13_12> <registers_13_13> <registers_13_14> <registers_13_15> <registers_13_16> <registers_13_17> <registers_13_18> <registers_13_19> <registers_13_20> <registers_13_21> <registers_13_22> <registers_13_23> <registers_13_24> <registers_13_25> <registers_13_26> <registers_13_27> <registers_13_28> <registers_13_29> <registers_13_30> <registers_13_31> 
+INFO:Xst:2261 - The FF/Latch <registers_5_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_5_2> <registers_5_3> <registers_5_4> <registers_5_5> <registers_5_6> <registers_5_7> <registers_5_8> <registers_5_9> <registers_5_10> <registers_5_11> <registers_5_12> <registers_5_13> <registers_5_14> <registers_5_15> <registers_5_16> <registers_5_17> <registers_5_18> <registers_5_19> <registers_5_20> <registers_5_21> <registers_5_22> <registers_5_23> <registers_5_24> <registers_5_25> <registers_5_26> <registers_5_27> <registers_5_28> <registers_5_29> <registers_5_30> <registers_5_31> 
+INFO:Xst:2261 - The FF/Latch <registers_19_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_19_2> <registers_19_3> <registers_19_4> <registers_19_5> <registers_19_6> <registers_19_7> <registers_19_8> <registers_19_9> <registers_19_10> <registers_19_11> <registers_19_12> <registers_19_13> <registers_19_14> <registers_19_15> <registers_19_16> <registers_19_17> <registers_19_18> <registers_19_19> <registers_19_20> <registers_19_21> <registers_19_22> <registers_19_23> <registers_19_24> <registers_19_25> <registers_19_26> <registers_19_27> <registers_19_28> <registers_19_29> <registers_19_30> <registers_19_31> 
+INFO:Xst:2261 - The FF/Latch <registers_24_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_24_2> <registers_24_3> <registers_24_4> <registers_24_5> <registers_24_6> <registers_24_7> <registers_24_8> <registers_24_9> <registers_24_10> <registers_24_11> <registers_24_12> <registers_24_13> <registers_24_14> <registers_24_15> <registers_24_16> <registers_24_17> <registers_24_18> <registers_24_19> <registers_24_20> <registers_24_21> <registers_24_22> <registers_24_23> <registers_24_24> <registers_24_25> <registers_24_26> <registers_24_27> <registers_24_28> <registers_24_29> <registers_24_30> <registers_24_31> 
+INFO:Xst:2261 - The FF/Latch <registers_11_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_11_2> <registers_11_3> <registers_11_4> <registers_11_5> <registers_11_6> <registers_11_7> <registers_11_8> <registers_11_9> <registers_11_10> <registers_11_11> <registers_11_12> <registers_11_13> <registers_11_14> <registers_11_15> <registers_11_16> <registers_11_17> <registers_11_18> <registers_11_19> <registers_11_20> <registers_11_21> <registers_11_22> <registers_11_23> <registers_11_24> <registers_11_25> <registers_11_26> <registers_11_27> <registers_11_28> <registers_11_29> <registers_11_30> <registers_11_31> 
+INFO:Xst:2261 - The FF/Latch <registers_3_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_3_2> <registers_3_3> <registers_3_4> <registers_3_5> <registers_3_6> <registers_3_7> <registers_3_8> <registers_3_9> <registers_3_10> <registers_3_11> <registers_3_12> <registers_3_13> <registers_3_14> <registers_3_15> <registers_3_16> <registers_3_17> <registers_3_18> <registers_3_19> <registers_3_20> <registers_3_21> <registers_3_22> <registers_3_23> <registers_3_24> <registers_3_25> <registers_3_26> <registers_3_27> <registers_3_28> <registers_3_29> <registers_3_30> <registers_3_31> 
+INFO:Xst:2261 - The FF/Latch <registers_17_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_17_2> <registers_17_3> <registers_17_4> <registers_17_5> <registers_17_6> <registers_17_7> <registers_17_8> <registers_17_9> <registers_17_10> <registers_17_11> <registers_17_12> <registers_17_13> <registers_17_14> <registers_17_15> <registers_17_16> <registers_17_17> <registers_17_18> <registers_17_19> <registers_17_20> <registers_17_21> <registers_17_22> <registers_17_23> <registers_17_24> <registers_17_25> <registers_17_26> <registers_17_27> <registers_17_28> <registers_17_29> <registers_17_30> <registers_17_31> 
+INFO:Xst:2261 - The FF/Latch <registers_22_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_22_2> <registers_22_3> <registers_22_4> <registers_22_5> <registers_22_6> <registers_22_7> <registers_22_8> <registers_22_9> <registers_22_10> <registers_22_11> <registers_22_12> <registers_22_13> <registers_22_14> <registers_22_15> <registers_22_16> <registers_22_17> <registers_22_18> <registers_22_19> <registers_22_20> <registers_22_21> <registers_22_22> <registers_22_23> <registers_22_24> <registers_22_25> <registers_22_26> <registers_22_27> <registers_22_28> <registers_22_29> <registers_22_30> <registers_22_31> 
+INFO:Xst:2261 - The FF/Latch <registers_9_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_9_2> <registers_9_3> <registers_9_4> <registers_9_5> <registers_9_6> <registers_9_7> <registers_9_8> <registers_9_9> <registers_9_10> <registers_9_11> <registers_9_12> <registers_9_13> <registers_9_14> <registers_9_15> <registers_9_16> <registers_9_17> <registers_9_18> <registers_9_19> <registers_9_20> <registers_9_21> <registers_9_22> <registers_9_23> <registers_9_24> <registers_9_25> <registers_9_26> <registers_9_27> <registers_9_28> <registers_9_29> <registers_9_30> <registers_9_31> 
+INFO:Xst:2261 - The FF/Latch <registers_1_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_1_2> <registers_1_3> <registers_1_4> <registers_1_5> <registers_1_6> <registers_1_7> <registers_1_8> <registers_1_9> <registers_1_10> <registers_1_11> <registers_1_12> <registers_1_13> <registers_1_14> <registers_1_15> <registers_1_16> <registers_1_17> <registers_1_18> <registers_1_19> <registers_1_20> <registers_1_21> <registers_1_22> <registers_1_23> <registers_1_24> <registers_1_25> <registers_1_26> <registers_1_27> <registers_1_28> <registers_1_29> <registers_1_30> <registers_1_31> 
+INFO:Xst:2261 - The FF/Latch <registers_28_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_28_2> <registers_28_3> <registers_28_4> <registers_28_5> <registers_28_6> <registers_28_7> <registers_28_8> <registers_28_9> <registers_28_10> <registers_28_11> <registers_28_12> <registers_28_13> <registers_28_14> <registers_28_15> <registers_28_16> <registers_28_17> <registers_28_18> <registers_28_19> <registers_28_20> <registers_28_21> <registers_28_22> <registers_28_23> <registers_28_24> <registers_28_25> <registers_28_26> <registers_28_27> <registers_28_28> <registers_28_29> <registers_28_30> <registers_28_31> 
+INFO:Xst:2261 - The FF/Latch <registers_15_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_15_2> <registers_15_3> <registers_15_4> <registers_15_5> <registers_15_6> <registers_15_7> <registers_15_8> <registers_15_9> <registers_15_10> <registers_15_11> <registers_15_12> <registers_15_13> <registers_15_14> <registers_15_15> <registers_15_16> <registers_15_17> <registers_15_18> <registers_15_19> <registers_15_20> <registers_15_21> <registers_15_22> <registers_15_23> <registers_15_24> <registers_15_25> <registers_15_26> <registers_15_27> <registers_15_28> <registers_15_29> <registers_15_30> <registers_15_31> 
+INFO:Xst:2261 - The FF/Latch <registers_20_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_20_2> <registers_20_3> <registers_20_4> <registers_20_5> <registers_20_6> <registers_20_7> <registers_20_8> <registers_20_9> <registers_20_10> <registers_20_11> <registers_20_12> <registers_20_13> <registers_20_14> <registers_20_15> <registers_20_16> <registers_20_17> <registers_20_18> <registers_20_19> <registers_20_20> <registers_20_21> <registers_20_22> <registers_20_23> <registers_20_24> <registers_20_25> <registers_20_26> <registers_20_27> <registers_20_28> <registers_20_29> <registers_20_30> <registers_20_31> 
+INFO:Xst:2261 - The FF/Latch <registers_7_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_7_2> <registers_7_3> <registers_7_4> <registers_7_5> <registers_7_6> <registers_7_7> <registers_7_8> <registers_7_9> <registers_7_10> <registers_7_11> <registers_7_12> <registers_7_13> <registers_7_14> <registers_7_15> <registers_7_16> <registers_7_17> <registers_7_18> <registers_7_19> <registers_7_20> <registers_7_21> <registers_7_22> <registers_7_23> <registers_7_24> <registers_7_25> <registers_7_26> <registers_7_27> <registers_7_28> <registers_7_29> <registers_7_30> <registers_7_31> 
+INFO:Xst:2261 - The FF/Latch <registers_26_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_26_2> <registers_26_3> <registers_26_4> <registers_26_5> <registers_26_6> <registers_26_7> <registers_26_8> <registers_26_9> <registers_26_10> <registers_26_11> <registers_26_12> <registers_26_13> <registers_26_14> <registers_26_15> <registers_26_16> <registers_26_17> <registers_26_18> <registers_26_19> <registers_26_20> <registers_26_21> <registers_26_22> <registers_26_23> <registers_26_24> <registers_26_25> <registers_26_26> <registers_26_27> <registers_26_28> <registers_26_29> <registers_26_30> <registers_26_31> 
+INFO:Xst:2261 - The FF/Latch <registers_31_1> in Unit <reg_file> is equivalent to the following 30 FFs/Latches, which will be removed : <registers_31_2> <registers_31_3> <registers_31_4> <registers_31_5> <registers_31_6> <registers_31_7> <registers_31_8> <registers_31_9> <registers_31_10> <registers_31_11> <registers_31_12> <registers_31_13> <registers_31_14> <registers_31_15> <registers_31_16> <registers_31_17> <registers_31_18> <registers_31_19> <registers_31_20> <registers_31_21> <registers_31_22> <registers_31_23> <registers_31_24> <registers_31_25> <registers_31_26> <registers_31_27> <registers_31_28> <registers_31_29> <registers_31_30> <registers_31_31> 
+INFO:Xst:2261 - The FF/Latch <regin_data_1> in Unit <control_file> is equivalent to the following FF/Latch, which will be removed : <reg_dst_1> 
+WARNING:Xst:1710 - FF/Latch <registers_16_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_19_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_19_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_17_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_17_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_18_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_18_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_20_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_20_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_21_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_21_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_22_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_22_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_23_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_23_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_24_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_24_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_25_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_25_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_26_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_26_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_27_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_27_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_28_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_28_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_29_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_29_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_30_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_30_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_31_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_31_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_2_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_2_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_0_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_1_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_3_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_3_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_4_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_4_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_5_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_5_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_6_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_6_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_7_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_7_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_8_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_8_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_9_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_9_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_10_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_10_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_11_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_11_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_12_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_12_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_13_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_13_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_14_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_14_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_15_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_15_1> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registers_16_0> (without init value) has a constant value of 0 in block <reg_file>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <mux_1_output> of sequential type is unconnected in block <next_address>.
+WARNING:Xst:1710 - FF/Latch <incr_pc_28> (without init value) has a constant value of 0 in block <next_address>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <incr_pc_29> (without init value) has a constant value of 0 in block <next_address>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <incr_pc_30> (without init value) has a constant value of 0 in block <next_address>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <incr_pc_31> (without init value) has a constant value of 0 in block <next_address>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
+WARNING:Xst:2170 - Unit alu_logic : the following signal(s) form a combinatorial loop: logic_output_shift0002<31>.
+
+Optimizing unit <Single_Cycle> ...
+
+Optimizing unit <reg_file> ...
+
+Optimizing unit <next_address> ...
+
+Optimizing unit <control_file> ...
+
+Optimizing unit <alu_logic> ...
+
+Optimizing unit <adder> ...
+
+Optimizing unit <alu> ...
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_31> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_30> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_29> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_28> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_27> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_26> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_25> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_24> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_23> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_22> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_21> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_20> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_19> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_18> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_17> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_16> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_15> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_14> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_13> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_12> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_11> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_10> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_9> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_8> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_7> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_6> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_5> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_4> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_3> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_2> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALU/my_alu/logic_output_1> (without init value) has a constant value of 0 in block <Single_Cycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_27> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_26> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_25> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_24> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_23> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_22> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_21> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_20> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_19> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_18> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_17> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_16> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_15> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_14> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_13> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_12> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_11> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_10> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_9> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_8> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_7> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_6> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_5> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_4> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_3> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_2> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <nextaddress/incr_pc_1> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <control/pc_sel_1> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <control/logic_fn_2> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <control/logic_fn_1> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <control/br_type_2> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:2677 - Node <control/br_type_1> of sequential type is unconnected in block <Single_Cycle>.
+WARNING:Xst:1294 - Latch <ALU/my_alu/logic_output_0> is equivalent to a wire in block <Single_Cycle>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Single_Cycle, actual ratio is 3.
+Latch control/regin_data_1 has been replicated 2 time(s) to handle iob=true attribute.
+Latch control/regin_data_0 has been replicated 1 time(s) to handle iob=true attribute.
+Latch control/alu_imm_1 has been replicated 1 time(s) to handle iob=true attribute.
+Latch control/alu_imm_0 has been replicated 1 time(s) to handle iob=true attribute.
+Latch control/reg_dst_0 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Single_Cycle.ngr
+Top Level Output File Name         : Single_Cycle
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 136
+
+Cell Usage :
+# BELS                             : 289
+#      GND                         : 11
+#      INV                         : 1
+#      LUT2                        : 6
+#      LUT2_L                      : 1
+#      LUT3                        : 151
+#      LUT3_D                      : 1
+#      LUT4                        : 38
+#      LUT4_D                      : 5
+#      MUXF5                       : 73
+#      VCC                         : 1
+#      XORCY                       : 1
+# FlipFlops/Latches                : 26
+#      FDC_1                       : 1
+#      FDE                         : 4
+#      FDRE_1                      : 2
+#      LD                          : 19
+# RAMS                             : 8
+#      RAMB16                      : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 135
+#      IBUF                        : 1
+#      OBUF                        : 134
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400pq208-5 
+
+ Number of Slices:                      106  out of   3584     2%  
+ Number of Slice Flip Flops:             20  out of   7168     0%  
+ Number of 4 input LUTs:                203  out of   7168     2%  
+ Number of IOs:                         136
+ Number of bonded IOBs:                 136  out of    141    96%  
+    IOB Flip Flops:                       6
+ Number of BRAMs:                         8  out of     16    50%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                            | Clock buffer(FF name)                                                                                                                                                              | Load  |
+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+clk                                                     | BUFGP                                                                                                                                                                              | 15    |
+instr_cache/BU2/dbiterr                                 | NONE(instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram/U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram)| 4     |
+data_cache/BU2/dbiterr                                  | NONE(data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram/U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram) | 4     |
+control/reg_dst_not0001(control/reg_dst_not0001120:O)   | NONE(*)(control/reg_dst_0)                                                                                                                                                         | 15    |
+control/data_read_not0001(control/data_read_not000196:O)| NONE(*)(control/logic_fn_0)                                                                                                                                                        | 4     |
+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 18.694ns (Maximum Frequency: 53.493MHz)
+   Minimum input arrival time before clock: 3.517ns
+   Maximum output required time after clock: 13.696ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 18.694ns (frequency: 53.493MHz)
+  Total number of paths / destination ports: 873 / 21
+-------------------------------------------------------------------------
+Delay:               9.347ns (Levels of Logic = 8)
+  Source:            instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0 (FF)
+  Destination:       register/registers_1_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk falling
+
+  Data Path: instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0 to register/registers_1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             64   0.626   2.026  U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0 (U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe<0>)
+     LUT3:I0->O            1   0.479   0.000  U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_38 (U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_38)
+     MUXF5:I1->O           2   0.314   0.804  U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_7 (douta(17))
+     end scope: 'BU2'
+     end scope: 'instr_cache'
+     LUT4_D:I2->O          1   0.479   0.976  register/mux322_SW0 (N25)
+     LUT4:I0->O            1   0.479   0.740  alu_input_2 (alu_input_2)
+     LUT3_D:I2->O          1   0.479   0.976  ALU/my_alu/Mmux_logic_output_mux0000_7 (ALU/mux_input2<0>)
+     LUT3:I0->O            1   0.479   0.000  reg_write_data_G (N55)
+     MUXF5:I1->O           2   0.314   0.000  reg_write_data (reg_write_data)
+     FDRE_1:D                  0.176          register/registers_0_0
+    ----------------------------------------
+    Total                      9.347ns (3.825ns logic, 5.522ns route)
+                                       (40.9% logic, 59.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              3.517ns (Levels of Logic = 3)
+  Source:            reset (PAD)
+  Destination:       instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   0.715   1.054  reset_IBUF (reset_IBUF)
+     begin scope: 'instr_cache'
+     begin scope: 'BU2'
+     LUT3:I2->O            2   0.479   0.745  U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_and00001 (U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_and0000)
+     FDE:CE                    0.524          U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0
+    ----------------------------------------
+    Total                      3.517ns (1.718ns logic, 1.799ns route)
+                                       (48.8% logic, 51.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 268 / 36
+-------------------------------------------------------------------------
+Offset:              13.696ns (Levels of Logic = 8)
+  Source:            instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0 (FF)
+  Destination:       alu_out<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0 to alu_out<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             64   0.626   2.026  U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0 (U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe<0>)
+     LUT3:I0->O            1   0.479   0.000  U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_38 (U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_38)
+     MUXF5:I1->O           2   0.314   0.804  U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_7 (douta(17))
+     end scope: 'BU2'
+     end scope: 'instr_cache'
+     LUT4_D:I2->O          1   0.479   0.976  register/mux322_SW0 (N25)
+     LUT4:I0->O            1   0.479   0.740  alu_input_2 (alu_input_2)
+     LUT3_D:I2->LO         1   0.479   0.123  ALU/my_alu/Mmux_logic_output_mux0000_7 (N60)
+     LUT4:I3->O            5   0.479   0.783  ALU/value<0>1 (alu_out_0_OBUF)
+     OBUF:I->O                 4.909          alu_out_0_OBUF (alu_out<0>)
+    ----------------------------------------
+    Total                     13.696ns (8.244ns logic, 5.452ns route)
+                                       (60.2% logic, 39.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'control/reg_dst_not0001'
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Offset:              10.867ns (Levels of Logic = 5)
+  Source:            control/alu_imm_0 (LATCH)
+  Destination:       alu_out<0> (PAD)
+  Source Clock:      control/reg_dst_not0001 falling
+
+  Data Path: control/alu_imm_0 to alu_out<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.551   1.040  control/alu_imm_0 (control/alu_imm_0)
+     LUT4:I0->O            2   0.479   0.804  alu_input_2_SW0 (N22)
+     LUT4:I2->O            1   0.479   0.740  alu_input_2 (alu_input_2)
+     LUT3_D:I2->LO         1   0.479   0.123  ALU/my_alu/Mmux_logic_output_mux0000_7 (N60)
+     LUT4:I3->O            5   0.479   0.783  ALU/value<0>1 (alu_out_0_OBUF)
+     OBUF:I->O                 4.909          alu_out_0_OBUF (alu_out<0>)
+    ----------------------------------------
+    Total                     10.867ns (7.376ns logic, 3.491ns route)
+                                       (67.9% logic, 32.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'control/data_read_not0001'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              8.300ns (Levels of Logic = 3)
+  Source:            control/logic_fn_0 (LATCH)
+  Destination:       alu_out<0> (PAD)
+  Source Clock:      control/data_read_not0001 falling
+
+  Data Path: control/logic_fn_0 to alu_out<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.551   0.976  control/logic_fn_0 (control/logic_fn_0)
+     LUT3_D:I0->LO         1   0.479   0.123  ALU/my_alu/Mmux_logic_output_mux0000_7 (N60)
+     LUT4:I3->O            5   0.479   0.783  ALU/value<0>1 (alu_out_0_OBUF)
+     OBUF:I->O                 4.909          alu_out_0_OBUF (alu_out<0>)
+    ----------------------------------------
+    Total                      8.300ns (6.418ns logic, 1.882ns route)
+                                       (77.3% logic, 22.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.73 secs
+ 
+--> 
+
+Total memory usage is 272420 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  292 (   0 filtered)
+Number of infos    :  105 (   0 filtered)
+

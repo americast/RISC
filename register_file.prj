@@ -1,0 +1,4 @@
+verilog work "mux_32to1_32bit.v"
+verilog work "flip_flop.v"
+verilog work "decoder.v"
+verilog work "register_file.v"

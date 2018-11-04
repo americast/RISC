@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="KGPRISC.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_ASY" xil_pn:name="KGPRISC.asy" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="KGPRISC.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="KGPRISC.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="KGPRISC.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="KGPRISC.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="KGPRISC.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="KGPRISC.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="KGPRISC.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="KGPRISC.sym" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="KGPRISC.syr"/>
+    <file xil_pn:fileType="FILE_VEO" xil_pn:name="KGPRISC.veo" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHO" xil_pn:name="KGPRISC.vho" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="KGPRISC.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="KGPRISC2.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="KGPRISC2_vhdl.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="KGPRISC_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="KGPRISC_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="KGPRISC_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="KGPRISC_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="KGPRISC_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="KGPRISC_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_USERDOC" xil_pn:name="blk_mem_gen_readme.txt" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1351599812" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1351599812">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351599812" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1455198494305834670" xil_pn:start_ts="1351599812">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351599812" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="2738947521653567884" xil_pn:start_ts="1351599812">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351599812" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1351599812">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351599812" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-2000003905281754378" xil_pn:start_ts="1351599812">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351680139" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-6388418249795389316" xil_pn:start_ts="1351680139">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351680139" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-5482940635504977033" xil_pn:start_ts="1351680139">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351680150" xil_pn:in_ck="1436822261867887002" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="7842702272232853793" xil_pn:start_ts="1351680139">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="KGPRISC.lso"/>
+      <outfile xil_pn:name="KGPRISC.ngc"/>
+      <outfile xil_pn:name="KGPRISC.ngr"/>
+      <outfile xil_pn:name="KGPRISC.prj"/>
+      <outfile xil_pn:name="KGPRISC.stx"/>
+      <outfile xil_pn:name="KGPRISC.syr"/>
+      <outfile xil_pn:name="KGPRISC.xst"/>
+      <outfile xil_pn:name="KGPRISC2.prj"/>
+      <outfile xil_pn:name="KGPRISC2_vhdl.prj"/>
+      <outfile xil_pn:name="KGPRISC_vhdl.prj"/>
+      <outfile xil_pn:name="KGPRISC_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1351680153" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-6456137886357614943" xil_pn:start_ts="1351680153">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1351680163" xil_pn:in_ck="118279744295788185" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5484427539900006581" xil_pn:start_ts="1351680153">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="KGPRISC.bld"/>
+      <outfile xil_pn:name="KGPRISC.ngd"/>
+      <outfile xil_pn:name="KGPRISC_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1351680167" xil_pn:in_ck="118279744295788186" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-235656141811914689" xil_pn:start_ts="1351680163">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="KGPRISC_map.map"/>
+      <outfile xil_pn:name="KGPRISC_map.mrp"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+  </transforms>
+
+</generated_project>

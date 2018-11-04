@@ -1,0 +1,16 @@
+# Output products list for <kgpriscmemory>
+_xmsgs\pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_readme.txt
+kgpriscmemory.asy
+kgpriscmemory.gise
+kgpriscmemory.ngc
+kgpriscmemory.sym
+kgpriscmemory.v
+kgpriscmemory.veo
+kgpriscmemory.vhd
+kgpriscmemory.vho
+kgpriscmemory.xco
+kgpriscmemory.xise
+kgpriscmemory_flist.txt
+kgpriscmemory_xmdf.tcl

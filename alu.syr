@@ -1,0 +1,478 @@
+Release 12.4 - xst M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: alu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "alu.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "alu"
+Output Format                      : NGC
+Target Device                      : xc3s400-5-pq208
+
+---- Source Options
+Top Module Name                    : alu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "half_adder.v" in library work
+Compiling verilog file "ipcore_dir/kgpriscmemory.v" in library work
+Module <half_adder> compiled
+Compiling verilog file "full_adder.v" in library work
+Module <kgpriscmemory> compiled
+Compiling verilog file "alu_logic.v" in library work
+Module <full_adder> compiled
+Compiling verilog file "adder.v" in library work
+Module <alu_logic> compiled
+Compiling verilog file "alu.v" in library work
+Module <adder> compiled
+Module <alu> compiled
+No errors in compilation
+Analysis of file <"alu.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <alu> in library <work>.
+
+Analyzing hierarchy for module <adder> in library <work>.
+
+Analyzing hierarchy for module <alu_logic> in library <work>.
+
+Analyzing hierarchy for module <full_adder> in library <work>.
+
+Analyzing hierarchy for module <half_adder> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <alu>.
+Module <alu> is correct for synthesis.
+ 
+Analyzing module <adder> in library <work>.
+Module <adder> is correct for synthesis.
+ 
+Analyzing module <full_adder> in library <work>.
+Module <full_adder> is correct for synthesis.
+ 
+Analyzing module <half_adder> in library <work>.
+Module <half_adder> is correct for synthesis.
+ 
+Analyzing module <alu_logic> in library <work>.
+Module <alu_logic> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <alu_logic>.
+    Related source file is "alu_logic.v".
+WARNING:Xst:737 - Found 32-bit latch for signal <logic_output>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 32-bit 5-to-1 multiplexer for signal <logic_output$mux0000>.
+    Found 32-bit shifter logical left for signal <logic_output$shift0003> created at line 33.
+    Found 32-bit shifter logical right for signal <logic_output$shift0004> created at line 34.
+    Found 32-bit shifter arithmetic right for signal <logic_output$shift0005> created at line 35.
+    Found 32-bit xor2 for signal <logic_output$xor0000> created at line 32.
+    Summary:
+	inferred  32 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <alu_logic> synthesized.
+
+
+Synthesizing Unit <half_adder>.
+    Related source file is "half_adder.v".
+    Found 1-bit xor2 for signal <s>.
+Unit <half_adder> synthesized.
+
+
+Synthesizing Unit <full_adder>.
+    Related source file is "full_adder.v".
+Unit <full_adder> synthesized.
+
+
+Synthesizing Unit <adder>.
+    Related source file is "adder.v".
+Unit <adder> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "alu.v".
+Unit <alu> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 1
+ 32-bit latch                                          : 1
+# Multiplexers                                         : 1
+ 32-bit 5-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 32-bit shifter arithmetic right                       : 1
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 65
+ 1-bit xor2                                            : 64
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 1
+ 32-bit latch                                          : 1
+# Multiplexers                                         : 1
+ 32-bit 5-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 32-bit shifter arithmetic right                       : 1
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 65
+ 1-bit xor2                                            : 64
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2170 - Unit alu_logic : the following signal(s) form a combinatorial loop: logic_output_shift0002<31>.
+
+Optimizing unit <alu> ...
+
+Optimizing unit <alu_logic> ...
+
+Optimizing unit <adder> ...
+
+Mapping all equations...
+WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: my_alu/N8.
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block alu, actual ratio is 11.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : alu.ngr
+Top Level Output File Name         : alu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 104
+
+Cell Usage :
+# BELS                             : 680
+#      GND                         : 1
+#      LUT2                        : 14
+#      LUT3                        : 286
+#      LUT4                        : 238
+#      MUXCY                       : 15
+#      MUXF5                       : 125
+#      VCC                         : 1
+# FlipFlops/Latches                : 32
+#      LD                          : 32
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 104
+#      IBUF                        : 69
+#      OBUF                        : 35
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400pq208-5 
+
+ Number of Slices:                      312  out of   3584     8%  
+ Number of Slice Flip Flops:             32  out of   7168     0%  
+ Number of 4 input LUTs:                538  out of   7168     7%  
+ Number of IOs:                         104
+ Number of bonded IOBs:                 104  out of    141    73%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------+--------------------------------+-------+
+Clock Signal                                              | Clock buffer(FF name)          | Load  |
+----------------------------------------------------------+--------------------------------+-------+
+my_alu/logic_output_or00011(my_alu/logic_output_or00011:O)| BUFG(*)(my_alu/logic_output_31)| 32    |
+----------------------------------------------------------+--------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 12.762ns
+   Maximum output required time after clock: 7.360ns
+   Maximum combinational path delay: 52.946ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'my_alu/logic_output_or00011'
+  Total number of paths / destination ports: 8063 / 32
+-------------------------------------------------------------------------
+Offset:              12.762ns (Levels of Logic = 11)
+  Source:            y<0> (PAD)
+  Destination:       my_alu/logic_output_31 (LATCH)
+  Destination Clock: my_alu/logic_output_or00011 falling
+
+  Data Path: y<0> to my_alu/logic_output_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            81   0.715   2.109  y_0_IBUF (y_0_IBUF)
+     LUT3:I0->O            2   0.479   0.915  my_alu/Sh113_SW1 (N165)
+     LUT3:I1->O            2   0.479   0.915  my_alu/Sh111 (my_alu/Sh111)
+     LUT3:I1->O            3   0.479   0.941  my_alu/Sh14320 (my_alu/Sh14320)
+     LUT3:I1->O            1   0.479   0.000  my_alu/Sh143311 (my_alu/Sh14331)
+     MUXF5:I1->O           2   0.314   0.804  my_alu/Sh14331_f5 (my_alu/Sh143)
+     LUT4:I2->O            1   0.479   0.851  my_alu/logic_output_shift0000<31>150 (my_alu/logic_output_shift0000<31>)
+     LUT3:I1->O            1   0.479   0.000  my_alu/Mmux_logic_output_mux0000_624 (my_alu/Mmux_logic_output_mux0000_624)
+     MUXF5:I1->O           2   0.314   1.040  my_alu/Mmux_logic_output_mux0000_5_f5_23 (my_alu/Mmux_logic_output_mux0000_5_f524)
+     LUT2:I0->O            1   0.479   0.000  my_alu/logic_function<2>241 (my_alu/logic_function<2>24)
+     MUXF5:I1->O           1   0.314   0.000  my_alu/logic_function<2>24_f5 (my_alu/logic_output_mux0000<31>)
+     LD:D                      0.176          my_alu/logic_output_31
+    ----------------------------------------
+    Total                     12.762ns (5.186ns logic, 7.576ns route)
+                                       (40.6% logic, 59.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'my_alu/logic_output_or00011'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              7.360ns (Levels of Logic = 2)
+  Source:            my_alu/logic_output_1 (LATCH)
+  Destination:       value<1> (PAD)
+  Source Clock:      my_alu/logic_output_or00011 falling
+
+  Data Path: my_alu/logic_output_1 to value<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.551   0.740  my_alu/logic_output_1 (my_alu/logic_output_1)
+     LUT4:I2->O            1   0.479   0.681  value<1> (value_1_OBUF)
+     OBUF:I->O                 4.909          value_1_OBUF (value<1>)
+    ----------------------------------------
+    Total                      7.360ns (5.939ns logic, 1.421ns route)
+                                       (80.7% logic, 19.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1962 / 35
+-------------------------------------------------------------------------
+Delay:               52.946ns (Levels of Logic = 36)
+  Source:            fn (PAD)
+  Destination:       value<31> (PAD)
+
+  Data Path: fn to value<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            65   0.715   2.031  fn_IBUF (fn_IBUF)
+     LUT2:I0->O            3   0.479   1.066  adder_input2<0>1 (adder_input2<0>)
+     LUT4:I0->O            1   0.479   0.000  uut/fulladder[1].uut3/c_out11 (uut/fulladder[1].uut3/c_out1)
+     MUXF5:I1->O           2   0.314   0.915  uut/fulladder[1].uut3/c_out1_f5 (uut/c_temp<1>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[2].uut3/c_out1 (uut/c_temp<2>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[3].uut3/c_out1 (uut/c_temp<3>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[4].uut3/c_out1 (uut/c_temp<4>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[5].uut3/c_out1 (uut/c_temp<5>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[6].uut3/c_out1 (uut/c_temp<6>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[7].uut3/c_out1 (uut/c_temp<7>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[8].uut3/c_out1 (uut/c_temp<8>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[9].uut3/c_out1 (uut/c_temp<9>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[10].uut3/c_out1 (uut/c_temp<10>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[11].uut3/c_out1 (uut/c_temp<11>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[12].uut3/c_out1 (uut/c_temp<12>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[13].uut3/c_out1 (uut/c_temp<13>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[14].uut3/c_out1 (uut/c_temp<14>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[15].uut3/c_out1 (uut/c_temp<15>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[16].uut3/c_out1 (uut/c_temp<16>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[17].uut3/c_out1 (uut/c_temp<17>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[18].uut3/c_out1 (uut/c_temp<18>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[19].uut3/c_out1 (uut/c_temp<19>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[20].uut3/c_out1 (uut/c_temp<20>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[21].uut3/c_out1 (uut/c_temp<21>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[22].uut3/c_out1 (uut/c_temp<22>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[23].uut3/c_out1 (uut/c_temp<23>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[24].uut3/c_out1 (uut/c_temp<24>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[25].uut3/c_out1 (uut/c_temp<25>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[26].uut3/c_out1 (uut/c_temp<26>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[27].uut3/c_out1 (uut/c_temp<27>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[28].uut3/c_out1 (uut/c_temp<28>)
+     LUT4:I1->O            2   0.479   0.915  uut/fulladder[29].uut3/c_out1 (uut/c_temp<29>)
+     LUT4:I1->O            2   0.479   1.040  uut/fulladder[30].uut3/c_out1 (uut/c_temp<30>)
+     LUT4:I0->O            1   0.479   0.000  value<31>1 (value<31>1)
+     MUXF5:I0->O           1   0.314   0.681  value<31>_f5 (value_31_OBUF)
+     OBUF:I->O                 4.909          value_31_OBUF (value<31>)
+    ----------------------------------------
+    Total                     52.946ns (21.580ns logic, 31.366ns route)
+                                       (40.8% logic, 59.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.16 secs
+ 
+--> 
+
+Total memory usage is 257380 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

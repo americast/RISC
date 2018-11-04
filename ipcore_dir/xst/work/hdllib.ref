@@ -1,0 +1,4 @@
+AR kgprisc kgprisc_a C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC.vhd sub00/vhpl03 1351680143
+AR kgprisc2 kgprisc2_a C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC2.vhd sub00/vhpl01 1351680026
+EN kgprisc2 NULL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC2.vhd sub00/vhpl00 1351680025
+EN kgprisc NULL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC.vhd sub00/vhpl02 1351680142

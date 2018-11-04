@@ -1,0 +1,14 @@
+V3 6
+FL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC.vhd 2012/10/31.15:14:18 M.81d
+EN work/KGPRISC 1351680142 \
+      FL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC.vhd \
+      PB ieee/std_logic_1164 1290154108
+AR work/KGPRISC/KGPRISC_a 1351680143 \
+      FL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC.vhd EN work/KGPRISC 1351680142
+FL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC2.vhd 2012/10/31.13:58:50 M.81d
+EN work/KGPRISC2 1351680025 \
+      FL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC2.vhd \
+      PB ieee/std_logic_1164 1290154108
+AR work/KGPRISC2/KGPRISC2_a 1351680026 \
+      FL C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC2.vhd \
+      EN work/KGPRISC2 1351680025

@@ -1,0 +1,2 @@
+verilog work "netgen/par/Single_Cycle_timesim.v"
+verilog work "Single_Cycle_test.v"

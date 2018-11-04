@@ -1,0 +1,5 @@
+set -tmpdir "E:/Academics/5th sem(my collection)/COA lab/xilinx/ass_5_coaa/kgprisc/xst/projnav.tmp"
+set -xsthdpdir "E:/Academics/5th sem(my collection)/COA lab/xilinx/ass_5_coaa/kgprisc/xst"
+elaborate
+-ifn decoder_32bit.prj
+-ifmt mixed

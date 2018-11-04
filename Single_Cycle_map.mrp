@@ -1,0 +1,1501 @@
+Release 12.4 Map M.81d (nt64)
+Xilinx Mapping Report File for Design 'Single_Cycle'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s400-pq208-5 -cm area -ir off -pr off
+-c 100 -o Single_Cycle_map.ncd Single_Cycle.ngd Single_Cycle.pcf 
+Target Device  : xc3s400
+Target Package : pq208
+Target Speed   : -5
+Mapper Version : spartan3 -- $Revision: 1.52.76.2 $
+Mapped Date    : Thu Nov 01 23:38:03 2012
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   33
+Logic Utilization:
+  Total Number Slice Registers:          16 out of   7,168    1%
+    Number used as Flip Flops:            3
+    Number used as Latches:              13
+  Number of 4 input LUTs:                66 out of   7,168    1%
+Logic Distribution:
+  Number of occupied Slices:             39 out of   3,584    1%
+    Number of Slices containing only related logic:      39 out of      39 100%
+    Number of Slices containing unrelated logic:          0 out of      39   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:          67 out of   7,168    1%
+    Number used as logic:                66
+    Number used as a route-thru:          1
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                136 out of     141   96%
+    IOB Latches:                          6
+  Number of RAMB16s:                      2 out of      16   12%
+  Number of BUFGMUXs:                     1 out of       8   12%
+
+Average Fanout of Non-Clock Nets:                3.01
+
+Peak Memory Usage:  224 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   1 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:PhysDesignRules:372 - Gated clock. Clock net control/reg_dst_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net control/data_read_not0001
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA1> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA2> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA3> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA4> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA5> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA6> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA7> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA8> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA9> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA10> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA11> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA12> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA13> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA14> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA15> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA16> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA17> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA18> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA19> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA20> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA21> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA22> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA23> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA24> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA25> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA26> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA27> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA28> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA29> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA30> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA31> on
+   block:<data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_ini
+   t.ram/dpram.dp36x36.ram.A>:<RAMB16_RAMB16A>.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network data_cache/douta<31> has no load.
+INFO:LIT:395 - The above info message is repeated 30 more times for the
+   following (max. 5 shown):
+   data_cache/douta<30>,
+   data_cache/douta<29>,
+   data_cache/douta<28>,
+   data_cache/douta<27>,
+   data_cache/douta<26>
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 108 block(s) removed
+  12 block(s) optimized away
+ 358 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "instr_cache/dina<31>" is sourceless and has been removed.
+The signal "instr_cache/dina<30>" is sourceless and has been removed.
+The signal "instr_cache/dina<29>" is sourceless and has been removed.
+The signal "instr_cache/dina<28>" is sourceless and has been removed.
+The signal "instr_cache/dina<27>" is sourceless and has been removed.
+The signal "instr_cache/dina<26>" is sourceless and has been removed.
+The signal "instr_cache/dina<25>" is sourceless and has been removed.
+The signal "instr_cache/dina<24>" is sourceless and has been removed.
+The signal "instr_cache/dina<23>" is sourceless and has been removed.
+The signal "instr_cache/dina<22>" is sourceless and has been removed.
+The signal "instr_cache/dina<21>" is sourceless and has been removed.
+The signal "instr_cache/dina<20>" is sourceless and has been removed.
+The signal "instr_cache/dina<19>" is sourceless and has been removed.
+The signal "instr_cache/dina<18>" is sourceless and has been removed.
+The signal "instr_cache/dina<17>" is sourceless and has been removed.
+The signal "instr_cache/dina<16>" is sourceless and has been removed.
+The signal "instr_cache/dina<15>" is sourceless and has been removed.
+The signal "instr_cache/dina<14>" is sourceless and has been removed.
+The signal "instr_cache/dina<13>" is sourceless and has been removed.
+The signal "instr_cache/dina<12>" is sourceless and has been removed.
+The signal "instr_cache/dina<11>" is sourceless and has been removed.
+The signal "instr_cache/dina<10>" is sourceless and has been removed.
+The signal "instr_cache/dina<9>" is sourceless and has been removed.
+The signal "instr_cache/dina<8>" is sourceless and has been removed.
+The signal "instr_cache/dina<7>" is sourceless and has been removed.
+The signal "instr_cache/dina<6>" is sourceless and has been removed.
+The signal "instr_cache/dina<5>" is sourceless and has been removed.
+The signal "instr_cache/dina<4>" is sourceless and has been removed.
+The signal "instr_cache/dina<3>" is sourceless and has been removed.
+The signal "instr_cache/dina<2>" is sourceless and has been removed.
+The signal "instr_cache/dina<1>" is sourceless and has been removed.
+The signal "instr_cache/dina<0>" is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<0>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_3" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<0>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe<1>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<10>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_31"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<10>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<11>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_32"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<11>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<12>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_33"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<12>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<13>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_34"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<13>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<14>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_35"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<14>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<15>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_36"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<15>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<16>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_37"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<16>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<17>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_38"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<17>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<18>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_39"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<18>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<19>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_310"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<19>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<1>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_311"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<1>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<20>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_312"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<20>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<21>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_313"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<21>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<22>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_314"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<22>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<23>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_315"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<23>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<24>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_316"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<24>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<25>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_317"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<25>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<26>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_318"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<26>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<27>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_319"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<27>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<28>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_320"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<28>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<29>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_321"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<29>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<2>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_322"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<2>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<30>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_323"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<30>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<31>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_324"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<31>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<3>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_325"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<3>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<4>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_326"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<4>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<5>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_327"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<5>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<6>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_328"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<6>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<7>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_329"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<7>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<8>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_330"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<8>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<9>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_331"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<9>" is
+sourceless and has been removed.
+The signal
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_and0000"
+is sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ena_array<3>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ena_array<2>" is
+sourceless and has been removed.
+The signal "instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ena_array<1>" is
+sourceless and has been removed.
+The signal "data_cache/douta<31>" is sourceless and has been removed.
+The signal "data_cache/douta<30>" is sourceless and has been removed.
+The signal "data_cache/douta<29>" is sourceless and has been removed.
+The signal "data_cache/douta<28>" is sourceless and has been removed.
+The signal "data_cache/douta<27>" is sourceless and has been removed.
+The signal "data_cache/douta<26>" is sourceless and has been removed.
+The signal "data_cache/douta<25>" is sourceless and has been removed.
+The signal "data_cache/douta<24>" is sourceless and has been removed.
+The signal "data_cache/douta<23>" is sourceless and has been removed.
+The signal "data_cache/douta<22>" is sourceless and has been removed.
+The signal "data_cache/douta<21>" is sourceless and has been removed.
+The signal "data_cache/douta<20>" is sourceless and has been removed.
+The signal "data_cache/douta<19>" is sourceless and has been removed.
+The signal "data_cache/douta<18>" is sourceless and has been removed.
+The signal "data_cache/douta<17>" is sourceless and has been removed.
+The signal "data_cache/douta<16>" is sourceless and has been removed.
+The signal "data_cache/douta<15>" is sourceless and has been removed.
+The signal "data_cache/douta<14>" is sourceless and has been removed.
+The signal "data_cache/douta<13>" is sourceless and has been removed.
+The signal "data_cache/douta<12>" is sourceless and has been removed.
+The signal "data_cache/douta<11>" is sourceless and has been removed.
+The signal "data_cache/douta<10>" is sourceless and has been removed.
+The signal "data_cache/douta<9>" is sourceless and has been removed.
+The signal "data_cache/douta<8>" is sourceless and has been removed.
+The signal "data_cache/douta<7>" is sourceless and has been removed.
+The signal "data_cache/douta<6>" is sourceless and has been removed.
+The signal "data_cache/douta<5>" is sourceless and has been removed.
+The signal "data_cache/douta<4>" is sourceless and has been removed.
+The signal "data_cache/douta<3>" is sourceless and has been removed.
+The signal "data_cache/douta<2>" is sourceless and has been removed.
+The signal "data_cache/douta<1>" is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<0>" is
+sourceless and has been removed.
+The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_3" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<0>" is
+sourceless and has been removed.
+The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe<1>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_0
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_3
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_4
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_5
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_6
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_7
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_8
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_9
+" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+0" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+1" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+2" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+3" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+4" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+5" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+6" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+7" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+8" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_1
+9" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+0" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+1" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+2" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+3" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+4" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+5" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+6" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+7" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+8" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_2
+9" (MUX) removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f5_3
+0" (MUX) removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<10>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_31"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_31" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<10>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<10>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_41"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_41" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<10>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<11>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_32"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_32" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<11>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<11>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_42"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_42" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<11>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<12>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_33"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_33" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<12>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<12>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_43"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_43" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<12>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<13>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_34"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_34" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<13>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<13>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_44"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_44" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<13>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<14>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_35"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_35" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<14>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<14>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_45"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_45" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<14>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<15>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_36"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_36" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<15>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<15>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_46"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_46" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<15>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<16>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_37"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_37" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<16>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<16>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_47"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_47" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<16>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<17>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_38"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_38" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<17>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<17>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_48"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_48" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<17>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<18>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_39"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_39" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<18>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<18>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_49"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_49" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<18>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<19>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_310"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_310"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<19>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<19>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_410"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_410"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<19>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<1>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_311"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_311"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<1>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<1>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_411"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_411"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<1>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<20>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_312"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_312"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<20>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<20>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_412"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_412"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<20>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<21>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_313"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_313"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<21>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<21>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_413"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_413"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<21>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<22>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_314"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_314"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<22>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<22>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_414"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_414"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<22>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<23>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_315"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_315"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<23>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<23>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_415"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_415"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<23>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<24>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_316"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_316"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<24>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<24>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_416"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_416"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<24>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<25>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_317"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_317"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<25>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<25>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_417"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_417"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<25>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<26>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_318"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_318"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<26>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<26>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_418"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_418"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<26>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<27>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_319"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_319"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<27>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<27>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_419"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_419"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<27>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<28>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_320"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_320"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<28>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<28>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_420"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_420"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<28>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<29>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_321"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_321"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<29>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<29>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_421"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_421"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<29>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<2>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_322"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_322"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<2>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<2>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_422"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_422"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<2>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<30>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_323"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_323"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<30>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<30>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_423"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_423"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<30>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<31>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_324"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_324"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<31>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<31>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_424"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_424"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<31>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<3>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_325"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_325"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<3>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<3>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_425"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_425"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<3>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<4>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_326"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_326"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<4>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<4>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_426"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_426"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<4>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<5>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_327"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_327"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<5>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<5>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_427"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_427"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<5>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<6>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_328"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_328"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<6>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<6>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_428"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_428"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<6>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<7>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_329"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_329"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<7>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<7>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_429"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_429"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<7>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<8>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_330"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_330"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<8>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<8>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_430"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_430"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<8>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta1<9>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_331"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_331"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta2<9>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta<9>" is
+sourceless and has been removed.
+ Sourceless block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_431"
+(ROM) removed.
+  The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/Mmux_dout_mux_431"
+is sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta0<9>" is
+sourceless and has been removed.
+The signal
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_and0000" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ena_array<3>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ena_array<2>" is
+sourceless and has been removed.
+The signal "data_cache/BU2/U0/blk_mem_generator/valid.cstr/ena_array<1>" is
+sourceless and has been removed.
+Unused block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/bindec_a.bindec_inst_a/ENOUT_1_m
+ux00001" (ROM) removed.
+Unused block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/bindec_a.bindec_inst_a/ENOUT_3_m
+ux00001" (ROM) removed.
+Unused block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_and00001"
+(ROM) removed.
+Unused block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dpr
+am.dp36x36.ram" (RAMB16_S36_S36) removed.
+Unused block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpr
+am.dp36x36.ram" (RAMB16_S36_S36) removed.
+Unused block "data_cache/GND" (ZERO) removed.
+Unused block "data_cache/VCC" (ONE) removed.
+Unused block
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/bindec_a.bindec_inst_a/ENOUT_1_
+mux00001" (ROM) removed.
+Unused block
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/bindec_a.bindec_inst_a/ENOUT_3_
+mux00001" (ROM) removed.
+Unused block
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dp
+ram.dp36x36.ram" (RAMB16_S36_S36) removed.
+Unused block
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dp
+ram.dp36x36.ram" (RAMB16_S36_S36) removed.
+Unused block "instr_cache/GND" (ZERO) removed.
+Unused block "instr_cache/VCC" (ONE) removed.
+Unused block
+"data_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dpr
+am.dp36x36.ram" (RAMB16_S36_S36) removed.
+Unused block
+"instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dp
+ram.dp36x36.ram" (RAMB16_S36_S36) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+LUT3
+		data_cache/BU2/U0/blk_mem_generator/valid.cstr/bindec_a.bindec_inst_a/ENOUT_2_
+mux00001
+FDE 		data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0
+   optimized to 0
+FDE 		data_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_1
+   optimized to 0
+GND 		data_cache/BU2/XST_GND
+LUT3
+		instr_cache/BU2/U0/blk_mem_generator/valid.cstr/bindec_a.bindec_inst_a/ENOUT_0
+_mux00001
+LUT3
+		instr_cache/BU2/U0/blk_mem_generator/valid.cstr/bindec_a.bindec_inst_a/ENOUT_2
+_mux00001
+FDE 		instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_0
+   optimized to 0
+FDE 		instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_1
+   optimized to 0
+LUT3
+		instr_cache/BU2/U0/blk_mem_generator/valid.cstr/has_mux_a.A/sel_pipe_and00001
+GND 		instr_cache/BU2/XST_GND
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| alu_imm<0>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
+| alu_imm<1>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
+| alu_out<0>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<1>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<2>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<3>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<4>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<5>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<6>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<7>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<8>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<9>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<10>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<11>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<12>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<13>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<14>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<15>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<16>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<17>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<18>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<19>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<20>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<21>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<22>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<23>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<24>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<25>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<26>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<27>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<28>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<29>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<30>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| alu_out<31>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| clk                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| instruction_out<0>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<1>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<2>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<3>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<4>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<5>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<6>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<7>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<8>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<9>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<10>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<11>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<12>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<13>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<14>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<15>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<16>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<17>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<18>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<19>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<20>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<21>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<22>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<23>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<24>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<25>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<26>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<27>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<28>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<29>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<30>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| instruction_out<31>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| reg_dest<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
+| reg_dest<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
+| regin_data<0>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
+| regin_data<1>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
+| reset                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| rs_val<0>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<1>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<2>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<3>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<4>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<5>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<6>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<7>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<8>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<9>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<10>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<11>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<12>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<13>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<14>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<15>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<16>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<17>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<18>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<19>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<20>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<21>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<22>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<23>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<24>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<25>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<26>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<27>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<28>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<29>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<30>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rs_val<31>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<0>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<1>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<2>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<3>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<4>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<5>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<6>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<7>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<8>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<9>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<10>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<11>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<12>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<13>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<14>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<15>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<16>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<17>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<18>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<19>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<20>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<21>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<22>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<23>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<24>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<25>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<26>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<27>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<28>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<29>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<30>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rt_val<31>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

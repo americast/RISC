@@ -1,0 +1,17 @@
+# Output products list for <KGPRISC>
+KGPRISC.asy
+KGPRISC.gise
+KGPRISC.mif
+KGPRISC.ngc
+KGPRISC.sym
+KGPRISC.v
+KGPRISC.veo
+KGPRISC.vhd
+KGPRISC.vho
+KGPRISC.xco
+KGPRISC.xise
+KGPRISC_flist.txt
+KGPRISC_xmdf.tcl
+_xmsgs\pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_readme.txt

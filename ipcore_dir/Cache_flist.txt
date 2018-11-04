@@ -1,0 +1,18 @@
+# Output products list for <Cache>
+Cache.asy
+Cache.gise
+Cache.mif
+Cache.ngc
+Cache.sym
+Cache.v
+Cache.veo
+Cache.vhd
+Cache.vho
+Cache.xco
+Cache.xise
+Cache_flist.txt
+Cache_xmdf.tcl
+KGPRISC.mif
+_xmsgs\pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_readme.txt

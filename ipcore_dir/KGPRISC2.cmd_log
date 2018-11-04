@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC2.xst" -ofn "C:/Users/himanshu/Desktop/kgprisc/ipcore_dir/KGPRISC2.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s400-pq208-4 KGPRISC2.ngc KGPRISC2.ngd  
+map -intstyle ise -p xc3s400-pq208-4 -cm area -ir off -pr off -c 100 -o KGPRISC2_map.ncd KGPRISC2.ngd KGPRISC2.pcf 

@@ -1,0 +1,28 @@
+Release 12.4 Map M.81d (nt64)
+Xilinx Mapping Report File for Design 'KGPRISC2'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s400-pq208-4 -cm area -ir off -pr off
+-c 100 -o KGPRISC2_map.ncd KGPRISC2.ngd KGPRISC2.pcf 
+Target Device  : xc3s400
+Target Package : pq208
+Target Speed   : -4
+Mapper Version : spartan3 -- $Revision: 1.52.76.2 $
+Mapped Date    : Wed Oct 31 16:11:03 2012
+
+Design Summary
+--------------
+Number of errors   :   2
+Number of warnings :   0
+
+Section 1 - Errors
+------------------
+ERROR:Map:116 - The design is empty.  No processing will be done.
+ERROR:Map:52 - Problem encountered processing RPMs. 
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------

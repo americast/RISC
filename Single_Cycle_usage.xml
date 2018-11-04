@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<DeviceUsageSummary rev="4">
+<DesignStatistics TimeStamp="Thu Nov 01 23:38:06 2012"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="4">
+<attrib name="value" value="136"/></item>
+<item name="AGG_IO" rev="4">
+<attrib name="value" value="136"/></item>
+<item name="AGG_SLICE" rev="4">
+<attrib name="value" value="39"/></item>
+<item name="NUM_4_INPUT_LUT" rev="4">
+<attrib name="value" value="67"/></item>
+<item name="NUM_BONDED_IOB" rev="4">
+<attrib name="value" value="136"/></item>
+<item name="NUM_BUFGMUX" rev="4">
+<attrib name="value" value="1"/></item>
+<item name="NUM_IOB_LATCH" rev="4">
+<attrib name="value" value="6"/></item>
+<item name="NUM_LUT_RT" rev="4">
+<attrib name="value" value="1"/></item>
+<item name="NUM_RAMB16" rev="4">
+<attrib name="value" value="2"/></item>
+<item name="NUM_SLICEL" rev="4">
+<attrib name="value" value="39"/></item>
+<item name="NUM_SLICE_FF" rev="4">
+<attrib name="value" value="3"/></item>
+<item name="NUM_SLICE_LATCH" rev="4">
+<attrib name="value" value="13"/></item>
+<item name="NUM_XOR" rev="4">
+<attrib name="value" value="1"/></item>
+<item name="Xilinx Core blk_mem_gen_v4_3, Xilinx CORE Generator 12.4" rev="4">
+<attrib name="value" value="2"/></item>
+</group>
+</DesignStatistics>
+<CmdHistory>
+</CmdHistory>
+</DeviceUsageSummary>

@@ -1,0 +1,2 @@
+verilog work "reg_file.v"
+verilog work "ipcore_dir/kgpriscmemory.v"

@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "C:/Users/himanshu/Desktop/kgprisc/alu.xst" -ofn "C:/Users/himanshu/Desktop/kgprisc/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc3s400-pq208-5 alu.ngc alu.ngd  
+map -intstyle ise -p xc3s400-pq208-5 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+xst -intstyle ise -ifn "C:/Users/himanshu/Desktop/kgprisc/alu.xst" -ofn "C:/Users/himanshu/Desktop/kgprisc/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc3s400-pq208-5 alu.ngc alu.ngd  
+map -intstyle ise -p xc3s400-pq208-5 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+netgen -intstyle ise -s 5  -pcf alu.pcf -sdf_anno true -sdf_path "netgen/map" -insert_glbl true -w -dir netgen/map -ofmt verilog -sim alu_map.ncd alu_map.v 
+xst -intstyle ise -ifn "C:/Users/himanshu/Desktop/kgprisc/alu.xst" -ofn "C:/Users/himanshu/Desktop/kgprisc/alu.syr" 
+xst -intstyle ise -ifn "C:/Users/himanshu/Desktop/kgprisc/alu.xst" -ofn "C:/Users/himanshu/Desktop/kgprisc/alu.syr" 
