@@ -7,8 +7,8 @@ WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for 
 This is a Lite version of ISim.
 WARNING:  For instance uut/instr_cache/, width 1 of formal port ena is not equal to width 32 of actual constant.
 WARNING:  For instance uut/instr_cache/, width 1 of formal port wea is not equal to width 32 of actual constant.
-WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 13.  For instance uut/instr_cache/, width 11 of formal port addra is not equal to width 32 of actual signal addr.
-WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 49.  For instance uut/data_cache/, width 11 of formal port addra is not equal to width 32 of actual signal alu_out.
+WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 11.  For instance uut/instr_cache/, width 11 of formal port addra is not equal to width 32 of actual signal addr.
+WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 50.  For instance uut/data_cache/, width 11 of formal port addra is not equal to width 32 of actual signal alu_out.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
@@ -21,4 +21,4 @@ Block Memory Generator CORE Generator module Single_Cycle_test.uut.instr_cache.i
  Block Memory Generator data initialization complete.
 Block Memory Generator CORE Generator module Single_Cycle_test.uut.data_cache.inst.blk_mem_gen_v4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Finished circuit initialization process.
-# run all
+# exit 0

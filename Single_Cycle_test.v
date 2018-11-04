@@ -35,6 +35,7 @@ module Single_Cycle_test;
 	wire [31:0] read_addr_pc;
 	wire [31:0] instruction_out;
 	wire reg_write;
+	wire [31:0] addr;
 	
 
 	// Instantiate the Unit Under Test (UUT)
@@ -46,7 +47,8 @@ module Single_Cycle_test;
 		.read_addr_pc(read_addr_pc),  
 		.instruction_out(instruction_out),    
 		.reg_write(reg_write), 
-		.real_carry_flag(real_carry_flag)
+		.real_carry_flag(real_carry_flag),
+		.addr(addr)
 	);
 
 	always

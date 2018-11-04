@@ -7,10 +7,11 @@ module Single_Cycle(
 	 output [31:0] read_addr_pc,
 	 output [31:0] instruction_out,
 	 output reg_write,
-	 output reg real_carry_flag
+	 output reg real_carry_flag,
+	 output [31:0] addr
     );
 reg [31:0] write_addr;
-wire [31:0] addr;
+//wire [31:0] addr;
 wire overflow;
 
 KGPRISC  instr_cache(

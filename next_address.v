@@ -25,7 +25,7 @@ begin
   else 
   begin
 	  case(brtype)
-		 0: mux_1_output = msb;
+		 0: mux_1_output = 1;
 		 1: mux_1_output = zero_flag;
 		 2: mux_1_output = ~zero_flag;
 		 3: mux_1_output = carry_flag;
@@ -40,7 +40,7 @@ begin
 		else 
 			 pseudo_adder_input_1 = 0;
 		
-		sign_extended_address[31:16] = 0;
+		sign_extended_address[31:16] = pseudo_adder_input_1[15] ? 16'b1111111111111111 : 0;
 		sign_extended_address[15:0] = pseudo_adder_input_1;
 		mux_2_input_1 = sign_extended_address + pc +1;
 		jmp_label_extended[31:28] = pc[31:28];
