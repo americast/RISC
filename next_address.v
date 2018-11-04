@@ -1,36 +1,18 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    12:16:23 10/16/2012 
-// Design Name: 
-// Module Name:    next_address 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module next_address(
     input zero_flag,
     input carry_flag,
     input msb,
 	 input clk,
     input [15:0] branch_label,
-    input [2:0] brtype,
+    input [3:0] brtype,
     input [31:0] jmp_ra,
     input [25:0] jmp_label,
     input [31:0] pc,
 	 input [1:0] pc_sel,
 	 input reset,
-    output reg [31:0] incr_pc
+    output reg [31:0] incr_pc,
+	 input overflow
     );
 reg mux_1_output;
 reg [31:0] pseudo_adder_input_1;
@@ -48,6 +30,10 @@ begin
 		 2: mux_1_output = ~zero_flag;
 		 3: mux_1_output = carry_flag;
 		 4: mux_1_output = ~carry_flag;
+		 5: mux_1_output = msb;
+		 6: mux_1_output = ~msb;
+		 7: mux_1_output = overflow;
+		 8: mux_1_output = ~overflow;
 		endcase
 		if(mux_1_output)
 			 pseudo_adder_input_1 = branch_label;

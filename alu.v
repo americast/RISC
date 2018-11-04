@@ -1,23 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    13:43:40 10/12/2012 
-// Design Name: 
-// Module Name:    alu 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module alu(
     input [31:0] x,
     input [31:0] y,
@@ -27,7 +9,8 @@ module alu(
     output [31:0] value,
     output carry,
     output zeroflag,
-	 output  msb
+	 output  msb,
+	 output overflow
     );
 wire [31:0] adder_input1;
 wire [31:0] adder_input2;
@@ -57,4 +40,5 @@ alu_logic my_alu(
     );
 
 assign value = fnclass ? mux_input2 : mux_tmp;
+assign overflow = (mux_input1[31] & carry) ? 1 : 0;
 endmodule

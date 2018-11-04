@@ -30,7 +30,7 @@ static unsigned int ng5[] = {4U, 0U};
 
 
 
-static void Always_28_0(char *t0)
+static void Always_9_0(char *t0)
 {
     char t10[8];
     char *t1;
@@ -81,7 +81,7 @@ LAB0:    t1 = (t0 + 2680U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(28, ng0);
+LAB2:    xsi_set_current_line(9, ng0);
     t2 = (t0 + 3000);
     *((int *)t2) = 1;
     t3 = (t0 + 2712);
@@ -89,9 +89,9 @@ LAB2:    xsi_set_current_line(28, ng0);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(29, ng0);
+LAB4:    xsi_set_current_line(10, ng0);
 
-LAB5:    xsi_set_current_line(30, ng0);
+LAB5:    xsi_set_current_line(11, ng0);
     t4 = (t0 + 1368U);
     t5 = *((char **)t4);
 
@@ -123,7 +123,7 @@ LAB14:    t2 = ((char*)((ng5)));
 LAB16:
 LAB17:    goto LAB2;
 
-LAB7:    xsi_set_current_line(31, ng0);
+LAB7:    xsi_set_current_line(12, ng0);
     t7 = (t0 + 1048U);
     t8 = *((char **)t7);
     t7 = (t0 + 1208U);
@@ -149,7 +149,7 @@ LAB20:    t41 = (t0 + 1768);
     xsi_vlogvar_wait_assign_value(t41, t10, 0, 0, 32, 0LL);
     goto LAB17;
 
-LAB9:    xsi_set_current_line(32, ng0);
+LAB9:    xsi_set_current_line(13, ng0);
     t3 = (t0 + 1048U);
     t4 = *((char **)t3);
     t3 = (t0 + 1208U);
@@ -175,7 +175,7 @@ LAB23:    t14 = (t0 + 1768);
     xsi_vlogvar_wait_assign_value(t14, t10, 0, 0, 32, 0LL);
     goto LAB17;
 
-LAB11:    xsi_set_current_line(33, ng0);
+LAB11:    xsi_set_current_line(14, ng0);
     t3 = (t0 + 1048U);
     t4 = *((char **)t3);
     t3 = (t0 + 1208U);
@@ -186,7 +186,7 @@ LAB11:    xsi_set_current_line(33, ng0);
     xsi_vlogvar_wait_assign_value(t3, t10, 0, 0, 32, 0LL);
     goto LAB17;
 
-LAB13:    xsi_set_current_line(34, ng0);
+LAB13:    xsi_set_current_line(15, ng0);
     t3 = (t0 + 1048U);
     t4 = *((char **)t3);
     t3 = (t0 + 1208U);
@@ -197,7 +197,7 @@ LAB13:    xsi_set_current_line(34, ng0);
     xsi_vlogvar_wait_assign_value(t3, t10, 0, 0, 32, 0LL);
     goto LAB17;
 
-LAB15:    xsi_set_current_line(35, ng0);
+LAB15:    xsi_set_current_line(16, ng0);
     t3 = (t0 + 1048U);
     t4 = *((char **)t3);
     t3 = (t0 + 1208U);
@@ -245,7 +245,7 @@ LAB21:    t21 = *((unsigned int *)t10);
 
 extern void work_m_13921684457445708440_0837587798_init()
 {
-	static char *pe[] = {(void *)Always_28_0};
+	static char *pe[] = {(void *)Always_9_0};
 	xsi_register_didat("work_m_13921684457445708440_0837587798", "isim/Single_Cycle_test_isim_beh.exe.sim/work/m_13921684457445708440_0837587798.didat");
 	xsi_register_executes(pe);
 }

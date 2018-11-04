@@ -1,15 +1,24 @@
 ISim log file
-Running: /home/ss/Downloads/Group39_Assign6/kgprisc/alu_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ss/Downloads/Group39_Assign6/kgprisc/alu_test_isim_beh.wdb 
-INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
+Running: /home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING:  For instance uut/instr_cache/, width 1 of formal port ena is not equal to width 32 of actual constant.
+WARNING:  For instance uut/instr_cache/, width 1 of formal port wea is not equal to width 32 of actual constant.
+WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 13.  For instance uut/instr_cache/, width 11 of formal port addra is not equal to width 32 of actual signal addr.
+WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 49.  For instance uut/data_cache/, width 11 of formal port addra is not equal to width 32 of actual signal alu_out.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module Single_Cycle_test.uut.instr_cache.inst.blk_mem_gen_v4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module Single_Cycle_test.uut.data_cache.inst.blk_mem_gen_v4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Finished circuit initialization process.
-# exit 0
+# run all

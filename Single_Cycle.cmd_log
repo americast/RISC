@@ -30,3 +30,5 @@ xst -intstyle ise -ifn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.
 xst -intstyle ise -ifn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.xst" -ofn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.syr" 
 xst -intstyle ise -ifn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.xst" -ofn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.syr" 
 xst -intstyle ise -ifn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.xst" -ofn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.syr" 
+xst -intstyle ise -ifn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.xst" -ofn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.syr" 
+xst -intstyle ise -ifn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.xst" -ofn "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.syr" 

@@ -1,4 +1,4 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /home/ss/Downloads/Group39_Assign6/kgprisc/alu_test_isim_beh.exe -prj /home/ss/Downloads/Group39_Assign6/kgprisc/alu_test_beh.prj work.alu_test work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_isim_beh.exe" -prj "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_beh.prj" "work.Single_Cycle_test" "work.glbl" 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -7,23 +7,43 @@ Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/half_adder.v"
 Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/full_adder.v" into library work
 Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/alu_logic.v" into library work
 Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/adder.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/reg_file.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/next_address.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/ipcore_dir/KGPRISC.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/control_file.v" into library work
 Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/alu.v" into library work
-Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/alu_test.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 18: Size mismatch in connection of port <ena>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 19: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 20: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 100: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
 Completed static elaboration
-Fuse Memory Usage: 95472 KB
-Fuse CPU Usage: 1490 ms
+Fuse Memory Usage: 96924 KB
+Fuse CPU Usage: 1660 ms
+Compiling module BLK_MEM_GEN_V4_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V4_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V4_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V4_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V4_3(C_FAMILY="spart...
+Compiling module KGPRISC
+Compiling module control_file
+Compiling module reg_file
 Compiling module half_adder
 Compiling module full_adder
 Compiling module adder
 Compiling module alu_logic
 Compiling module alu
-Compiling module alu_test
+Compiling module next_address
+Compiling module Single_Cycle
+Compiling module Single_Cycle_test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 7 Verilog Units
-Built simulation executable /home/ss/Downloads/Group39_Assign6/kgprisc/alu_test_isim_beh.exe
-Fuse Memory Usage: 655728 KB
-Fuse CPU Usage: 1520 ms
-GCC CPU Usage: 910 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 17 Verilog Units
+Built simulation executable /home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_isim_beh.exe
+Fuse Memory Usage: 660816 KB
+Fuse CPU Usage: 1780 ms
+GCC CPU Usage: 390 ms

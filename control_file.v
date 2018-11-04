@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    14:27:15 10/11/2012 
-// Design Name: 
-// Module Name:    control_file 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module control_file(
     input [5:0] opcode,
     input [5:0] function_val,
@@ -30,7 +11,7 @@ module control_file(
     output reg data_read,
     output reg data_write,
     output reg [1:0] regin_data,
-    output reg [2:0] br_type,
+    output reg [3:0] br_type,
     output reg [1:0] pc_sel
     );
 
@@ -49,7 +30,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						  end
 			6'b001101: begin
@@ -62,7 +43,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						  end
 			6'b100011: begin
@@ -75,7 +56,7 @@ always @(opcode or function_val)
 						  data_read = 1;
 						  data_write = 0;
 						  regin_data = 2'b00;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						  end
 			6'b101011: begin
@@ -88,7 +69,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 1;
 						  regin_data = 2'bxx;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						  end
 			6'b000010: begin
@@ -101,7 +82,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'bxx;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b01;
 						  end
 			6'b000001: begin
@@ -114,7 +95,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'bxx;
-					     br_type = 3'b000;
+					     br_type = 4'b0000;
 						  pc_sel = 2'b00;
 						  end
 			6'b000100: begin
@@ -127,7 +108,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'bxx;
-					     br_type = 3'b001;
+					     br_type = 4'b0001;
 						  pc_sel = 2'b00;
 						  end
 			6'b000101: begin
@@ -140,7 +121,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'bxx;
-					     br_type = 3'b010;
+					     br_type = 4'b0010;
 						  pc_sel = 2'b00;
 						  end
 			6'b000011: begin
@@ -153,7 +134,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b10;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b01;
 						  end
 			6'b001111: begin
@@ -166,7 +147,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'bxx;
-					     br_type = 3'b011;
+					     br_type = 4'b0011;
 						  pc_sel = 2'b00;
 						  end
 			6'b010000: begin
@@ -179,7 +160,59 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'bxx;
-					     br_type = 3'b100;
+					     br_type = 4'b0100;
+						  pc_sel = 2'b00;
+						  end
+			6'b010001: begin
+			           reg_dst = 2'bxx;
+			           reg_write = 0;
+						  alu_imm = 2'bxx;
+						  fn = 1'bx;
+						  logic_fn = 3'bxxx;
+						  fn_class = 1'bx;
+						  data_read = 0;
+						  data_write = 0;
+						  regin_data = 2'bxx;
+					     br_type = 4'b0101;
+						  pc_sel = 2'b00;
+						  end
+			6'b010010: begin
+			           reg_dst = 2'bxx;
+			           reg_write = 0;
+						  alu_imm = 2'bxx;
+						  fn = 1'bx;
+						  logic_fn = 3'bxxx;
+						  fn_class = 1'bx;
+						  data_read = 0;
+						  data_write = 0;
+						  regin_data = 2'bxx;
+					     br_type = 4'b0110;
+						  pc_sel = 2'b00;
+						  end
+			 6'b010011: begin
+			           reg_dst = 2'bxx;
+			           reg_write = 0;
+						  alu_imm = 2'bxx;
+						  fn = 1'bx;
+						  logic_fn = 3'bxxx;
+						  fn_class = 1'bx;
+						  data_read = 0;
+						  data_write = 0;
+						  regin_data = 2'bxx;
+					     br_type = 4'b0111;
+						  pc_sel = 2'b00;
+						  end
+		6'b010100: begin
+			           reg_dst = 2'bxx;
+			           reg_write = 0;
+						  alu_imm = 2'bxx;
+						  fn = 1'bx;
+						  logic_fn = 3'bxxx;
+						  fn_class = 1'bx;
+						  data_read = 0;
+						  data_write = 0;
+						  regin_data = 2'bxx;
+					     br_type = 4'b1000;
 						  pc_sel = 2'b00;
 						  end
 		 endcase
@@ -197,7 +230,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  34:			 begin
@@ -210,7 +243,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 
@@ -224,7 +257,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  36:			begin
@@ -237,7 +270,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  31:			begin
@@ -250,7 +283,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  30:			begin
@@ -263,7 +296,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  37:			begin
@@ -276,7 +309,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  38:			begin
@@ -289,7 +322,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  29:			begin
@@ -302,7 +335,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  39:			begin
@@ -315,7 +348,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		40:			begin
@@ -328,7 +361,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'b01;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b00;
 						 end
 		  8:			begin
@@ -341,7 +374,7 @@ always @(opcode or function_val)
 						  data_read = 0;
 						  data_write = 0;
 						  regin_data = 2'bxx;
-					     br_type = 3'bxxx;
+					     br_type = 4'bxxxx;
 						  pc_sel = 2'b10;
 						 end
 		endcase

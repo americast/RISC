@@ -53,16 +53,16 @@ module alu_test;
 	initial begin
 	#10;
 		// Initialize Inputs
-		x = 10;
-		y = 11;
-		fn = 1;
+		x = 32;
+		y = 1;
+		fn = 0;
 		fnclass = 0;
 	//	logicfn = 0;
 
 		// Wait 100 ns for global reset to finish
 		#10;
-		x=0;
-      y=2;
+		x=65536;
+      y=1;
 		fn=0;
 		fnclass=0;
 		
