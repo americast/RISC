@@ -318,6 +318,19 @@ always @(opcode or function_val)
 					     br_type = 3'bxxx;
 						  pc_sel = 2'b00;
 						 end
+		40:			begin
+			           reg_dst = 2'b00;
+			           reg_write = 1;
+						  alu_imm = 2'b01;
+						  fn = 0;
+						  logic_fn = 3'b100;
+						  fn_class = 1;
+						  data_read = 0;
+						  data_write = 0;
+						  regin_data = 2'b01;
+					     br_type = 3'bxxx;
+						  pc_sel = 2'b00;
+						 end
 		  8:			begin
 			           reg_dst = 2'bxx;
 			           reg_write = 0;

@@ -33,19 +33,21 @@ wire [31:0] adder_input1;
 wire [31:0] adder_input2;
 wire [31:0] mux_input1;
 wire [31:0] mux_input2;
+wire [31:0] mux_tmp;
 
-	assign adder_input1 = fn ? 1 : x;
-	assign adder_input2 = fn ? 1 : y;
-
+	//assign adder_input1 = fn ? 1 : x;
+	//assign adder_input2 = fn ? 1 : y;
+	assign adder_input1 = x;
+	assign adder_input2 = y;
 adder uut (
 		.a(adder_input1), 
 		.b(adder_input2), 
 		.s(mux_input1), 
 		.c_out(carry)
 	);
-
- assign zeroflag = x ? 0 : 1;
- assign msb = x[31]; 
+ assign mux_tmp=fn?~y+1:mux_input1;
+ assign zeroflag = mux_input1 ? 0 : 1;
+ assign msb = mux_input1[31]; 
  
 alu_logic my_alu(
     .x(x),
@@ -54,5 +56,5 @@ alu_logic my_alu(
     .logic_function(logicfn)
     );
 
-assign value = fnclass ? mux_input2 : mux_input1;
+assign value = fnclass ? mux_input2 : mux_tmp;
 endmodule

@@ -3,11 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Thu Nov 01 23:37:39 2012">
+<application name="pn" timeStamp="Sun Nov  4 18:22:32 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="ADF89A8893FA4E0EAF282B3D0FA16363" type="project"/>
 <property name="ProjectIteration" value="0" type="project"/>
-<property name="ProjectFile" value="C:/Users/himanshu/Desktop/kgprisc/kgprisc.xise" type="project"/>
+<property name="ProjectFile" value="/home/ss/Downloads/Group39_Assign6/kgprisc/kgprisc.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2012-10-09T23:02:02" type="project"/>
 </section>
 <section name="Project Statistics" visible="true">
@@ -22,7 +22,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_SynthTopFile" value="changed" type="process"/>
 <property name="PROP_Top_Level_Module_Type" value="HDL" type="design"/>
 <property name="PROP_UseSmartGuide" value="false" type="design"/>
-<property name="PROP_UserConstraintEditorPreference" value="Constraints Editor" type="process"/>
+<property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2012-10-09T23:02:02" type="design"/>
 <property name="PROP_intWbtProjectID" value="ADF89A8893FA4E0EAF282B3D0FA16363" type="design"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
@@ -31,6 +31,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_selectedSimRootSourceNode_par" value="work.Single_Cycle_test" type="process"/>
 <property name="PROP_selectedSimSourceNode" value="uut" type="process"/>
 <property name="PROP_AutoTop" value="false" type="design"/>
+<property name="PROP_CompxlibEdkSimLib" value="true" type="process"/>
 <property name="PROP_DevFamily" value="Spartan3" type="design"/>
 <property name="PROP_DevDevice" value="xc3s400" type="design"/>
 <property name="PROP_DevFamilyPMName" value="spartan3" type="design"/>
@@ -38,8 +39,8 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_Synthesis_Tool" value="XST (VHDL/Verilog)" type="design"/>
 <property name="PROP_DevSpeed" value="-5" type="design"/>
 <property name="PROP_PreferredLanguage" value="Verilog" type="design"/>
-<property name="FILE_COREGEN" value="3" type="source"/>
-<property name="FILE_VERILOG" value="24" type="source"/>
+<property name="FILE_COREGEN" value="2" type="source"/>
+<property name="FILE_VERILOG" value="14" type="source"/>
 </section>
 </application>
 </document>

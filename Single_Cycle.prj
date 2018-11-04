@@ -1,4 +1,3 @@
-verilog work "ipcore_dir/kgpriscmemory.v"
 verilog work "half_adder.v"
 verilog work "full_adder.v"
 verilog work "alu_logic.v"

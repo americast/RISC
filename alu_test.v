@@ -53,9 +53,9 @@ module alu_test;
 	initial begin
 	#10;
 		// Initialize Inputs
-		x = 0;
-		y = 1;
-		fn = 0;
+		x = 10;
+		y = 11;
+		fn = 1;
 		fnclass = 0;
 	//	logicfn = 0;
 

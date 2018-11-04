@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_isim_beh.exe" -prj "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_beh.prj" "work.Single_Cycle_test" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ss/Downloads/Group39_Assign6/kgprisc/alu_test_isim_beh.exe" -prj "/home/ss/Downloads/Group39_Assign6/kgprisc/alu_test_beh.prj" "work.alu_test" "work.glbl" 
