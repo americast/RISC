@@ -1,28 +1,5 @@
 `timescale 1ns / 1ps
-
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   17:09:32 10/16/2012
-// Design Name:   next_address
-// Module Name:   C:/Users/himanshu/Desktop/kgprisc/next_address_test.v
-// Project Name:  kgprisc
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: next_address
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
-module next_address_test;
+module branch_control_test;
 
 	// Inputs
 	reg zero_flag;
@@ -40,7 +17,7 @@ module next_address_test;
 	wire [31:0] incr_pc;
 
 	// Instantiate the Unit Under Test (UUT)
-	next_address uut (
+	branch_control test (
 		.zero_flag(zero_flag), 
 		.carry_flag(carry_flag), 
 		.msb(msb), 

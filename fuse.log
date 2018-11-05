@@ -1,41 +1,21 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28_test_isim_beh.exe -prj /home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28_test_beh.prj RISC_28_test work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /home/ss/Downloads/Group28_Assign6/kgprisc/alu_logic_test_isim_beh.exe -prj /home/ss/Downloads/Group28_Assign6/kgprisc/alu_logic_test_beh.prj alu_logic_test work.glbl 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/reg_file.v" into library work
-Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/next_address.v" into library work
-Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/ipcore_dir/KGPRISC.v" into library work
-Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/control_file.v" into library work
-Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/alu.v" into library work
-Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28.v" into library work
-Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28_test.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/alu_logic.v" into library work
+Analyzing Verilog file "/home/ss/Downloads/Group28_Assign6/kgprisc/alu_logic_test.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28.v" Line 38: Size mismatch in connection of port <ena>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28.v" Line 39: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28.v" Line 40: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28.v" Line 50: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
 Completed static elaboration
-Fuse Memory Usage: 96892 KB
-Fuse CPU Usage: 1490 ms
-Compiling module BLK_MEM_GEN_V4_3_output_stage(C_...
-Compiling module BLK_MEM_GEN_V4_3_output_stage(C_...
-Compiling module BLK_MEM_GEN_V4_3_softecc_output_...
-Compiling module BLK_MEM_GEN_V4_3_mem_module(C_CO...
-Compiling module BLK_MEM_GEN_V4_3(C_FAMILY="spart...
-Compiling module KGPRISC
-Compiling module control_unit
-Compiling module reg_file
-Compiling module alu
-Compiling module branch_control
-Compiling module RISC_28
-Compiling module RISC_28_test
+Fuse Memory Usage: 95480 KB
+Fuse CPU Usage: 1450 ms
+Compiling module alu_logic
+Compiling module alu_logic_test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 6 sub-compilation(s) to finish...
-Compiled 13 Verilog Units
-Built simulation executable /home/ss/Downloads/Group28_Assign6/kgprisc/RISC_28_test_isim_beh.exe
-Fuse Memory Usage: 660332 KB
-Fuse CPU Usage: 1630 ms
-GCC CPU Usage: 3280 ms
+Compiled 3 Verilog Units
+Built simulation executable /home/ss/Downloads/Group28_Assign6/kgprisc/alu_logic_test_isim_beh.exe
+Fuse Memory Usage: 655656 KB
+Fuse CPU Usage: 1470 ms
+GCC CPU Usage: 580 ms

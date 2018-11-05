@@ -22,7 +22,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module control_file_test;
+module control_unit_test;
 
 	// Inputs
 	reg [5:0] opcode;
@@ -42,7 +42,7 @@ module control_file_test;
 	wire [1:0] counter_selector;
 
 	// Instantiate the Unit Under Test (UUT)
-	control_file uut (
+	control_unit testing (
 		.opcode(opcode), 
 		.function_val(function_val), 
 		.reg_dst(reg_dst), 
@@ -64,109 +64,59 @@ module control_file_test;
 		function_val = 0;
 
 		// Wait 100 ns for global reset to finish
-		#20;
-      function_val = 32; 
-		$display("op=0,fn=32---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
+
 
       #20;
-      function_val = 34; 
+      function_val = 6'b100010; 
 		$display("op=0,fn=34---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
      
       #20;
-      function_val = 42; 
+      function_val = 6'b101010; 
 		$display("op=0,fn=42---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
-
 		#20;
-      function_val = 36; 
-		$display("op=0,fn=36---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
+      function_val = 6'b100000; 
+		$display("op=0,fn=32---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
+			
 		
 		#20;
-      function_val = 31; 
+      function_val = 6'b011111; 
 		$display("op=0,fn=31---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
 		
 		#20;
-      function_val = 30;
+      function_val = 6'b011110;
 		$display("op=0,fn=30---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
+	
+		#20;
+      function_val = 6'b100100; 
+		$display("op=0,fn=36---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
+			
 
 		#20;
-      function_val = 37; 
+      function_val = 6'b100101; 
 		$display("op=0,fn=37---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
 		
 		#20;
-      function_val = 38; 
-		$display("op=0,fn=38---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
-      function_val = 29; 
-		$display("op=0,fn=29---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
-      function_val = 8; 
-		$display("op=0,fn=8---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
-      opcode = 12;
+      opcode = 6'b100011;
       $display("op=12---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 				
 		
 		#20;
-      opcode = 13; 
+      opcode = 6'b101011; 
 		$display("op=13---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
 		
 		#20;
-      opcode = 35; 
+      opcode = 6'b000001; 
 		$display("op=35---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
 		
 		#20;
-      opcode = 43; 
+      opcode = 6'b000100; 
 		$display("op=43---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
-      opcode = 2;
-      $display("op=2---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-				
-		
-		#20;
-      opcode = 1;
-      $display("op=1---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-				
-		
-		#20;
-      opcode = 4; 
-		$display("op=4---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
-      opcode = 5; 
-		$display("op=5---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
-      opcode = 3;
-      $display("op=3---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-				
-		
-		#20;
-      opcode = 15; 
-		$display("op=15---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
-      opcode = 16; 
-		$display("op=16---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
 		// Add stimulus here
 
