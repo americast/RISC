@@ -5,15 +5,15 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="sim" num="172" delta="new" >Generating IP...
+<msg type="info" file="sim" num="172" delta="old" >Generating IP...
 </msg>
 
 <msg type="error" file="coreutil" num="0" delta="new" >ERROR:sim - Unable to find .\instructions.coe
    Coregen is looking for
-   /home/ss/Downloads/Group39_Assign6/kgprisc/ipcore_dir/instructions.coe
+   /home/ss/Downloads/Group28_Assign6/kgprisc/ipcore_dir/instructions.coe
 ERROR:sim - Unable to find .\instructions.coe
    Coregen is looking for
-   /home/ss/Downloads/Group39_Assign6/kgprisc/ipcore_dir/instructions.coe
+   /home/ss/Downloads/Group28_Assign6/kgprisc/ipcore_dir/instructions.coe
 ERROR:sim:781 - An invalid core configuration has been detected during
    Customization. Core parameters will be reset to their default values.
 </msg>

@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module Single_Cycle_test;
+module RISC_28_test;
 
 	// Inputs
 	reg clk;
@@ -12,7 +12,7 @@ module Single_Cycle_test;
 	
 
 	// Instantiate the Unit Under Test (UUT)
-	Single_Cycle uut (
+	RISC_28 risc (
 		.clk(clk), 
 		.reset(reset),  
 		.rs_value(rs_value), 

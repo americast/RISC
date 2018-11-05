@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module Single_Cycle(
+module RISC_28(
     input clk,
 	 input reset,
 	 output [31:0] rs_value,

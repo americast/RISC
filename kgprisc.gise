@@ -23,6 +23,19 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="RISC_28.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="RISC_28.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="RISC_28.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="RISC_28.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RISC_28.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="RISC_28.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="RISC_28.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="RISC_28.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="RISC_28_summary.html"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RISC_28_test_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="RISC_28_test_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="RISC_28_test_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="RISC_28_xst.xrpt"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Single_Cycle.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Single_Cycle.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Single_Cycle.ngc"/>
@@ -34,9 +47,7 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Single_Cycle_envsettings.html"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Single_Cycle_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Single_Cycle_summary.html"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Single_Cycle_test_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Single_Cycle_test_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Single_Cycle_test_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Single_Cycle_test_par.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Single_Cycle_test_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Single_Cycle_xst.xrpt"/>
@@ -78,11 +89,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541410693" xil_pn:in_ck="-727060767505604888" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1541410693">
+    <transform xil_pn:end_ts="1541410902" xil_pn:in_ck="3367058801397214010" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1541410902">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="Single_Cycle.v"/>
-      <outfile xil_pn:name="Single_Cycle_test.v"/>
+      <outfile xil_pn:name="RISC_28.v"/>
+      <outfile xil_pn:name="RISC_28_test.v"/>
       <outfile xil_pn:name="adder.v"/>
       <outfile xil_pn:name="alu.v"/>
       <outfile xil_pn:name="alu_logic.v"/>
@@ -96,15 +107,15 @@
       <outfile xil_pn:name="next_address_test.v"/>
       <outfile xil_pn:name="reg_file.v"/>
     </transform>
-    <transform xil_pn:end_ts="1541365250" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7603295163821871751" xil_pn:start_ts="1541365250">
+    <transform xil_pn:end_ts="1541410902" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7849045985802138480" xil_pn:start_ts="1541410902">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541365250" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="5901814901115535423" xil_pn:start_ts="1541365250">
+    <transform xil_pn:end_ts="1541410902" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="532209309501140040" xil_pn:start_ts="1541410902">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541240909" xil_pn:in_ck="467074483129154605" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-5146835203725108769" xil_pn:start_ts="1541240909">
+    <transform xil_pn:end_ts="1541410902" xil_pn:in_ck="467074483129154605" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="695914768284588584" xil_pn:start_ts="1541410902">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/KGPRISC.ngc"/>
@@ -112,11 +123,11 @@
       <outfile xil_pn:name="ipcore_dir/kgpriscmemory.ngc"/>
       <outfile xil_pn:name="ipcore_dir/kgpriscmemory.v"/>
     </transform>
-    <transform xil_pn:end_ts="1541410693" xil_pn:in_ck="-2222534317281041459" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1541410693">
+    <transform xil_pn:end_ts="1541410902" xil_pn:in_ck="-3465776509452050529" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1541410902">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="Single_Cycle.v"/>
-      <outfile xil_pn:name="Single_Cycle_test.v"/>
+      <outfile xil_pn:name="RISC_28.v"/>
+      <outfile xil_pn:name="RISC_28_test.v"/>
       <outfile xil_pn:name="adder.v"/>
       <outfile xil_pn:name="alu.v"/>
       <outfile xil_pn:name="alu_logic.v"/>
@@ -132,22 +143,22 @@
       <outfile xil_pn:name="next_address_test.v"/>
       <outfile xil_pn:name="reg_file.v"/>
     </transform>
-    <transform xil_pn:end_ts="1541410696" xil_pn:in_ck="-2222534317281041459" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3746997118602000266" xil_pn:start_ts="1541410693">
+    <transform xil_pn:end_ts="1541410906" xil_pn:in_ck="-3465776509452050529" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3272156284810385692" xil_pn:start_ts="1541410902">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Single_Cycle_test_beh.prj"/>
-      <outfile xil_pn:name="Single_Cycle_test_isim_beh.exe"/>
+      <outfile xil_pn:name="RISC_28_test_beh.prj"/>
+      <outfile xil_pn:name="RISC_28_test_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1541410697" xil_pn:in_ck="-1739875444271669169" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2894143988578462829" xil_pn:start_ts="1541410696">
+    <transform xil_pn:end_ts="1541410906" xil_pn:in_ck="-2966032475918425161" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4580104264764117567" xil_pn:start_ts="1541410906">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="Single_Cycle_test_isim_beh.wdb"/>
+      <outfile xil_pn:name="RISC_28_test_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
@@ -155,11 +166,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541334575" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="183171267456292896" xil_pn:start_ts="1541334575">
+    <transform xil_pn:end_ts="1541410857" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="9111104765771453833" xil_pn:start_ts="1541410857">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541334576" xil_pn:in_ck="3927161101637832986" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-5146835203725108769" xil_pn:start_ts="1541334575">
+    <transform xil_pn:end_ts="1541410857" xil_pn:in_ck="3927161101637832986" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="695914768284588584" xil_pn:start_ts="1541410857">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/KGPRISC.ngc"/>
@@ -169,7 +180,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541334576" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="6566110409519782248" xil_pn:start_ts="1541334576">
+    <transform xil_pn:end_ts="1541410857" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="1854990869375920593" xil_pn:start_ts="1541410857">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -177,28 +188,23 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541334576" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="8088867712047702377" xil_pn:start_ts="1541334576">
+    <transform xil_pn:end_ts="1541410857" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-6969257228114377870" xil_pn:start_ts="1541410857">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541410687" xil_pn:in_ck="-2766204303569544935" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="7386655348777189043" xil_pn:start_ts="1541410654">
+    <transform xil_pn:end_ts="1541410891" xil_pn:in_ck="-2623920640509375582" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-8768979253888299748" xil_pn:start_ts="1541410857">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
-      <outfile xil_pn:name="Single_Cycle.lso"/>
-      <outfile xil_pn:name="Single_Cycle.ngc"/>
-      <outfile xil_pn:name="Single_Cycle.ngr"/>
-      <outfile xil_pn:name="Single_Cycle.prj"/>
-      <outfile xil_pn:name="Single_Cycle.stx"/>
-      <outfile xil_pn:name="Single_Cycle.syr"/>
-      <outfile xil_pn:name="Single_Cycle.xst"/>
-      <outfile xil_pn:name="Single_Cycle_test_beh.prj"/>
-      <outfile xil_pn:name="Single_Cycle_test_par.prj"/>
-      <outfile xil_pn:name="Single_Cycle_test_stx_beh.prj"/>
-      <outfile xil_pn:name="Single_Cycle_xst.xrpt"/>
+      <outfile xil_pn:name="RISC_28.lso"/>
+      <outfile xil_pn:name="RISC_28.ngc"/>
+      <outfile xil_pn:name="RISC_28.ngr"/>
+      <outfile xil_pn:name="RISC_28.prj"/>
+      <outfile xil_pn:name="RISC_28.stx"/>
+      <outfile xil_pn:name="RISC_28.syr"/>
+      <outfile xil_pn:name="RISC_28.xst"/>
+      <outfile xil_pn:name="RISC_28_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="alu.ngr"/>
       <outfile xil_pn:name="reg_file.ngr"/>
