@@ -14,358 +14,83 @@ module control_unit(
     output reg [1:0] counter_selector
     );
 
-always @(opcode or function_val)
-	begin
-	 if(opcode)
-	  begin
-	    case(opcode)
-		  			6'b100011: begin
-			           reg_dst = 2'b01;
-			           reg_write = 1;
-						  immediacy = 2'b01;
-						  functionals = 2'b00;
-						  logic_fn = 3'b111;
-						  data_read = 1;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						  end
-			6'b101011: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b01;
-						  functionals = 2'b00;
-						  logic_fn = 3'b111;
-						  data_read = 0;
-						  data_write = 1;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						  end
-			6'b000010: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  functionals = 2'b00;
-						  logic_fn = 3'b111;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b01;
-						  end
-			6'b000001: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  functionals = 2'b00;
-						  logic_fn = 3'b111;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0000;
-						  counter_selector = 2'b00;
-						  end
-			6'b000100: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0001;
-						  counter_selector = 2'b00;
-						  end
-			6'b000101: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0010;
-						  counter_selector = 2'b00;
-						  end
-			6'b000011: begin
-			           reg_dst = 2'b10;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b10;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b01;
-						  end
-			6'b001111: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0011;
-						  counter_selector = 2'b00;
-						  end
-			6'b010000: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0100;
-						  counter_selector = 2'b00;
-						  end
-			6'b010001: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0101;
-						  counter_selector = 2'b00;
-						  end
-			6'b010010: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0110;
-						  counter_selector = 2'b00;
-						  end
-			 6'b010011: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b0111;
-						  counter_selector = 2'b00;
-						  end
-		6'b010100: begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b1000;
-						  counter_selector = 2'b00;
-						  end
-		 6'b001100: begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b01;
-						  logic_fn = 3'b101;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						  end
-			6'b001101: begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b01;
-						  logic_fn = 3'b111;
-						  functionals = 2'b01;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						  end
-
-		 endcase
-	  end
-	 else
-	  begin
-      case(function_val)
-		
-		  
-		  6'b100000:  begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b101;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b100010:			 begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b101;
-						  functionals = 2'b01;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-
-		  6'b101010:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b000;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b100100:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b001;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b011111:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b10;
-						  logic_fn = 3'b010;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b011110:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b10;
-						  logic_fn = 3'b011;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b100101:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b010;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b100110:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b011;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b011101:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b10;
-						  logic_fn = 3'b100;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b100111:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b100;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		6'b101000:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 1;
-						  immediacy = 2'b01;
-						  logic_fn = 3'b100;
-						  functionals = 2'b10;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b01;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b00;
-						 end
-		  6'b001000:			begin
-			           reg_dst = 2'b00;
-			           reg_write = 0;
-						  immediacy = 2'b00;
-						  logic_fn = 3'b101;
-						  functionals = 2'b00;
-						  data_read = 0;
-						  data_write = 0;
-						  reg_input_data = 2'b00;
-					     branch_type = 4'b1001;
-						  counter_selector = 2'b10;
-						 end
-				  6'b000000:			begin
-//			           reg_dst = 2'b00;
-//			           reg_write = 0;
-//						  immediacy = 2'b00;
-						  logic_fn = 3'b111;
-//						  functionals = 2'b00;
-//						  data_read = 0;
-//						  data_write = 0;
-//						  reg_input_data = 2'b00;
-//					     branch_type = 4'b1001;
-//						  counter_selector = 2'b10;
-						 end
-		endcase
-	  end	  
-	end
-
+	 wire [1:0] reg_dst_ctrl;
+	 wire reg_write_ctrl;
+    wire [1:0] immediacy_ctrl;
+    wire [2:0] logic_fn_ctrl;
+    wire [1:0] functionals_ctrl;
+    wire data_read_ctrl;
+    wire data_write_ctrl;
+    wire [1:0] reg_input_data_ctrl;
+    wire [3:0] branch_type_ctrl;
+    wire [1:0] counter_selector_ctrl;
+	 
+	 wire [1:0] reg_dst_alu;
+	 wire reg_write_alu;
+    wire [1:0] immediacy_alu;
+    wire [2:0] logic_fn_alu;
+    wire [1:0] functionals_alu;
+    wire data_read_alu;
+    wire data_write_alu;
+    wire [1:0] reg_input_data_alu;
+    wire [3:0] branch_type_alu;
+    wire [1:0] counter_selector_alu;
+ 
+	control ctrl(
+		 .opcode(opcode),
+		 .function_val(function_val),
+		 .reg_dst(reg_dst_ctrl),
+		 .reg_write(reg_write_ctrl),
+		 .immediacy(immediacy_ctrl),
+		 .logic_fn(logic_fn_ctrl),
+		 .functionals(functionals_ctrl),
+		 .data_read(data_read_ctrl),
+		 .data_write(data_write_ctrl),
+		 .reg_input_data(reg_input_data_ctrl),
+		 .branch_type(branch_type_ctrl),
+		 .counter_selector(counter_selector_ctrl)
+	 );
+	 
+	 alu_control aluctrl(
+		 .opcode(opcode),
+		 .function_val(function_val),
+		 .reg_dst(reg_dst_alu),
+		 .reg_write(reg_write_alu),
+		 .immediacy(immediacy_alu),
+		 .logic_fn(logic_fn_alu),
+		 .functionals(functionals_alu),
+		 .data_read(data_read_alu),
+		 .data_write(data_write_alu),
+		 .reg_input_data(reg_input_data_alu),
+		 .branch_type(branch_type_alu),
+		 .counter_selector(counter_selector_alu)
+	 );
+	 
+always @(opcode or function_val) begin
+	 if (opcode) begin
+	   reg_dst = reg_dst_ctrl;
+		reg_write = reg_write_ctrl;
+		immediacy = immediacy_ctrl;
+		logic_fn = logic_fn_ctrl;
+		functionals = functionals_ctrl;
+		data_read = data_read_ctrl;
+		data_write = data_write_ctrl;
+		reg_input_data = reg_input_data_ctrl;
+		branch_type = branch_type_ctrl;
+		counter_selector = counter_selector_ctrl;
+	 end
+	 else begin
+	 	   reg_dst = reg_dst_alu;
+			reg_write = reg_write_alu;
+			immediacy = immediacy_alu;
+			logic_fn = logic_fn_alu;
+			functionals = functionals_alu;
+			data_read = data_read_alu;
+			data_write = data_write_alu;
+			reg_input_data = reg_input_data_alu;
+			branch_type = branch_type_alu;
+			counter_selector = counter_selector_alu;
+	 end
+end
+	 
 endmodule
