@@ -5,16 +5,16 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 38 </arg>Connection to input port &apos;<arg fmt="%s" index="2">ena</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 38 </arg>Connection to input port &apos;<arg fmt="%s" index="2">ena</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 39 </arg>Connection to input port &apos;<arg fmt="%s" index="2">wea</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 39 </arg>Connection to input port &apos;<arg fmt="%s" index="2">wea</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 40 </arg>Connection to input port &apos;<arg fmt="%s" index="2">addra</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 40 </arg>Connection to input port &apos;<arg fmt="%s" index="2">addra</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 50 </arg>Connection to input port &apos;<arg fmt="%s" index="2">addra</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;RISC_28.v&quot; line 50 </arg>Connection to input port &apos;<arg fmt="%s" index="2">addra</arg>&apos; does not match port size
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">jmp_label_extended&lt;1&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">branch_control</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
