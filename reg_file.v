@@ -1,4 +1,12 @@
 `timescale 1ns / 1ps
+///////////////////////////////////
+// Assignment No 7
+// Semester 5 (Autumn 2018)
+// Group 28
+// Members:
+//			Swastika Dutta (16CS10060)
+//			Sayan Sinha		(16CS10048)
+/////////////////////////////////////
 module reg_file(rs_add,rs_value,rt_add,rt_value,clk,write_enable,write_add,write_data,reset);
 	input [4:0] rs_add; 					// address for read port 1 (Reg[RA])
 	output [31:0] rs_value; 				// read data for port 1

@@ -1,27 +1,12 @@
 `timescale 1ns / 1ps
-
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   15:39:38 10/12/2012
-// Design Name:   alu_logic
-// Module Name:  C:/Users/himanshu/Desktop/kgprisc/alu_logic_test.v
-// Project Name:  kgprisc
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: alu_logic
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
+///////////////////////////////////
+// Assignment No 7
+// Semester 5 (Autumn 2018)
+// Group 28
+// Members:
+//			Swastika Dutta (16CS10060)
+//			Sayan Sinha		(16CS10048)
+/////////////////////////////////////
 module alu_logic_test;
 
 	// Inputs

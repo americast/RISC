@@ -1,4 +1,13 @@
 `timescale 1ns / 1ps
+///////////////////////////////////
+// Assignment No 7
+// Semester 5 (Autumn 2018)
+// Group 28
+// Members:
+//			Swastika Dutta (16CS10060)
+//			Sayan Sinha		(16CS10048)
+/////////////////////////////////////
+
 module RISC_28(
     input clk,
 	 input reset,
