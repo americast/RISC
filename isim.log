@@ -8,7 +8,7 @@ This is a Lite version of ISim.
 WARNING:  For instance uut/instr_cache/, width 1 of formal port ena is not equal to width 32 of actual constant.
 WARNING:  For instance uut/instr_cache/, width 1 of formal port wea is not equal to width 32 of actual constant.
 WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 7.  For instance uut/instr_cache/, width 11 of formal port addra is not equal to width 32 of actual signal read_addr_pc.
-WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 30.  For instance uut/data_cache/, width 11 of formal port addra is not equal to width 32 of actual signal alu_out.
+WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 31.  For instance uut/data_cache/, width 11 of formal port addra is not equal to width 32 of actual signal alu_out.
 Time resolution is 1 ps
 # onerror resume
 # wave add /

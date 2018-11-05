@@ -352,6 +352,18 @@ always @(opcode or function_val)
 					     br_type = 4'b1001;
 						  pc_sel = 2'b10;
 						 end
+//				  6'b000000:			begin
+//			           reg_dst = 2'b00;
+//			           reg_write = 0;
+//						  alu_imm = 2'b00;
+//						  logic_fn = 3'b111;
+//						  functionals = 2'b00;
+//						  data_read = 0;
+//						  data_write = 0;
+//						  regin_data = 2'b00;
+//					     br_type = 4'b1001;
+//						  pc_sel = 2'b10;
+//						 end
 		endcase
 	  end	  
 	end

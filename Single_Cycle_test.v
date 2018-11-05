@@ -31,6 +31,7 @@ module Single_Cycle_test;
 	wire [31:0] rt_val;
 	wire [31:0] read_addr_pc;
 	wire [31:0] instruction_out;
+	wire msb;
 	
 
 	// Instantiate the Unit Under Test (UUT)
@@ -40,7 +41,8 @@ module Single_Cycle_test;
 		.rs_val(rs_val), 
 		.rt_val(rt_val),  
 		.read_addr_pc(read_addr_pc),  
-		.instruction_out(instruction_out)  
+		.instruction_out(instruction_out), 
+		.msb(msb)
 	);
 
 	always

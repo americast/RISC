@@ -5,7 +5,8 @@ module Single_Cycle(
 	 output [31:0] rs_val,
 	 output [31:0] rt_val,
 	 output [31:0] read_addr_pc,
-	 output [31:0] instruction_out
+	 output [31:0] instruction_out,
+	 output msb
     );
 wire [31:0] addr;
 wire reg_write;
@@ -26,7 +27,7 @@ wire [4:0] reg_write_addr;
 wire [31:0] reg_write_data;
 wire [31:0] alu_input_2;
 wire carry_flag;
-wire msb;
+//wire msb;
 wire [31:0] alu_out;
 wire data_cache_enable;
 wire [31:0] data_cache_out;

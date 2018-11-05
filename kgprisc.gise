@@ -78,7 +78,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541395894" xil_pn:in_ck="-727060767505604888" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1541395894">
+    <transform xil_pn:end_ts="1541406682" xil_pn:in_ck="-727060767505604888" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1541406682">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Single_Cycle.v"/>
@@ -112,7 +112,7 @@
       <outfile xil_pn:name="ipcore_dir/kgpriscmemory.ngc"/>
       <outfile xil_pn:name="ipcore_dir/kgpriscmemory.v"/>
     </transform>
-    <transform xil_pn:end_ts="1541395894" xil_pn:in_ck="-2222534317281041459" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1541395894">
+    <transform xil_pn:end_ts="1541406682" xil_pn:in_ck="-2222534317281041459" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1541406682">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Single_Cycle.v"/>
@@ -132,9 +132,11 @@
       <outfile xil_pn:name="next_address_test.v"/>
       <outfile xil_pn:name="reg_file.v"/>
     </transform>
-    <transform xil_pn:end_ts="1541395919" xil_pn:in_ck="-2222534317281041459" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3746997118602000266" xil_pn:start_ts="1541395894">
+    <transform xil_pn:end_ts="1541406686" xil_pn:in_ck="-2222534317281041459" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3746997118602000266" xil_pn:start_ts="1541406682">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Single_Cycle_test_beh.prj"/>
       <outfile xil_pn:name="Single_Cycle_test_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -142,7 +144,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1541395920" xil_pn:in_ck="-1739875444271669169" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2894143988578462829" xil_pn:start_ts="1541395919">
+    <transform xil_pn:end_ts="1541406836" xil_pn:in_ck="-1739875444271669169" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2894143988578462829" xil_pn:start_ts="1541406836">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Single_Cycle_test_isim_beh.wdb"/>
@@ -179,7 +181,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1541386723" xil_pn:in_ck="-2766204303569544935" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="7386655348777189043" xil_pn:start_ts="1541386686">
+    <transform xil_pn:end_ts="1541406676" xil_pn:in_ck="-2766204303569544935" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="7386655348777189043" xil_pn:start_ts="1541406642">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

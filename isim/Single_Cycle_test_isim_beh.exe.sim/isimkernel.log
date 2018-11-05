@@ -2,9 +2,9 @@ Command line:
    Single_Cycle_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  43989
+     -socket  44627
 
-Mon Nov  5 11:02:21 2018
+Mon Nov  5 14:03:59 2018
 
 
- Elaboration Time: 0.06 sec
+ Elaboration Time: 0.02 sec
