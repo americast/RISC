@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module control_file(
+module control_unit(
     input [5:0] opcode,
     input [5:0] function_val,
     output reg [1:0] reg_dst,

@@ -17,18 +17,18 @@ WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cyc
 WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cycle.v" Line 40: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
 WARNING:HDLCompiler:189 - "/home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cycle.v" Line 50: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
 Completed static elaboration
-Fuse Memory Usage: 96896 KB
-Fuse CPU Usage: 1350 ms
+Fuse Memory Usage: 96892 KB
+Fuse CPU Usage: 1460 ms
 Compiling module BLK_MEM_GEN_V4_3_output_stage(C_...
 Compiling module BLK_MEM_GEN_V4_3_output_stage(C_...
 Compiling module BLK_MEM_GEN_V4_3_softecc_output_...
 Compiling module BLK_MEM_GEN_V4_3_mem_module(C_CO...
 Compiling module BLK_MEM_GEN_V4_3(C_FAMILY="spart...
 Compiling module KGPRISC
-Compiling module control_file
+Compiling module control_unit
 Compiling module reg_file
 Compiling module alu
-Compiling module next_address
+Compiling module branch_control
 Compiling module Single_Cycle
 Compiling module Single_Cycle_test
 Compiling module glbl
@@ -37,5 +37,5 @@ Waiting for 6 sub-compilation(s) to finish...
 Compiled 13 Verilog Units
 Built simulation executable /home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cycle_test_isim_beh.exe
 Fuse Memory Usage: 660340 KB
-Fuse CPU Usage: 1460 ms
-GCC CPU Usage: 3280 ms
+Fuse CPU Usage: 1600 ms
+GCC CPU Usage: 3290 ms

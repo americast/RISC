@@ -17,10 +17,10 @@
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Single_Cycle.v&quot; line 50 </arg>Connection to input port &apos;<arg fmt="%s" index="2">addra</arg>&apos; does not match port size
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">jmp_label_extended&lt;1&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">next_address</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">jmp_label_extended&lt;1&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">branch_control</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">jmp_label_extended&lt;0&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">next_address</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">jmp_label_extended&lt;0&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">branch_control</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
 <msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">2</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">reg_dst</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -122,7 +122,7 @@
 <msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">addr</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">data_read</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">control_file</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;reg_dst_0&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">data_read</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">control_unit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;reg_dst_0&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="1901" delta="old" >Instance <arg fmt="%s" index="1">U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram</arg> in unit <arg fmt="%s" index="2">U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram</arg> of type <arg fmt="%s" index="3">RAMB16_S36_S36</arg> has been replaced by <arg fmt="%s" index="4">RAMB16</arg>
@@ -149,10 +149,10 @@
 <msg type="info" file="Xst" num="1901" delta="old" >Instance <arg fmt="%s" index="1">U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp36x36.ram</arg> in unit <arg fmt="%s" index="2">U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp36x36.ram</arg> of type <arg fmt="%s" index="3">RAMB16_S36_S36</arg> has been replaced by <arg fmt="%s" index="4">RAMB16</arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">reg_input_data_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">control_file</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;reg_dst_1&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">reg_input_data_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">control_unit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;reg_dst_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">reg_input_data_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">control_file</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;reg_dst_1&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">reg_input_data_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">control_unit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;reg_dst_1&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.

@@ -54,7 +54,7 @@ KGPRISC data_cache(
 	);
 
 
-control_file control(
+control_unit control(
      .opcode(instruction_out[31:26]),
      .function_val(instruction_out[5:0]),
      .reg_dst(reg_dest),
@@ -93,7 +93,7 @@ alu ALU(
 	 .overflow(overflow)
     );	 
 
-next_address nextaddress(
+branch_control brcontrol(
     .zero_flag(zero_flag),
     .carry_flag(real_carry_flag),
     .msb(msb),

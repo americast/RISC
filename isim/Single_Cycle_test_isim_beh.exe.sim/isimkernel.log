@@ -2,12 +2,12 @@ Command line:
    Single_Cycle_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  54281
+     -socket  42723
 
-Mon Nov  5 15:03:48 2018
+Mon Nov  5 15:08:19 2018
 
 
- Elaboration Time: 0.03 sec
+ Elaboration Time: 0.02 sec
 
  Current Memory Usage: 198.865 Meg
 
@@ -21,9 +21,9 @@ Mon Nov  5 15:03:48 2018
  Total Scalar Nets and Variables : 184590
 Total Line Count : 1193
 
- Total Simulation Time: 0.05 sec
+ Total Simulation Time: 0.04 sec
 
  Current Memory Usage: 274.366 Meg
 
-Mon Nov  5 15:03:50 2018
+Mon Nov  5 15:08:22 2018
 

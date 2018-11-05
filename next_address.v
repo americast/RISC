@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module next_address(
+module branch_control(
     input zero_flag,
     input carry_flag,
     input msb,

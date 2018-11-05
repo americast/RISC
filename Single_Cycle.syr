@@ -114,11 +114,11 @@ Compiling verilog file "reg_file.v" in library work
 Compiling verilog file "next_address.v" in library work
 Module <reg_file> compiled
 Compiling verilog file "ipcore_dir/KGPRISC.v" in library work
-Module <next_address> compiled
+Module <branch_control> compiled
 Compiling verilog file "control_file.v" in library work
 Module <KGPRISC> compiled
 Compiling verilog file "alu.v" in library work
-Module <control_file> compiled
+Module <control_unit> compiled
 Compiling verilog file "Single_Cycle.v" in library work
 Module <alu> compiled
 Module <Single_Cycle> compiled
@@ -131,13 +131,13 @@ Analysis of file <"Single_Cycle.prj"> succeeded.
 =========================================================================
 Analyzing hierarchy for module <Single_Cycle> in library <work>.
 
-Analyzing hierarchy for module <control_file> in library <work>.
+Analyzing hierarchy for module <control_unit> in library <work>.
 
 Analyzing hierarchy for module <reg_file> in library <work>.
 
 Analyzing hierarchy for module <alu> in library <work>.
 
-Analyzing hierarchy for module <next_address> in library <work>.
+Analyzing hierarchy for module <branch_control> in library <work>.
 
 
 =========================================================================
@@ -146,8 +146,8 @@ Analyzing hierarchy for module <next_address> in library <work>.
 Analyzing top module <Single_Cycle>.
 Module <Single_Cycle> is correct for synthesis.
  
-Analyzing module <control_file> in library <work>.
-Module <control_file> is correct for synthesis.
+Analyzing module <control_unit> in library <work>.
+Module <control_unit> is correct for synthesis.
  
 Analyzing module <reg_file> in library <work>.
 Module <reg_file> is correct for synthesis.
@@ -155,8 +155,8 @@ Module <reg_file> is correct for synthesis.
 Analyzing module <alu> in library <work>.
 Module <alu> is correct for synthesis.
  
-Analyzing module <next_address> in library <work>.
-Module <next_address> is correct for synthesis.
+Analyzing module <branch_control> in library <work>.
+Module <branch_control> is correct for synthesis.
  
 
 =========================================================================
@@ -164,10 +164,10 @@ Module <next_address> is correct for synthesis.
 =========================================================================
 
 Performing bidirectional port resolution...
-INFO:Xst:2679 - Register <jmp_label_extended<1>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <jmp_label_extended<0>> in unit <next_address> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <jmp_label_extended<1>> in unit <branch_control> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <jmp_label_extended<0>> in unit <branch_control> has a constant value of 0 during circuit operation. The register is replaced by logic.
 
-Synthesizing Unit <control_file>.
+Synthesizing Unit <control_unit>.
     Related source file is "control_file.v".
 WARNING:Xst:737 - Found 2-bit latch for signal <reg_dst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
@@ -189,7 +189,7 @@ WARNING:Xst:737 - Found 4-bit latch for signal <branch_type>. Latches may be gen
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 2-bit latch for signal <counter_selector>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-Unit <control_file> synthesized.
+Unit <control_unit> synthesized.
 
 
 Synthesizing Unit <reg_file>.
@@ -224,7 +224,7 @@ INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and 
 Unit <alu> synthesized.
 
 
-Synthesizing Unit <next_address>.
+Synthesizing Unit <branch_control>.
     Related source file is "next_address.v".
 WARNING:Xst:646 - Signal <sign_extended_address> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <pseudo_adder_input_1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -237,7 +237,7 @@ WARNING:Xst:646 - Signal <jmp_label_extended> is assigned but never used. This u
 	inferred  32 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 Multiplexer(s).
-Unit <next_address> synthesized.
+Unit <branch_control> synthesized.
 
 
 Synthesizing Unit <Single_Cycle>.
@@ -320,7 +320,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <data_read> in Unit <control_file> is equivalent to the following FF/Latch, which will be removed : <reg_dst_0> 
+INFO:Xst:2261 - The FF/Latch <data_read> in Unit <control_unit> is equivalent to the following FF/Latch, which will be removed : <reg_dst_0> 
 INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[3].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
 INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[2].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
 INFO:Xst:1901 - Instance U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dpram.dp36x36.ram in unit U0/blk_mem_generator/valid.cstr/ramloop[1].ram.r/s3_init.ram/dpram.dp36x36.ram of type RAMB16_S36_S36 has been replaced by RAMB16
@@ -334,11 +334,11 @@ Optimizing unit <Single_Cycle> ...
 
 Optimizing unit <reg_file> ...
 
-Optimizing unit <next_address> ...
+Optimizing unit <branch_control> ...
 
-Optimizing unit <control_file> ...
-INFO:Xst:2261 - The FF/Latch <reg_input_data_1> in Unit <control_file> is equivalent to the following FF/Latch, which will be removed : <reg_dst_1> 
-INFO:Xst:2261 - The FF/Latch <reg_input_data_1> in Unit <control_file> is equivalent to the following FF/Latch, which will be removed : <reg_dst_1> 
+Optimizing unit <control_unit> ...
+INFO:Xst:2261 - The FF/Latch <reg_input_data_1> in Unit <control_unit> is equivalent to the following FF/Latch, which will be removed : <reg_dst_1> 
+INFO:Xst:2261 - The FF/Latch <reg_input_data_1> in Unit <control_unit> is equivalent to the following FF/Latch, which will be removed : <reg_dst_1> 
 
 Optimizing unit <alu> ...
 
@@ -612,12 +612,12 @@ Offset:              16.907ns (Levels of Logic = 10)
 
 
 Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 29.46 secs
+Total CPU time to Xst completion: 29.65 secs
  
 --> 
 
 
-Total memory usage is 572220 kilobytes
+Total memory usage is 572236 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   25 (   0 filtered)
