@@ -32,13 +32,12 @@ module control_unit_test;
 	wire [1:0] reg_dst;
 	wire reg_write;
 	wire [1:0] immediacy;
-	wire fn;
 	wire [2:0] logic_fn;
-	wire fn_class;
+	wire [1:0] functionals;
 	wire data_read;
 	wire data_write;
 	wire [1:0] reg_input_data;
-	wire [2:0] branch_type;
+	wire [3:0] branch_type;
 	wire [1:0] counter_selector;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -47,10 +46,9 @@ module control_unit_test;
 		.function_val(function_val), 
 		.reg_dst(reg_dst), 
 		.reg_write(reg_write), 
-		.immediacy(immediacy), 
-		.fn(fn), 
+		.immediacy(immediacy),
 		.logic_fn(logic_fn), 
-		.fn_class(fn_class), 
+		.functionals(functionals),
 		.data_read(data_read), 
 		.data_write(data_write), 
 		.reg_input_data(reg_input_data), 
@@ -66,58 +64,38 @@ module control_unit_test;
 		// Wait 100 ns for global reset to finish
 
 
-      #20;
+      #100;
       function_val = 6'b100010; 
-		$display("op=0,fn=34---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
      
-      #20;
+      #100;
       function_val = 6'b101010; 
-		$display("op=0,fn=42---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
-		#20;
+		#100;
       function_val = 6'b100000; 
-		$display("op=0,fn=32---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-			
 		
-		#20;
+		#100;
       function_val = 6'b011111; 
-		$display("op=0,fn=31---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
-		
-		#20;
+		#100;
       function_val = 6'b011110;
-		$display("op=0,fn=30---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-	
-		#20;
+		
+		#100;
       function_val = 6'b100100; 
-		$display("op=0,fn=36---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-			
-
-		#20;
+		
+		#100;
       function_val = 6'b100101; 
-		$display("op=0,fn=37---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
-		
-		#20;
+		#100;
       opcode = 6'b100011;
-      $display("op=12---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-				
 		
-		#20;
+		#100;
       opcode = 6'b101011; 
-		$display("op=13---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
 		
+		#100;
+      opcode = 6'b000001;
 		
-		#20;
-      opcode = 6'b000001; 
-		$display("op=35---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
-		
-		#20;
+		#100;
       opcode = 6'b000100; 
-		$display("op=43---%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b\n \n ",reg_dst,reg_write,immediacy,fn,logic_fn,fn_class,data_read,data_write,reg_input_data,branch_type,counter_selector);
-		
 		// Add stimulus here
 
 	end

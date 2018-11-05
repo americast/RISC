@@ -27,8 +27,7 @@ module alu_test;
 	// Inputs
 	reg [31:0] x;
 	reg [31:0] y;
-	reg fn;
-	reg fnclass;
+	reg [1:0] functionals;
 	reg [2:0] logicfn;
 
 	// Outputs
@@ -36,41 +35,39 @@ module alu_test;
 	wire carry;
 	wire zeroflag;
 	wire msb;
+	wire overflow;
 
 	// Instantiate the Unit Under Test (UUT)
-	alu uut (
+	alu test (
 		.x(x), 
 		.y(y), 
-		.fn(fn), 
-		.fnclass(fnclass), 
+		.functionals(functionals),
 		.logicfn(logicfn), 
 		.value(value), 
 		.carry(carry), 
 		.zeroflag(zeroflag), 
-		.msb(msb)
+		.msb(msb),
+		.overflow(overflow)
 	);
 
 	initial begin
-	#10;
+	
 		// Initialize Inputs
 		x = 32;
 		y = 1;
-		fn = 0;
-		fnclass = 0;
-	//	logicfn = 0;
+		functionals = 2'b00;
+		logicfn = 2'b000;
 
 		// Wait 100 ns for global reset to finish
-		#10;
-		x=65536;
-      y=1;
-		fn=0;
-		fnclass=0;
+		#100;
+		x=127;
+      y=3;
+		functionals = 2'b00;
 		
-		#10;
+		#100;
 		x=1;
 		y=2;
-		fn=0;
-		fnclass=0;
+		functionals = 2'b00;
 		// Add stimulus here
 
 	end

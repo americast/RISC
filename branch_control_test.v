@@ -50,29 +50,29 @@ module branch_control_test;
 		counter_selector = 0;
 
 		// Wait 100 ns for global reset to finish
-		#10;
+		#100;
 		zero_flag = 0;
 		carry_flag = 0;
 		msb = 0;
 		branch_label = 0;
 		brtype = 0;
 		jmp_ra = 0;
-		jmp_label = 26;
+		jmp_label = 22;
 		pc = 0;
 		counter_selector = 1;
 		
-		#10;
+		#100;
 		zero_flag = 1;
 		carry_flag = 1;
 		msb = 0;
 		branch_label = 0;
 		brtype = 0;
 		jmp_ra = 1045;
-		jmp_label = 26;
+		jmp_label = 22;
 		pc = 0;
 		counter_selector = 2;
 		
-      #10;
+      #100;
 		zero_flag = 1;
 		carry_flag = 1;
 		msb = 1;

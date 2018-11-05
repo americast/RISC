@@ -49,28 +49,29 @@ module alu_logic_test;
 		// Wait 100 ns for global reset to finish
 		#100;
       x = 1;
-      y = 5;
+      y = 4;
 		logic_function = 0;
-		
-		#100;
-		x = 1;
-      y = 5;
-		logic_function = 1;
  
       #100;
 		x = 1;
       y = 5;
 		logic_function = 2;
-
+		
+		#100;
+		x = 6;
+      y = 8;
+		logic_function = 1;
+		
+      #100;
+		x = -1;
+      y = 5;
+		logic_function = 4;	
+		
       #100;
 		x = 1;
       y = 5;
 		logic_function = 3;
     
-      #100;
-		x = -1;
-      y = 5;
-		logic_function = 4;	 
 		// Add stimulus here
 
 	end

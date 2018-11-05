@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ss/Downloads/Group28_Assign6/kgprisc/alu_logic_test_isim_beh.exe" -prj "/home/ss/Downloads/Group28_Assign6/kgprisc/alu_logic_test_beh.prj" "alu_logic_test" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ss/Downloads/Group28_Assign6/kgprisc/control_unit_test_isim_beh.exe" -prj "/home/ss/Downloads/Group28_Assign6/kgprisc/control_unit_test_beh.prj" "control_unit_test" "work.glbl" 
