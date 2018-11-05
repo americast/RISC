@@ -27,15 +27,10 @@ module Single_Cycle_test;
 	// Inputs
 	reg clk;
 	reg reset;
-	//reg [1:0] reg_select;
-
-	// Outputs
 	wire [31:0] rs_val;
 	wire [31:0] rt_val;
 	wire [31:0] read_addr_pc;
 	wire [31:0] instruction_out;
-	wire reg_write;
-	wire [31:0] addr;
 	
 
 	// Instantiate the Unit Under Test (UUT)
@@ -45,10 +40,7 @@ module Single_Cycle_test;
 		.rs_val(rs_val), 
 		.rt_val(rt_val),  
 		.read_addr_pc(read_addr_pc),  
-		.instruction_out(instruction_out),    
-		.reg_write(reg_write), 
-		.real_carry_flag(real_carry_flag),
-		.addr(addr)
+		.instruction_out(instruction_out)  
 	);
 
 	always
