@@ -25,12 +25,7 @@ wire [31:0] mux_tmp;
 	assign adder_input2 = y;
 
 
-//adder uut (
-//		.a(adder_input1), 
-//		.b(adder_input2), 
-//		.s(mux_input1), 
-//		.c_out(carry)
-//	);
+
 	
 assign {carry,mux_input1} = adder_input1+adder_input2;	
 assign mux_tmp = functionals[0] ? ~y+1 : mux_input1;
@@ -54,7 +49,7 @@ always @(logicfn or x or y)
 always @(*) begin
 	if (logicfn != 3'b111) begin
 		zeroflag = mux_input1 ? 0 : 1;
-		msb = mux_input1[31]; 
+		msb = x[31]; 
 		overflow = (mux_input1[31] & carry) ? 1 : 0;
 	end
 end
