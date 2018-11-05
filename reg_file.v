@@ -1,28 +1,9 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    15:20:37 10/12/2012 
-// Design Name: 
-// Module Name:    reg_file 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
-module reg_file(rs_add,rs_val,rt_add,rt_val,clk,write_enable,write_add,write_data,reset);
+module reg_file(rs_add,rs_value,rt_add,rt_value,clk,write_enable,write_add,write_data,reset);
 	input [4:0] rs_add; 					// address for read port 1 (Reg[RA])
-	output [31:0] rs_val; 				// read data for port 1
+	output [31:0] rs_value; 				// read data for port 1
 	input [4:0] rt_add; 					// address for read port 2 (Reg[RB], Reg[RC] for ST)
-	output [31:0] rt_val; 				// read data for port 2
+	output [31:0] rt_value; 				// read data for port 2
 	input clk;
 	input write_enable; 					// write enable, active high
 	input [4:0] write_add; 				// address for write port (Reg[RC])
@@ -32,8 +13,8 @@ module reg_file(rs_add,rs_val,rt_add,rt_val,clk,write_enable,write_add,write_dat
 												// read paths are combinational
 												// logic to ensure R31 reads as zero is in main datapath
 	
-	assign rs_val = registers[rs_add];
-	assign rt_val = registers[rt_add];
+	assign rs_value = registers[rs_add];
+	assign rt_value = registers[rt_add];
 												// write port is active only when WERF is asserted
 	always @(negedge clk)
 	 begin

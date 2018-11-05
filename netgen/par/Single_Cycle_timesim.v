@@ -34,15 +34,15 @@
 `timescale 1 ns/1 ps
 
 module Single_Cycle (
-  clk, reset, rs_val, instruction_out, regin_data, rt_val, alu_imm, alu_out, reg_dest
+  clk, reset, rs_value, instruction_out, reg_input_data, rt_value, immediacy, alu_out, reg_dest
 );
   input clk;
   input reset;
-  output [31 : 0] rs_val;
+  output [31 : 0] rs_value;
   output [31 : 0] instruction_out;
-  output [1 : 0] regin_data;
-  output [31 : 0] rt_val;
-  output [1 : 0] alu_imm;
+  output [1 : 0] reg_input_data;
+  output [31 : 0] rt_value;
+  output [1 : 0] immediacy;
   output [31 : 0] alu_out;
   output [1 : 0] reg_dest;
   wire \control/reg_dst_not0001 ;
@@ -105,18 +105,18 @@ module Single_Cycle (
   wire \alu_out<24>/O ;
   wire \alu_out<16>/O ;
   wire \instruction_out<0>/O ;
-  wire \alu_imm<0>/O ;
+  wire \immediacy<0>/O ;
   wire \alu_out<25>/O ;
   wire \alu_out<17>/O ;
-  wire \regin_data<0>/O ;
+  wire \reg_input_data<0>/O ;
   wire \instruction_out<1>/O ;
-  wire \alu_imm<1>/O ;
+  wire \immediacy<1>/O ;
   wire \alu_out<26>/O ;
   wire \alu_out<18>/O ;
-  wire \regin_data<1>/O ;
-  wire \regin_data<1>/OUTPUT/OFF/O1INV_1238 ;
+  wire \reg_input_data<1>/O ;
+  wire \reg_input_data<1>/OUTPUT/OFF/O1INV_1238 ;
   wire \control/regin_data_1_1_1241 ;
-  wire \regin_data<1>/OUTPUT/OTCLK1INVNOT ;
+  wire \reg_input_data<1>/OUTPUT/OTCLK1INVNOT ;
   wire \instruction_out<2>/O ;
   wire \alu_out<27>/O ;
   wire \alu_out<19>/O ;
@@ -124,104 +124,104 @@ module Single_Cycle (
   wire \clk/INBUF ;
   wire \alu_out<28>/O ;
   wire \instruction_out<4>/O ;
-  wire \rs_val<0>/O ;
+  wire \rs_value<0>/O ;
   wire \alu_out<29>/O ;
   wire \instruction_out<5>/O ;
-  wire \rs_val<1>/O ;
+  wire \rs_value<1>/O ;
   wire \instruction_out<6>/O ;
-  wire \rs_val<2>/O ;
-  wire \rt_val<10>/O ;
+  wire \rs_value<2>/O ;
+  wire \rt_value<10>/O ;
   wire \instruction_out<7>/O ;
-  wire \rs_val<3>/O ;
-  wire \rt_val<11>/O ;
+  wire \rs_value<3>/O ;
+  wire \rt_value<11>/O ;
   wire \instruction_out<8>/O ;
-  wire \rs_val<4>/O ;
-  wire \rt_val<20>/O ;
-  wire \rt_val<12>/O ;
+  wire \rs_value<4>/O ;
+  wire \rt_value<20>/O ;
+  wire \rt_value<12>/O ;
   wire \instruction_out<9>/O ;
-  wire \rs_val<5>/O ;
-  wire \rt_val<21>/O ;
-  wire \rt_val<13>/O ;
-  wire \rs_val<6>/O ;
-  wire \rt_val<30>/O ;
-  wire \rt_val<22>/O ;
-  wire \rt_val<14>/O ;
-  wire \rs_val<7>/O ;
-  wire \rt_val<31>/O ;
-  wire \rt_val<23>/O ;
-  wire \rt_val<15>/O ;
-  wire \rs_val<8>/O ;
-  wire \rt_val<24>/O ;
-  wire \rt_val<16>/O ;
-  wire \rs_val<9>/O ;
-  wire \rt_val<25>/O ;
-  wire \rt_val<17>/O ;
-  wire \rt_val<26>/O ;
-  wire \rt_val<18>/O ;
-  wire \rt_val<27>/O ;
-  wire \rt_val<19>/O ;
-  wire \rt_val<28>/O ;
-  wire \rt_val<29>/O ;
-  wire \rt_val<0>/O ;
-  wire \rt_val<1>/O ;
-  wire \rt_val<2>/O ;
-  wire \rt_val<3>/O ;
+  wire \rs_value<5>/O ;
+  wire \rt_value<21>/O ;
+  wire \rt_value<13>/O ;
+  wire \rs_value<6>/O ;
+  wire \rt_value<30>/O ;
+  wire \rt_value<22>/O ;
+  wire \rt_value<14>/O ;
+  wire \rs_value<7>/O ;
+  wire \rt_value<31>/O ;
+  wire \rt_value<23>/O ;
+  wire \rt_value<15>/O ;
+  wire \rs_value<8>/O ;
+  wire \rt_value<24>/O ;
+  wire \rt_value<16>/O ;
+  wire \rs_value<9>/O ;
+  wire \rt_value<25>/O ;
+  wire \rt_value<17>/O ;
+  wire \rt_value<26>/O ;
+  wire \rt_value<18>/O ;
+  wire \rt_value<27>/O ;
+  wire \rt_value<19>/O ;
+  wire \rt_value<28>/O ;
+  wire \rt_value<29>/O ;
+  wire \rt_value<0>/O ;
+  wire \rt_value<1>/O ;
+  wire \rt_value<2>/O ;
+  wire \rt_value<3>/O ;
   wire \instruction_out<10>/O ;
-  wire \rt_val<4>/O ;
+  wire \rt_value<4>/O ;
   wire \instruction_out<11>/O ;
-  wire \rt_val<5>/O ;
+  wire \rt_value<5>/O ;
   wire \instruction_out<20>/O ;
   wire \instruction_out<12>/O ;
-  wire \rt_val<6>/O ;
+  wire \rt_value<6>/O ;
   wire \instruction_out<21>/O ;
   wire \instruction_out<13>/O ;
-  wire \rt_val<7>/O ;
+  wire \rt_value<7>/O ;
   wire \instruction_out<30>/O ;
   wire \instruction_out<22>/O ;
   wire \instruction_out<14>/O ;
-  wire \rt_val<8>/O ;
+  wire \rt_value<8>/O ;
   wire \instruction_out<31>/O ;
   wire \instruction_out<23>/O ;
   wire \instruction_out<15>/O ;
-  wire \rt_val<9>/O ;
+  wire \rt_value<9>/O ;
   wire \instruction_out<24>/O ;
   wire \instruction_out<16>/O ;
   wire \instruction_out<25>/O ;
   wire \instruction_out<17>/O ;
   wire \instruction_out<26>/O ;
   wire \instruction_out<18>/O ;
-  wire \rs_val<10>/O ;
+  wire \rs_value<10>/O ;
   wire \instruction_out<27>/O ;
   wire \instruction_out<19>/O ;
-  wire \rs_val<11>/O ;
+  wire \rs_value<11>/O ;
   wire \instruction_out<28>/O ;
-  wire \rs_val<20>/O ;
-  wire \rs_val<12>/O ;
+  wire \rs_value<20>/O ;
+  wire \rs_value<12>/O ;
   wire \instruction_out<29>/O ;
-  wire \rs_val<21>/O ;
-  wire \rs_val<13>/O ;
-  wire \rs_val<30>/O ;
-  wire \rs_val<22>/O ;
-  wire \rs_val<14>/O ;
-  wire \rs_val<31>/O ;
-  wire \rs_val<23>/O ;
-  wire \rs_val<15>/O ;
+  wire \rs_value<21>/O ;
+  wire \rs_value<13>/O ;
+  wire \rs_value<30>/O ;
+  wire \rs_value<22>/O ;
+  wire \rs_value<14>/O ;
+  wire \rs_value<31>/O ;
+  wire \rs_value<23>/O ;
+  wire \rs_value<15>/O ;
   wire \reset/INBUF ;
-  wire \rs_val<24>/O ;
-  wire \rs_val<16>/O ;
+  wire \rs_value<24>/O ;
+  wire \rs_value<16>/O ;
   wire \alu_out<0>/O ;
-  wire \rs_val<25>/O ;
-  wire \rs_val<17>/O ;
+  wire \rs_value<25>/O ;
+  wire \rs_value<17>/O ;
   wire \alu_out<1>/O ;
-  wire \rs_val<26>/O ;
-  wire \rs_val<18>/O ;
+  wire \rs_value<26>/O ;
+  wire \rs_value<18>/O ;
   wire \alu_out<2>/O ;
-  wire \rs_val<27>/O ;
-  wire \rs_val<19>/O ;
+  wire \rs_value<27>/O ;
+  wire \rs_value<19>/O ;
   wire \alu_out<3>/O ;
-  wire \rs_val<28>/O ;
+  wire \rs_value<28>/O ;
   wire \alu_out<4>/O ;
-  wire \rs_val<29>/O ;
+  wire \rs_value<29>/O ;
   wire \alu_out<5>/O ;
   wire \alu_out<6>/O ;
   wire \alu_out<7>/O ;
@@ -441,19 +441,19 @@ module Single_Cycle (
   wire N49;
   wire \control/data_read_not0001/BXINV_2626 ;
   wire N48;
-  wire \control/alu_imm<0>/DXMUX_2663 ;
-  wire \control/alu_imm<0>/FXMUX_2662 ;
-  wire \control/alu_imm<0>/F5MUX_2661 ;
+  wire \control/immediacy<0>/DXMUX_2663 ;
+  wire \control/immediacy<0>/FXMUX_2662 ;
+  wire \control/immediacy<0>/F5MUX_2661 ;
   wire N53;
-  wire \control/alu_imm<0>/BXINV_2654 ;
+  wire \control/immediacy<0>/BXINV_2654 ;
   wire N52;
-  wire \control/alu_imm<0>/CLKINVNOT ;
-  wire \control/pc_sel<0>/DXMUX_2694 ;
-  wire \control/pc_sel<0>/F5MUX_2692 ;
-  wire \control/pc_sel<0>/F ;
-  wire \control/pc_sel<0>/BXINV_2681 ;
+  wire \control/immediacy<0>/CLKINVNOT ;
+  wire \control/counter_selector<0>/DXMUX_2694 ;
+  wire \control/counter_selector<0>/F5MUX_2692 ;
+  wire \control/counter_selector<0>/F ;
+  wire \control/counter_selector<0>/BXINV_2681 ;
   wire \control/pc_sel_mux0000<0>1_2679 ;
-  wire \control/pc_sel<0>/CLKINVNOT ;
+  wire \control/counter_selector<0>/CLKINVNOT ;
   wire \control/data_read_not000161/F5MUX_2721 ;
   wire \control/data_read_not000161/F ;
   wire \control/data_read_not000161/BXINV_2710 ;
@@ -521,24 +521,24 @@ module Single_Cycle (
   wire N27;
   wire N40;
   wire \control/data_read_not00017_pack_2 ;
-  wire \control/alu_imm<1>/DXMUX_3295 ;
-  wire \control/alu_imm<1>/FXMUX_3294 ;
+  wire \control/immediacy<1>/DXMUX_3295 ;
+  wire \control/immediacy<1>/FXMUX_3294 ;
   wire N6_pack_1;
-  wire \control/alu_imm<1>/CLKINVNOT ;
+  wire \control/immediacy<1>/CLKINVNOT ;
   wire \control/reg_dst_not000118_3320 ;
   wire \control/N9_pack_1 ;
-  wire \control/regin_data<0>/DXMUX_3350 ;
-  wire \control/regin_data<0>/FXMUX_3349 ;
+  wire \control/reg_input_data<0>/DXMUX_3350 ;
+  wire \control/reg_input_data<0>/FXMUX_3349 ;
   wire \control/reg_write_mux0000129_pack_1 ;
-  wire \control/regin_data<0>/CLKINVNOT ;
-  wire \control/br_type<0>/DXMUX_3380 ;
+  wire \control/reg_input_data<0>/CLKINVNOT ;
+  wire \control/branch_type<0>/DXMUX_3380 ;
   wire N13_pack_1;
-  wire \control/br_type<0>/CLKINVNOT ;
+  wire \control/branch_type<0>/CLKINVNOT ;
   wire N30;
-  wire \control/regin_data<1>/DXMUX_3423 ;
-  wire \control/regin_data<1>/FXMUX_3422 ;
+  wire \control/reg_input_data<1>/DXMUX_3423 ;
+  wire \control/reg_input_data<1>/FXMUX_3422 ;
   wire \control/N16_pack_1 ;
-  wire \control/regin_data<1>/CLKINVNOT ;
+  wire \control/reg_input_data<1>/CLKINVNOT ;
   wire N22;
   wire \control/fn_class/DXMUX_3465 ;
   wire \control/fn_class_mux0000_3462 ;
@@ -547,15 +547,15 @@ module Single_Cycle (
   wire \reg_dest<1>/OUTPUT/OFF/O1INV_1062 ;
   wire \control/regin_data_1_2_1065 ;
   wire \reg_dest<1>/OUTPUT/OTCLK1INVNOT ;
-  wire \alu_imm<0>/OUTPUT/OFF/O1INV_1150 ;
+  wire \immediacy<0>/OUTPUT/OFF/O1INV_1150 ;
   wire \control/alu_imm_0_1_1153 ;
-  wire \alu_imm<0>/OUTPUT/OTCLK1INVNOT ;
-  wire \regin_data<0>/OUTPUT/OFF/O1INV_1182 ;
+  wire \immediacy<0>/OUTPUT/OTCLK1INVNOT ;
+  wire \reg_input_data<0>/OUTPUT/OFF/O1INV_1182 ;
   wire \control/regin_data_0_1_1185 ;
-  wire \regin_data<0>/OUTPUT/OTCLK1INVNOT ;
-  wire \alu_imm<1>/OUTPUT/OFF/O1INV_1206 ;
+  wire \reg_input_data<0>/OUTPUT/OTCLK1INVNOT ;
+  wire \immediacy<1>/OUTPUT/OFF/O1INV_1206 ;
   wire \control/alu_imm_1_1_1209 ;
-  wire \alu_imm<1>/OUTPUT/OTCLK1INVNOT ;
+  wire \immediacy<1>/OUTPUT/OTCLK1INVNOT ;
   wire \nextaddress/incr_pc<0>/FFY/RSTAND_3010 ;
   wire \alu_out<30>/OUTPUT/OFF/O1INV_1074 ;
   wire \alu_out<22>/OUTPUT/OFF/O1INV_1082 ;
@@ -573,71 +573,71 @@ module Single_Cycle (
   wire \alu_out<19>/OUTPUT/OFF/O1INV_1266 ;
   wire \alu_out<28>/OUTPUT/OFF/O1INV_1288 ;
   wire \alu_out<29>/OUTPUT/OFF/O1INV_1312 ;
-  wire \rs_val<1>/OUTPUT/OFF/O1INV_1328 ;
-  wire \rs_val<2>/OUTPUT/OFF/O1INV_1344 ;
-  wire \rt_val<10>/OUTPUT/OFF/O1INV_1352 ;
-  wire \rs_val<3>/OUTPUT/OFF/O1INV_1368 ;
-  wire \rt_val<11>/OUTPUT/OFF/O1INV_1376 ;
-  wire \rs_val<4>/OUTPUT/OFF/O1INV_1392 ;
-  wire \rt_val<20>/OUTPUT/OFF/O1INV_1400 ;
-  wire \rt_val<12>/OUTPUT/OFF/O1INV_1408 ;
-  wire \rs_val<5>/OUTPUT/OFF/O1INV_1424 ;
-  wire \rt_val<21>/OUTPUT/OFF/O1INV_1432 ;
-  wire \rt_val<13>/OUTPUT/OFF/O1INV_1440 ;
-  wire \rs_val<6>/OUTPUT/OFF/O1INV_1448 ;
-  wire \rt_val<30>/OUTPUT/OFF/O1INV_1456 ;
-  wire \rt_val<22>/OUTPUT/OFF/O1INV_1464 ;
-  wire \rt_val<14>/OUTPUT/OFF/O1INV_1472 ;
-  wire \rs_val<7>/OUTPUT/OFF/O1INV_1480 ;
-  wire \rt_val<31>/OUTPUT/OFF/O1INV_1488 ;
-  wire \rt_val<23>/OUTPUT/OFF/O1INV_1496 ;
-  wire \rt_val<15>/OUTPUT/OFF/O1INV_1504 ;
-  wire \rs_val<8>/OUTPUT/OFF/O1INV_1512 ;
-  wire \rt_val<24>/OUTPUT/OFF/O1INV_1520 ;
-  wire \rt_val<16>/OUTPUT/OFF/O1INV_1528 ;
-  wire \rs_val<9>/OUTPUT/OFF/O1INV_1536 ;
-  wire \rt_val<25>/OUTPUT/OFF/O1INV_1544 ;
-  wire \rt_val<17>/OUTPUT/OFF/O1INV_1552 ;
-  wire \rt_val<26>/OUTPUT/OFF/O1INV_1560 ;
-  wire \rt_val<18>/OUTPUT/OFF/O1INV_1568 ;
-  wire \rt_val<27>/OUTPUT/OFF/O1INV_1576 ;
-  wire \rt_val<19>/OUTPUT/OFF/O1INV_1584 ;
-  wire \rt_val<28>/OUTPUT/OFF/O1INV_1592 ;
-  wire \rt_val<29>/OUTPUT/OFF/O1INV_1600 ;
-  wire \rt_val<1>/OUTPUT/OFF/O1INV_1616 ;
-  wire \rt_val<2>/OUTPUT/OFF/O1INV_1624 ;
-  wire \rt_val<3>/OUTPUT/OFF/O1INV_1632 ;
-  wire \rt_val<4>/OUTPUT/OFF/O1INV_1648 ;
-  wire \rt_val<5>/OUTPUT/OFF/O1INV_1664 ;
-  wire \rt_val<6>/OUTPUT/OFF/O1INV_1688 ;
-  wire \rt_val<7>/OUTPUT/OFF/O1INV_1712 ;
-  wire \rt_val<8>/OUTPUT/OFF/O1INV_1744 ;
-  wire \rt_val<9>/OUTPUT/OFF/O1INV_1776 ;
-  wire \rs_val<10>/OUTPUT/OFF/O1INV_1832 ;
-  wire \rs_val<11>/OUTPUT/OFF/O1INV_1856 ;
-  wire \rs_val<20>/OUTPUT/OFF/O1INV_1872 ;
-  wire \rs_val<12>/OUTPUT/OFF/O1INV_1880 ;
-  wire \rs_val<21>/OUTPUT/OFF/O1INV_1896 ;
-  wire \rs_val<13>/OUTPUT/OFF/O1INV_1904 ;
-  wire \rs_val<30>/OUTPUT/OFF/O1INV_1912 ;
-  wire \rs_val<22>/OUTPUT/OFF/O1INV_1920 ;
-  wire \rs_val<14>/OUTPUT/OFF/O1INV_1928 ;
-  wire \rs_val<31>/OUTPUT/OFF/O1INV_1936 ;
-  wire \rs_val<23>/OUTPUT/OFF/O1INV_1944 ;
-  wire \rs_val<15>/OUTPUT/OFF/O1INV_1952 ;
-  wire \rs_val<24>/OUTPUT/OFF/O1INV_1966 ;
-  wire \rs_val<16>/OUTPUT/OFF/O1INV_1974 ;
-  wire \rs_val<25>/OUTPUT/OFF/O1INV_1990 ;
-  wire \rs_val<17>/OUTPUT/OFF/O1INV_1998 ;
-  wire \rs_val<26>/OUTPUT/OFF/O1INV_2014 ;
-  wire \rs_val<18>/OUTPUT/OFF/O1INV_2022 ;
+  wire \rs_value<1>/OUTPUT/OFF/O1INV_1328 ;
+  wire \rs_value<2>/OUTPUT/OFF/O1INV_1344 ;
+  wire \rt_value<10>/OUTPUT/OFF/O1INV_1352 ;
+  wire \rs_value<3>/OUTPUT/OFF/O1INV_1368 ;
+  wire \rt_value<11>/OUTPUT/OFF/O1INV_1376 ;
+  wire \rs_value<4>/OUTPUT/OFF/O1INV_1392 ;
+  wire \rt_value<20>/OUTPUT/OFF/O1INV_1400 ;
+  wire \rt_value<12>/OUTPUT/OFF/O1INV_1408 ;
+  wire \rs_value<5>/OUTPUT/OFF/O1INV_1424 ;
+  wire \rt_value<21>/OUTPUT/OFF/O1INV_1432 ;
+  wire \rt_value<13>/OUTPUT/OFF/O1INV_1440 ;
+  wire \rs_value<6>/OUTPUT/OFF/O1INV_1448 ;
+  wire \rt_value<30>/OUTPUT/OFF/O1INV_1456 ;
+  wire \rt_value<22>/OUTPUT/OFF/O1INV_1464 ;
+  wire \rt_value<14>/OUTPUT/OFF/O1INV_1472 ;
+  wire \rs_value<7>/OUTPUT/OFF/O1INV_1480 ;
+  wire \rt_value<31>/OUTPUT/OFF/O1INV_1488 ;
+  wire \rt_value<23>/OUTPUT/OFF/O1INV_1496 ;
+  wire \rt_value<15>/OUTPUT/OFF/O1INV_1504 ;
+  wire \rs_value<8>/OUTPUT/OFF/O1INV_1512 ;
+  wire \rt_value<24>/OUTPUT/OFF/O1INV_1520 ;
+  wire \rt_value<16>/OUTPUT/OFF/O1INV_1528 ;
+  wire \rs_value<9>/OUTPUT/OFF/O1INV_1536 ;
+  wire \rt_value<25>/OUTPUT/OFF/O1INV_1544 ;
+  wire \rt_value<17>/OUTPUT/OFF/O1INV_1552 ;
+  wire \rt_value<26>/OUTPUT/OFF/O1INV_1560 ;
+  wire \rt_value<18>/OUTPUT/OFF/O1INV_1568 ;
+  wire \rt_value<27>/OUTPUT/OFF/O1INV_1576 ;
+  wire \rt_value<19>/OUTPUT/OFF/O1INV_1584 ;
+  wire \rt_value<28>/OUTPUT/OFF/O1INV_1592 ;
+  wire \rt_value<29>/OUTPUT/OFF/O1INV_1600 ;
+  wire \rt_value<1>/OUTPUT/OFF/O1INV_1616 ;
+  wire \rt_value<2>/OUTPUT/OFF/O1INV_1624 ;
+  wire \rt_value<3>/OUTPUT/OFF/O1INV_1632 ;
+  wire \rt_value<4>/OUTPUT/OFF/O1INV_1648 ;
+  wire \rt_value<5>/OUTPUT/OFF/O1INV_1664 ;
+  wire \rt_value<6>/OUTPUT/OFF/O1INV_1688 ;
+  wire \rt_value<7>/OUTPUT/OFF/O1INV_1712 ;
+  wire \rt_value<8>/OUTPUT/OFF/O1INV_1744 ;
+  wire \rt_value<9>/OUTPUT/OFF/O1INV_1776 ;
+  wire \rs_value<10>/OUTPUT/OFF/O1INV_1832 ;
+  wire \rs_value<11>/OUTPUT/OFF/O1INV_1856 ;
+  wire \rs_value<20>/OUTPUT/OFF/O1INV_1872 ;
+  wire \rs_value<12>/OUTPUT/OFF/O1INV_1880 ;
+  wire \rs_value<21>/OUTPUT/OFF/O1INV_1896 ;
+  wire \rs_value<13>/OUTPUT/OFF/O1INV_1904 ;
+  wire \rs_value<30>/OUTPUT/OFF/O1INV_1912 ;
+  wire \rs_value<22>/OUTPUT/OFF/O1INV_1920 ;
+  wire \rs_value<14>/OUTPUT/OFF/O1INV_1928 ;
+  wire \rs_value<31>/OUTPUT/OFF/O1INV_1936 ;
+  wire \rs_value<23>/OUTPUT/OFF/O1INV_1944 ;
+  wire \rs_value<15>/OUTPUT/OFF/O1INV_1952 ;
+  wire \rs_value<24>/OUTPUT/OFF/O1INV_1966 ;
+  wire \rs_value<16>/OUTPUT/OFF/O1INV_1974 ;
+  wire \rs_value<25>/OUTPUT/OFF/O1INV_1990 ;
+  wire \rs_value<17>/OUTPUT/OFF/O1INV_1998 ;
+  wire \rs_value<26>/OUTPUT/OFF/O1INV_2014 ;
+  wire \rs_value<18>/OUTPUT/OFF/O1INV_2022 ;
   wire \alu_out<2>/OUTPUT/OFF/O1INV_2030 ;
-  wire \rs_val<27>/OUTPUT/OFF/O1INV_2038 ;
-  wire \rs_val<19>/OUTPUT/OFF/O1INV_2046 ;
+  wire \rs_value<27>/OUTPUT/OFF/O1INV_2038 ;
+  wire \rs_value<19>/OUTPUT/OFF/O1INV_2046 ;
   wire \alu_out<3>/OUTPUT/OFF/O1INV_2054 ;
-  wire \rs_val<28>/OUTPUT/OFF/O1INV_2062 ;
+  wire \rs_value<28>/OUTPUT/OFF/O1INV_2062 ;
   wire \alu_out<4>/OUTPUT/OFF/O1INV_2070 ;
-  wire \rs_val<29>/OUTPUT/OFF/O1INV_2078 ;
+  wire \rs_value<29>/OUTPUT/OFF/O1INV_2078 ;
   wire \alu_out<5>/OUTPUT/OFF/O1INV_2086 ;
   wire \alu_out<6>/OUTPUT/OFF/O1INV_2094 ;
   wire \alu_out<7>/OUTPUT/OFF/O1INV_2102 ;
@@ -678,15 +678,15 @@ module Single_Cycle (
   wire [31 : 0] \instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta ;
   wire [0 : 0] \data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta ;
   wire [0 : 0] \nextaddress/incr_pc ;
-  wire [1 : 0] \control/alu_imm ;
-  wire [0 : 0] \control/pc_sel ;
+  wire [1 : 0] \control/immediacy ;
+  wire [0 : 0] \control/counter_selector ;
   wire [0 : 0] \ALU/mux_input2 ;
   wire [0 : 0] \ALU/adder_input2 ;
   wire [0 : 0] \control/logic_fn ;
-  wire [1 : 0] \control/regin_data ;
+  wire [1 : 0] \control/reg_input_data ;
   wire [0 : 0] \control/reg_dst ;
   wire [0 : 0] \nextaddress/_old_mux_2_input_1_12 ;
-  wire [0 : 0] \control/br_type ;
+  wire [0 : 0] \control/branch_type ;
   wire [0 : 0] \ALU/adder_input1 ;
   wire [0 : 0] \nextaddress/incr_pc_mux0000 ;
   wire [0 : 0] \nextaddress/Madd__old_mux_2_input_1_12_lut ;
@@ -808,14 +808,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD168" ))
-  \alu_imm<0>/PAD  (
-    .PAD(alu_imm[0])
+  \immediacy<0>/PAD  (
+    .PAD(immediacy[0])
   );
   X_OBUF #(
     .LOC ( "PAD168" ))
   alu_imm_0_OBUF (
-    .I(\alu_imm<0>/O ),
-    .O(alu_imm[0])
+    .I(\immediacy<0>/O ),
+    .O(immediacy[0])
   );
   X_OPAD #(
     .LOC ( "PAD41" ))
@@ -841,14 +841,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD164" ))
-  \regin_data<0>/PAD  (
-    .PAD(regin_data[0])
+  \reg_input_data<0>/PAD  (
+    .PAD(reg_input_data[0])
   );
   X_OBUF #(
     .LOC ( "PAD164" ))
   regin_data_0_OBUF (
-    .I(\regin_data<0>/O ),
-    .O(regin_data[0])
+    .I(\reg_input_data<0>/O ),
+    .O(reg_input_data[0])
   );
   X_OPAD #(
     .LOC ( "PAD165" ))
@@ -863,14 +863,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD163" ))
-  \alu_imm<1>/PAD  (
-    .PAD(alu_imm[1])
+  \immediacy<1>/PAD  (
+    .PAD(immediacy[1])
   );
   X_OBUF #(
     .LOC ( "PAD163" ))
   alu_imm_1_OBUF (
-    .I(\alu_imm<1>/O ),
-    .O(alu_imm[1])
+    .I(\immediacy<1>/O ),
+    .O(immediacy[1])
   );
   X_OPAD #(
     .LOC ( "PAD40" ))
@@ -896,32 +896,32 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD183" ))
-  \regin_data<1>/PAD  (
-    .PAD(regin_data[1])
+  \reg_input_data<1>/PAD  (
+    .PAD(reg_input_data[1])
   );
   X_OBUF #(
     .LOC ( "PAD183" ))
   regin_data_1_OBUF (
-    .I(\regin_data<1>/O ),
-    .O(regin_data[1])
+    .I(\reg_input_data<1>/O ),
+    .O(reg_input_data[1])
   );
   X_BUF #(
     .LOC ( "PAD183" ))
-  \regin_data<1>/OUTPUT/OFF/O1INV  (
+  \reg_input_data<1>/OUTPUT/OFF/O1INV  (
     .I(\control/reg_dst_mux0000<1>_0 ),
-    .O(\regin_data<1>/OUTPUT/OFF/O1INV_1238 )
+    .O(\reg_input_data<1>/OUTPUT/OFF/O1INV_1238 )
   );
   X_BUF #(
     .LOC ( "PAD183" ))
-  \regin_data<1>/OUTPUT/OFF/OMUX  (
+  \reg_input_data<1>/OUTPUT/OFF/OMUX  (
     .I(\control/regin_data_1_1_1241 ),
-    .O(\regin_data<1>/O )
+    .O(\reg_input_data<1>/O )
   );
   X_LATCHE #(
     .LOC ( "PAD183" ),
     .INIT ( 1'b0 ))
   \control/regin_data_1_1  (
-    .I(\regin_data<1>/OUTPUT/OFF/O1INV_1238 ),
+    .I(\reg_input_data<1>/OUTPUT/OFF/O1INV_1238 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/regin_data_1_1/CLK ),
     .SET(GND),
@@ -930,9 +930,9 @@ module Single_Cycle (
   );
   X_INV #(
     .LOC ( "PAD183" ))
-  \regin_data<1>/OUTPUT/OTCLK1INV  (
+  \reg_input_data<1>/OUTPUT/OTCLK1INV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\regin_data<1>/OUTPUT/OTCLK1INVNOT )
+    .O(\reg_input_data<1>/OUTPUT/OTCLK1INVNOT )
   );
   X_OPAD #(
     .LOC ( "PAD148" ))
@@ -1013,14 +1013,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD170" ))
-  \rs_val<0>/PAD  (
-    .PAD(rs_val[0])
+  \rs_value<0>/PAD  (
+    .PAD(rs_value[0])
   );
   X_OBUF #(
     .LOC ( "PAD170" ))
   rs_val_0_OBUF (
-    .I(\rs_val<0>/O ),
-    .O(rs_val[0])
+    .I(\rs_value<0>/O ),
+    .O(rs_value[0])
   );
   X_OPAD #(
     .LOC ( "PAD37" ))
@@ -1046,14 +1046,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD106" ))
-  \rs_val<1>/PAD  (
-    .PAD(rs_val[1])
+  \rs_value<1>/PAD  (
+    .PAD(rs_value[1])
   );
   X_OBUF #(
     .LOC ( "PAD106" ))
   rs_val_1_OBUF (
-    .I(\rs_val<1>/O ),
-    .O(rs_val[1])
+    .I(\rs_value<1>/O ),
+    .O(rs_value[1])
   );
   X_OPAD #(
     .LOC ( "PAD128" ))
@@ -1068,25 +1068,25 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD136" ))
-  \rs_val<2>/PAD  (
-    .PAD(rs_val[2])
+  \rs_value<2>/PAD  (
+    .PAD(rs_value[2])
   );
   X_OBUF #(
     .LOC ( "PAD136" ))
   rs_val_2_OBUF (
-    .I(\rs_val<2>/O ),
-    .O(rs_val[2])
+    .I(\rs_value<2>/O ),
+    .O(rs_value[2])
   );
   X_OPAD #(
     .LOC ( "PAD254" ))
-  \rt_val<10>/PAD  (
-    .PAD(rt_val[10])
+  \rt_value<10>/PAD  (
+    .PAD(rt_value[10])
   );
   X_OBUF #(
     .LOC ( "PAD254" ))
   rt_val_10_OBUF (
-    .I(\rt_val<10>/O ),
-    .O(rt_val[10])
+    .I(\rt_value<10>/O ),
+    .O(rt_value[10])
   );
   X_OPAD #(
     .LOC ( "PAD124" ))
@@ -1101,25 +1101,25 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD215" ))
-  \rs_val<3>/PAD  (
-    .PAD(rs_val[3])
+  \rs_value<3>/PAD  (
+    .PAD(rs_value[3])
   );
   X_OBUF #(
     .LOC ( "PAD215" ))
   rs_val_3_OBUF (
-    .I(\rs_val<3>/O ),
-    .O(rs_val[3])
+    .I(\rs_value<3>/O ),
+    .O(rs_value[3])
   );
   X_OPAD #(
     .LOC ( "PAD253" ))
-  \rt_val<11>/PAD  (
-    .PAD(rt_val[11])
+  \rt_value<11>/PAD  (
+    .PAD(rt_value[11])
   );
   X_OBUF #(
     .LOC ( "PAD253" ))
   rt_val_11_OBUF (
-    .I(\rt_val<11>/O ),
-    .O(rt_val[11])
+    .I(\rt_value<11>/O ),
+    .O(rt_value[11])
   );
   X_OPAD #(
     .LOC ( "PAD116" ))
@@ -1134,36 +1134,36 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD236" ))
-  \rs_val<4>/PAD  (
-    .PAD(rs_val[4])
+  \rs_value<4>/PAD  (
+    .PAD(rs_value[4])
   );
   X_OBUF #(
     .LOC ( "PAD236" ))
   rs_val_4_OBUF (
-    .I(\rs_val<4>/O ),
-    .O(rs_val[4])
+    .I(\rs_value<4>/O ),
+    .O(rs_value[4])
   );
   X_OPAD #(
     .LOC ( "PAD34" ))
-  \rt_val<20>/PAD  (
-    .PAD(rt_val[20])
+  \rt_value<20>/PAD  (
+    .PAD(rt_value[20])
   );
   X_OBUF #(
     .LOC ( "PAD34" ))
   rt_val_20_OBUF (
-    .I(\rt_val<20>/O ),
-    .O(rt_val[20])
+    .I(\rt_value<20>/O ),
+    .O(rt_value[20])
   );
   X_OPAD #(
     .LOC ( "PAD252" ))
-  \rt_val<12>/PAD  (
-    .PAD(rt_val[12])
+  \rt_value<12>/PAD  (
+    .PAD(rt_value[12])
   );
   X_OBUF #(
     .LOC ( "PAD252" ))
   rt_val_12_OBUF (
-    .I(\rt_val<12>/O ),
-    .O(rt_val[12])
+    .I(\rt_value<12>/O ),
+    .O(rt_value[12])
   );
   X_OPAD #(
     .LOC ( "PAD127" ))
@@ -1178,300 +1178,300 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD171" ))
-  \rs_val<5>/PAD  (
-    .PAD(rs_val[5])
+  \rs_value<5>/PAD  (
+    .PAD(rs_value[5])
   );
   X_OBUF #(
     .LOC ( "PAD171" ))
   rs_val_5_OBUF (
-    .I(\rs_val<5>/O ),
-    .O(rs_val[5])
+    .I(\rs_value<5>/O ),
+    .O(rs_value[5])
   );
   X_OPAD #(
     .LOC ( "PAD235" ))
-  \rt_val<21>/PAD  (
-    .PAD(rt_val[21])
+  \rt_value<21>/PAD  (
+    .PAD(rt_value[21])
   );
   X_OBUF #(
     .LOC ( "PAD235" ))
   rt_val_21_OBUF (
-    .I(\rt_val<21>/O ),
-    .O(rt_val[21])
+    .I(\rt_value<21>/O ),
+    .O(rt_value[21])
   );
   X_OPAD #(
     .LOC ( "PAD251" ))
-  \rt_val<13>/PAD  (
-    .PAD(rt_val[13])
+  \rt_value<13>/PAD  (
+    .PAD(rt_value[13])
   );
   X_OBUF #(
     .LOC ( "PAD251" ))
   rt_val_13_OBUF (
-    .I(\rt_val<13>/O ),
-    .O(rt_val[13])
+    .I(\rt_value<13>/O ),
+    .O(rt_value[13])
   );
   X_OPAD #(
     .LOC ( "PAD174" ))
-  \rs_val<6>/PAD  (
-    .PAD(rs_val[6])
+  \rs_value<6>/PAD  (
+    .PAD(rs_value[6])
   );
   X_OBUF #(
     .LOC ( "PAD174" ))
   rs_val_6_OBUF (
-    .I(\rs_val<6>/O ),
-    .O(rs_val[6])
+    .I(\rs_value<6>/O ),
+    .O(rs_value[6])
   );
   X_OPAD #(
     .LOC ( "PAD203" ))
-  \rt_val<30>/PAD  (
-    .PAD(rt_val[30])
+  \rt_value<30>/PAD  (
+    .PAD(rt_value[30])
   );
   X_OBUF #(
     .LOC ( "PAD203" ))
   rt_val_30_OBUF (
-    .I(\rt_val<30>/O ),
-    .O(rt_val[30])
+    .I(\rt_value<30>/O ),
+    .O(rt_value[30])
   );
   X_OPAD #(
     .LOC ( "PAD234" ))
-  \rt_val<22>/PAD  (
-    .PAD(rt_val[22])
+  \rt_value<22>/PAD  (
+    .PAD(rt_value[22])
   );
   X_OBUF #(
     .LOC ( "PAD234" ))
   rt_val_22_OBUF (
-    .I(\rt_val<22>/O ),
-    .O(rt_val[22])
+    .I(\rt_value<22>/O ),
+    .O(rt_value[22])
   );
   X_OPAD #(
     .LOC ( "PAD250" ))
-  \rt_val<14>/PAD  (
-    .PAD(rt_val[14])
+  \rt_value<14>/PAD  (
+    .PAD(rt_value[14])
   );
   X_OBUF #(
     .LOC ( "PAD250" ))
   rt_val_14_OBUF (
-    .I(\rt_val<14>/O ),
-    .O(rt_val[14])
+    .I(\rt_value<14>/O ),
+    .O(rt_value[14])
   );
   X_OPAD #(
     .LOC ( "PAD175" ))
-  \rs_val<7>/PAD  (
-    .PAD(rs_val[7])
+  \rs_value<7>/PAD  (
+    .PAD(rs_value[7])
   );
   X_OBUF #(
     .LOC ( "PAD175" ))
   rs_val_7_OBUF (
-    .I(\rs_val<7>/O ),
-    .O(rs_val[7])
+    .I(\rs_value<7>/O ),
+    .O(rs_value[7])
   );
   X_OPAD #(
     .LOC ( "PAD217" ))
-  \rt_val<31>/PAD  (
-    .PAD(rt_val[31])
+  \rt_value<31>/PAD  (
+    .PAD(rt_value[31])
   );
   X_OBUF #(
     .LOC ( "PAD217" ))
   rt_val_31_OBUF (
-    .I(\rt_val<31>/O ),
-    .O(rt_val[31])
+    .I(\rt_value<31>/O ),
+    .O(rt_value[31])
   );
   X_OPAD #(
     .LOC ( "PAD233" ))
-  \rt_val<23>/PAD  (
-    .PAD(rt_val[23])
+  \rt_value<23>/PAD  (
+    .PAD(rt_value[23])
   );
   X_OBUF #(
     .LOC ( "PAD233" ))
   rt_val_23_OBUF (
-    .I(\rt_val<23>/O ),
-    .O(rt_val[23])
+    .I(\rt_value<23>/O ),
+    .O(rt_value[23])
   );
   X_OPAD #(
     .LOC ( "PAD249" ))
-  \rt_val<15>/PAD  (
-    .PAD(rt_val[15])
+  \rt_value<15>/PAD  (
+    .PAD(rt_value[15])
   );
   X_OBUF #(
     .LOC ( "PAD249" ))
   rt_val_15_OBUF (
-    .I(\rt_val<15>/O ),
-    .O(rt_val[15])
+    .I(\rt_value<15>/O ),
+    .O(rt_value[15])
   );
   X_OPAD #(
     .LOC ( "PAD135" ))
-  \rs_val<8>/PAD  (
-    .PAD(rs_val[8])
+  \rs_value<8>/PAD  (
+    .PAD(rs_value[8])
   );
   X_OBUF #(
     .LOC ( "PAD135" ))
   rs_val_8_OBUF (
-    .I(\rs_val<8>/O ),
-    .O(rs_val[8])
+    .I(\rs_value<8>/O ),
+    .O(rs_value[8])
   );
   X_OPAD #(
     .LOC ( "PAD221" ))
-  \rt_val<24>/PAD  (
-    .PAD(rt_val[24])
+  \rt_value<24>/PAD  (
+    .PAD(rt_value[24])
   );
   X_OBUF #(
     .LOC ( "PAD221" ))
   rt_val_24_OBUF (
-    .I(\rt_val<24>/O ),
-    .O(rt_val[24])
+    .I(\rt_value<24>/O ),
+    .O(rt_value[24])
   );
   X_OPAD #(
     .LOC ( "PAD240" ))
-  \rt_val<16>/PAD  (
-    .PAD(rt_val[16])
+  \rt_value<16>/PAD  (
+    .PAD(rt_value[16])
   );
   X_OBUF #(
     .LOC ( "PAD240" ))
   rt_val_16_OBUF (
-    .I(\rt_val<16>/O ),
-    .O(rt_val[16])
+    .I(\rt_value<16>/O ),
+    .O(rt_value[16])
   );
   X_OPAD #(
     .LOC ( "PAD134" ))
-  \rs_val<9>/PAD  (
-    .PAD(rs_val[9])
+  \rs_value<9>/PAD  (
+    .PAD(rs_value[9])
   );
   X_OBUF #(
     .LOC ( "PAD134" ))
   rs_val_9_OBUF (
-    .I(\rs_val<9>/O ),
-    .O(rs_val[9])
+    .I(\rs_value<9>/O ),
+    .O(rs_value[9])
   );
   X_OPAD #(
     .LOC ( "PAD268" ))
-  \rt_val<25>/PAD  (
-    .PAD(rt_val[25])
+  \rt_value<25>/PAD  (
+    .PAD(rt_value[25])
   );
   X_OBUF #(
     .LOC ( "PAD268" ))
   rt_val_25_OBUF (
-    .I(\rt_val<25>/O ),
-    .O(rt_val[25])
+    .I(\rt_value<25>/O ),
+    .O(rt_value[25])
   );
   X_OPAD #(
     .LOC ( "PAD239" ))
-  \rt_val<17>/PAD  (
-    .PAD(rt_val[17])
+  \rt_value<17>/PAD  (
+    .PAD(rt_value[17])
   );
   X_OBUF #(
     .LOC ( "PAD239" ))
   rt_val_17_OBUF (
-    .I(\rt_val<17>/O ),
-    .O(rt_val[17])
+    .I(\rt_value<17>/O ),
+    .O(rt_value[17])
   );
   X_OPAD #(
     .LOC ( "PAD220" ))
-  \rt_val<26>/PAD  (
-    .PAD(rt_val[26])
+  \rt_value<26>/PAD  (
+    .PAD(rt_value[26])
   );
   X_OBUF #(
     .LOC ( "PAD220" ))
   rt_val_26_OBUF (
-    .I(\rt_val<26>/O ),
-    .O(rt_val[26])
+    .I(\rt_value<26>/O ),
+    .O(rt_value[26])
   );
   X_OPAD #(
     .LOC ( "PAD35" ))
-  \rt_val<18>/PAD  (
-    .PAD(rt_val[18])
+  \rt_value<18>/PAD  (
+    .PAD(rt_value[18])
   );
   X_OBUF #(
     .LOC ( "PAD35" ))
   rt_val_18_OBUF (
-    .I(\rt_val<18>/O ),
-    .O(rt_val[18])
+    .I(\rt_value<18>/O ),
+    .O(rt_value[18])
   );
   X_OPAD #(
     .LOC ( "PAD238" ))
-  \rt_val<27>/PAD  (
-    .PAD(rt_val[27])
+  \rt_value<27>/PAD  (
+    .PAD(rt_value[27])
   );
   X_OBUF #(
     .LOC ( "PAD238" ))
   rt_val_27_OBUF (
-    .I(\rt_val<27>/O ),
-    .O(rt_val[27])
+    .I(\rt_value<27>/O ),
+    .O(rt_value[27])
   );
   X_OPAD #(
     .LOC ( "PAD237" ))
-  \rt_val<19>/PAD  (
-    .PAD(rt_val[19])
+  \rt_value<19>/PAD  (
+    .PAD(rt_value[19])
   );
   X_OBUF #(
     .LOC ( "PAD237" ))
   rt_val_19_OBUF (
-    .I(\rt_val<19>/O ),
-    .O(rt_val[19])
+    .I(\rt_value<19>/O ),
+    .O(rt_value[19])
   );
   X_OPAD #(
     .LOC ( "PAD218" ))
-  \rt_val<28>/PAD  (
-    .PAD(rt_val[28])
+  \rt_value<28>/PAD  (
+    .PAD(rt_value[28])
   );
   X_OBUF #(
     .LOC ( "PAD218" ))
   rt_val_28_OBUF (
-    .I(\rt_val<28>/O ),
-    .O(rt_val[28])
+    .I(\rt_value<28>/O ),
+    .O(rt_value[28])
   );
   X_OPAD #(
     .LOC ( "PAD196" ))
-  \rt_val<29>/PAD  (
-    .PAD(rt_val[29])
+  \rt_value<29>/PAD  (
+    .PAD(rt_value[29])
   );
   X_OBUF #(
     .LOC ( "PAD196" ))
   rt_val_29_OBUF (
-    .I(\rt_val<29>/O ),
-    .O(rt_val[29])
+    .I(\rt_value<29>/O ),
+    .O(rt_value[29])
   );
   X_OPAD #(
     .LOC ( "PAD222" ))
-  \rt_val<0>/PAD  (
-    .PAD(rt_val[0])
+  \rt_value<0>/PAD  (
+    .PAD(rt_value[0])
   );
   X_OBUF #(
     .LOC ( "PAD222" ))
   rt_val_0_OBUF (
-    .I(\rt_val<0>/O ),
-    .O(rt_val[0])
+    .I(\rt_value<0>/O ),
+    .O(rt_value[0])
   );
   X_OPAD #(
     .LOC ( "PAD267" ))
-  \rt_val<1>/PAD  (
-    .PAD(rt_val[1])
+  \rt_value<1>/PAD  (
+    .PAD(rt_value[1])
   );
   X_OBUF #(
     .LOC ( "PAD267" ))
   rt_val_1_OBUF (
-    .I(\rt_val<1>/O ),
-    .O(rt_val[1])
+    .I(\rt_value<1>/O ),
+    .O(rt_value[1])
   );
   X_OPAD #(
     .LOC ( "PAD264" ))
-  \rt_val<2>/PAD  (
-    .PAD(rt_val[2])
+  \rt_value<2>/PAD  (
+    .PAD(rt_value[2])
   );
   X_OBUF #(
     .LOC ( "PAD264" ))
   rt_val_2_OBUF (
-    .I(\rt_val<2>/O ),
-    .O(rt_val[2])
+    .I(\rt_value<2>/O ),
+    .O(rt_value[2])
   );
   X_OPAD #(
     .LOC ( "PAD263" ))
-  \rt_val<3>/PAD  (
-    .PAD(rt_val[3])
+  \rt_value<3>/PAD  (
+    .PAD(rt_value[3])
   );
   X_OBUF #(
     .LOC ( "PAD263" ))
   rt_val_3_OBUF (
-    .I(\rt_val<3>/O ),
-    .O(rt_val[3])
+    .I(\rt_value<3>/O ),
+    .O(rt_value[3])
   );
   X_OPAD #(
     .LOC ( "PAD122" ))
@@ -1486,14 +1486,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD260" ))
-  \rt_val<4>/PAD  (
-    .PAD(rt_val[4])
+  \rt_value<4>/PAD  (
+    .PAD(rt_value[4])
   );
   X_OBUF #(
     .LOC ( "PAD260" ))
   rt_val_4_OBUF (
-    .I(\rt_val<4>/O ),
-    .O(rt_val[4])
+    .I(\rt_value<4>/O ),
+    .O(rt_value[4])
   );
   X_OPAD #(
     .LOC ( "PAD121" ))
@@ -1508,14 +1508,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD259" ))
-  \rt_val<5>/PAD  (
-    .PAD(rt_val[5])
+  \rt_value<5>/PAD  (
+    .PAD(rt_value[5])
   );
   X_OBUF #(
     .LOC ( "PAD259" ))
   rt_val_5_OBUF (
-    .I(\rt_val<5>/O ),
-    .O(rt_val[5])
+    .I(\rt_value<5>/O ),
+    .O(rt_value[5])
   );
   X_OPAD #(
     .LOC ( "PAD167" ))
@@ -1541,14 +1541,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD258" ))
-  \rt_val<6>/PAD  (
-    .PAD(rt_val[6])
+  \rt_value<6>/PAD  (
+    .PAD(rt_value[6])
   );
   X_OBUF #(
     .LOC ( "PAD258" ))
   rt_val_6_OBUF (
-    .I(\rt_val<6>/O ),
-    .O(rt_val[6])
+    .I(\rt_value<6>/O ),
+    .O(rt_value[6])
   );
   X_OPAD #(
     .LOC ( "PAD126" ))
@@ -1574,14 +1574,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD257" ))
-  \rt_val<7>/PAD  (
-    .PAD(rt_val[7])
+  \rt_value<7>/PAD  (
+    .PAD(rt_value[7])
   );
   X_OBUF #(
     .LOC ( "PAD257" ))
   rt_val_7_OBUF (
-    .I(\rt_val<7>/O ),
-    .O(rt_val[7])
+    .I(\rt_value<7>/O ),
+    .O(rt_value[7])
   );
   X_OPAD #(
     .LOC ( "PAD185" ))
@@ -1618,14 +1618,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD256" ))
-  \rt_val<8>/PAD  (
-    .PAD(rt_val[8])
+  \rt_value<8>/PAD  (
+    .PAD(rt_value[8])
   );
   X_OBUF #(
     .LOC ( "PAD256" ))
   rt_val_8_OBUF (
-    .I(\rt_val<8>/O ),
-    .O(rt_val[8])
+    .I(\rt_value<8>/O ),
+    .O(rt_value[8])
   );
   X_OPAD #(
     .LOC ( "PAD216" ))
@@ -1662,14 +1662,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD255" ))
-  \rt_val<9>/PAD  (
-    .PAD(rt_val[9])
+  \rt_value<9>/PAD  (
+    .PAD(rt_value[9])
   );
   X_OBUF #(
     .LOC ( "PAD255" ))
   rt_val_9_OBUF (
-    .I(\rt_val<9>/O ),
-    .O(rt_val[9])
+    .I(\rt_value<9>/O ),
+    .O(rt_value[9])
   );
   X_OPAD #(
     .LOC ( "PAD118" ))
@@ -1739,14 +1739,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD71" ))
-  \rs_val<10>/PAD  (
-    .PAD(rs_val[10])
+  \rs_value<10>/PAD  (
+    .PAD(rs_value[10])
   );
   X_OBUF #(
     .LOC ( "PAD71" ))
   rs_val_10_OBUF (
-    .I(\rs_val<10>/O ),
-    .O(rs_val[10])
+    .I(\rs_value<10>/O ),
+    .O(rs_value[10])
   );
   X_OPAD #(
     .LOC ( "PAD184" ))
@@ -1772,14 +1772,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD105" ))
-  \rs_val<11>/PAD  (
-    .PAD(rs_val[11])
+  \rs_value<11>/PAD  (
+    .PAD(rs_value[11])
   );
   X_OBUF #(
     .LOC ( "PAD105" ))
   rs_val_11_OBUF (
-    .I(\rs_val<11>/O ),
-    .O(rs_val[11])
+    .I(\rs_value<11>/O ),
+    .O(rs_value[11])
   );
   X_OPAD #(
     .LOC ( "PAD156" ))
@@ -1794,25 +1794,25 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD88" ))
-  \rs_val<20>/PAD  (
-    .PAD(rs_val[20])
+  \rs_value<20>/PAD  (
+    .PAD(rs_value[20])
   );
   X_OBUF #(
     .LOC ( "PAD88" ))
   rs_val_20_OBUF (
-    .I(\rs_val<20>/O ),
-    .O(rs_val[20])
+    .I(\rs_value<20>/O ),
+    .O(rs_value[20])
   );
   X_OPAD #(
     .LOC ( "PAD104" ))
-  \rs_val<12>/PAD  (
-    .PAD(rs_val[12])
+  \rs_value<12>/PAD  (
+    .PAD(rs_value[12])
   );
   X_OBUF #(
     .LOC ( "PAD104" ))
   rs_val_12_OBUF (
-    .I(\rs_val<12>/O ),
-    .O(rs_val[12])
+    .I(\rs_value<12>/O ),
+    .O(rs_value[12])
   );
   X_OPAD #(
     .LOC ( "PAD154" ))
@@ -1827,91 +1827,91 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD87" ))
-  \rs_val<21>/PAD  (
-    .PAD(rs_val[21])
+  \rs_value<21>/PAD  (
+    .PAD(rs_value[21])
   );
   X_OBUF #(
     .LOC ( "PAD87" ))
   rs_val_21_OBUF (
-    .I(\rs_val<21>/O ),
-    .O(rs_val[21])
+    .I(\rs_value<21>/O ),
+    .O(rs_value[21])
   );
   X_OPAD #(
     .LOC ( "PAD103" ))
-  \rs_val<13>/PAD  (
-    .PAD(rs_val[13])
+  \rs_value<13>/PAD  (
+    .PAD(rs_value[13])
   );
   X_OBUF #(
     .LOC ( "PAD103" ))
   rs_val_13_OBUF (
-    .I(\rs_val<13>/O ),
-    .O(rs_val[13])
+    .I(\rs_value<13>/O ),
+    .O(rs_value[13])
   );
   X_OPAD #(
     .LOC ( "PAD78" ))
-  \rs_val<30>/PAD  (
-    .PAD(rs_val[30])
+  \rs_value<30>/PAD  (
+    .PAD(rs_value[30])
   );
   X_OBUF #(
     .LOC ( "PAD78" ))
   rs_val_30_OBUF (
-    .I(\rs_val<30>/O ),
-    .O(rs_val[30])
+    .I(\rs_value<30>/O ),
+    .O(rs_value[30])
   );
   X_OPAD #(
     .LOC ( "PAD86" ))
-  \rs_val<22>/PAD  (
-    .PAD(rs_val[22])
+  \rs_value<22>/PAD  (
+    .PAD(rs_value[22])
   );
   X_OBUF #(
     .LOC ( "PAD86" ))
   rs_val_22_OBUF (
-    .I(\rs_val<22>/O ),
-    .O(rs_val[22])
+    .I(\rs_value<22>/O ),
+    .O(rs_value[22])
   );
   X_OPAD #(
     .LOC ( "PAD102" ))
-  \rs_val<14>/PAD  (
-    .PAD(rs_val[14])
+  \rs_value<14>/PAD  (
+    .PAD(rs_value[14])
   );
   X_OBUF #(
     .LOC ( "PAD102" ))
   rs_val_14_OBUF (
-    .I(\rs_val<14>/O ),
-    .O(rs_val[14])
+    .I(\rs_value<14>/O ),
+    .O(rs_value[14])
   );
   X_OPAD #(
     .LOC ( "PAD72" ))
-  \rs_val<31>/PAD  (
-    .PAD(rs_val[31])
+  \rs_value<31>/PAD  (
+    .PAD(rs_value[31])
   );
   X_OBUF #(
     .LOC ( "PAD72" ))
   rs_val_31_OBUF (
-    .I(\rs_val<31>/O ),
-    .O(rs_val[31])
+    .I(\rs_value<31>/O ),
+    .O(rs_value[31])
   );
   X_OPAD #(
     .LOC ( "PAD85" ))
-  \rs_val<23>/PAD  (
-    .PAD(rs_val[23])
+  \rs_value<23>/PAD  (
+    .PAD(rs_value[23])
   );
   X_OBUF #(
     .LOC ( "PAD85" ))
   rs_val_23_OBUF (
-    .I(\rs_val<23>/O ),
-    .O(rs_val[23])
+    .I(\rs_value<23>/O ),
+    .O(rs_value[23])
   );
   X_OPAD #(
     .LOC ( "PAD101" ))
-  \rs_val<15>/PAD  (
-    .PAD(rs_val[15])
+  \rs_value<15>/PAD  (
+    .PAD(rs_value[15])
   );
   X_OBUF #(
     .LOC ( "PAD101" ))
   rs_val_15_OBUF (
-    .I(\rs_val<15>/O ),
-    .O(rs_val[15])
+    .I(\rs_value<15>/O ),
+    .O(rs_value[15])
   );
   X_IPAD #(
     .LOC ( "PAD224" ))
@@ -1926,25 +1926,25 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD84" ))
-  \rs_val<24>/PAD  (
-    .PAD(rs_val[24])
+  \rs_value<24>/PAD  (
+    .PAD(rs_value[24])
   );
   X_OBUF #(
     .LOC ( "PAD84" ))
   rs_val_24_OBUF (
-    .I(\rs_val<24>/O ),
-    .O(rs_val[24])
+    .I(\rs_value<24>/O ),
+    .O(rs_value[24])
   );
   X_OPAD #(
     .LOC ( "PAD100" ))
-  \rs_val<16>/PAD  (
-    .PAD(rs_val[16])
+  \rs_value<16>/PAD  (
+    .PAD(rs_value[16])
   );
   X_OBUF #(
     .LOC ( "PAD100" ))
   rs_val_16_OBUF (
-    .I(\rs_val<16>/O ),
-    .O(rs_val[16])
+    .I(\rs_value<16>/O ),
+    .O(rs_value[16])
   );
   X_OPAD #(
     .LOC ( "PAD219" ))
@@ -1959,25 +1959,25 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD83" ))
-  \rs_val<25>/PAD  (
-    .PAD(rs_val[25])
+  \rs_value<25>/PAD  (
+    .PAD(rs_value[25])
   );
   X_OBUF #(
     .LOC ( "PAD83" ))
   rs_val_25_OBUF (
-    .I(\rs_val<25>/O ),
-    .O(rs_val[25])
+    .I(\rs_value<25>/O ),
+    .O(rs_value[25])
   );
   X_OPAD #(
     .LOC ( "PAD99" ))
-  \rs_val<17>/PAD  (
-    .PAD(rs_val[17])
+  \rs_value<17>/PAD  (
+    .PAD(rs_value[17])
   );
   X_OBUF #(
     .LOC ( "PAD99" ))
   rs_val_17_OBUF (
-    .I(\rs_val<17>/O ),
-    .O(rs_val[17])
+    .I(\rs_value<17>/O ),
+    .O(rs_value[17])
   );
   X_OPAD #(
     .LOC ( "PAD223" ))
@@ -1992,25 +1992,25 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD82" ))
-  \rs_val<26>/PAD  (
-    .PAD(rs_val[26])
+  \rs_value<26>/PAD  (
+    .PAD(rs_value[26])
   );
   X_OBUF #(
     .LOC ( "PAD82" ))
   rs_val_26_OBUF (
-    .I(\rs_val<26>/O ),
-    .O(rs_val[26])
+    .I(\rs_value<26>/O ),
+    .O(rs_value[26])
   );
   X_OPAD #(
     .LOC ( "PAD90" ))
-  \rs_val<18>/PAD  (
-    .PAD(rs_val[18])
+  \rs_value<18>/PAD  (
+    .PAD(rs_value[18])
   );
   X_OBUF #(
     .LOC ( "PAD90" ))
   rs_val_18_OBUF (
-    .I(\rs_val<18>/O ),
-    .O(rs_val[18])
+    .I(\rs_value<18>/O ),
+    .O(rs_value[18])
   );
   X_OPAD #(
     .LOC ( "PAD33" ))
@@ -2025,25 +2025,25 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD81" ))
-  \rs_val<27>/PAD  (
-    .PAD(rs_val[27])
+  \rs_value<27>/PAD  (
+    .PAD(rs_value[27])
   );
   X_OBUF #(
     .LOC ( "PAD81" ))
   rs_val_27_OBUF (
-    .I(\rs_val<27>/O ),
-    .O(rs_val[27])
+    .I(\rs_value<27>/O ),
+    .O(rs_value[27])
   );
   X_OPAD #(
     .LOC ( "PAD89" ))
-  \rs_val<19>/PAD  (
-    .PAD(rs_val[19])
+  \rs_value<19>/PAD  (
+    .PAD(rs_value[19])
   );
   X_OBUF #(
     .LOC ( "PAD89" ))
   rs_val_19_OBUF (
-    .I(\rs_val<19>/O ),
-    .O(rs_val[19])
+    .I(\rs_value<19>/O ),
+    .O(rs_value[19])
   );
   X_OPAD #(
     .LOC ( "PAD32" ))
@@ -2058,14 +2058,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD80" ))
-  \rs_val<28>/PAD  (
-    .PAD(rs_val[28])
+  \rs_value<28>/PAD  (
+    .PAD(rs_value[28])
   );
   X_OBUF #(
     .LOC ( "PAD80" ))
   rs_val_28_OBUF (
-    .I(\rs_val<28>/O ),
-    .O(rs_val[28])
+    .I(\rs_value<28>/O ),
+    .O(rs_value[28])
   );
   X_OPAD #(
     .LOC ( "PAD31" ))
@@ -2080,14 +2080,14 @@ module Single_Cycle (
   );
   X_OPAD #(
     .LOC ( "PAD79" ))
-  \rs_val<29>/PAD  (
-    .PAD(rs_val[29])
+  \rs_value<29>/PAD  (
+    .PAD(rs_value[29])
   );
   X_OBUF #(
     .LOC ( "PAD79" ))
   rs_val_29_OBUF (
-    .I(\rs_val<29>/O ),
-    .O(rs_val[29])
+    .I(\rs_value<29>/O ),
+    .O(rs_value[29])
   );
   X_OPAD #(
     .LOC ( "PAD30" ))
@@ -2774,35 +2774,35 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y11" ))
-  \control/alu_imm<0>/DXMUX  (
-    .I(\control/alu_imm<0>/FXMUX_2662 ),
-    .O(\control/alu_imm<0>/DXMUX_2663 )
+  \control/immediacy<0>/DXMUX  (
+    .I(\control/immediacy<0>/FXMUX_2662 ),
+    .O(\control/immediacy<0>/DXMUX_2663 )
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y11" ))
-  \control/alu_imm<0>/FXMUX  (
-    .I(\control/alu_imm<0>/F5MUX_2661 ),
-    .O(\control/alu_imm<0>/FXMUX_2662 )
+  \control/immediacy<0>/FXMUX  (
+    .I(\control/immediacy<0>/F5MUX_2661 ),
+    .O(\control/immediacy<0>/FXMUX_2662 )
   );
   X_MUX2 #(
     .LOC ( "SLICE_X28Y11" ))
-  \control/alu_imm<0>/F5MUX  (
+  \control/immediacy<0>/F5MUX  (
     .IA(N52),
     .IB(N53),
-    .SEL(\control/alu_imm<0>/BXINV_2654 ),
-    .O(\control/alu_imm<0>/F5MUX_2661 )
+    .SEL(\control/immediacy<0>/BXINV_2654 ),
+    .O(\control/immediacy<0>/F5MUX_2661 )
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y11" ))
-  \control/alu_imm<0>/BXINV  (
+  \control/immediacy<0>/BXINV  (
     .I(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [27]),
-    .O(\control/alu_imm<0>/BXINV_2654 )
+    .O(\control/immediacy<0>/BXINV_2654 )
   );
   X_INV #(
     .LOC ( "SLICE_X28Y11" ))
-  \control/alu_imm<0>/CLKINV  (
+  \control/immediacy<0>/CLKINV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\control/alu_imm<0>/CLKINVNOT )
+    .O(\control/immediacy<0>/CLKINVNOT )
   );
   X_LUT4 #(
     .INIT ( 16'h0400 ),
@@ -2816,29 +2816,29 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "SLICE_X33Y13" ))
-  \control/pc_sel<0>/DXMUX  (
-    .I(\control/pc_sel<0>/F5MUX_2692 ),
-    .O(\control/pc_sel<0>/DXMUX_2694 )
+  \control/counter_selector<0>/DXMUX  (
+    .I(\control/counter_selector<0>/F5MUX_2692 ),
+    .O(\control/counter_selector<0>/DXMUX_2694 )
   );
   X_MUX2 #(
     .LOC ( "SLICE_X33Y13" ))
-  \control/pc_sel<0>/F5MUX  (
+  \control/counter_selector<0>/F5MUX  (
     .IA(\control/pc_sel_mux0000<0>1_2679 ),
-    .IB(\control/pc_sel<0>/F ),
-    .SEL(\control/pc_sel<0>/BXINV_2681 ),
-    .O(\control/pc_sel<0>/F5MUX_2692 )
+    .IB(\control/counter_selector<0>/F ),
+    .SEL(\control/counter_selector<0>/BXINV_2681 ),
+    .O(\control/counter_selector<0>/F5MUX_2692 )
   );
   X_BUF #(
     .LOC ( "SLICE_X33Y13" ))
-  \control/pc_sel<0>/BXINV  (
+  \control/counter_selector<0>/BXINV  (
     .I(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [31]),
-    .O(\control/pc_sel<0>/BXINV_2681 )
+    .O(\control/counter_selector<0>/BXINV_2681 )
   );
   X_INV #(
     .LOC ( "SLICE_X33Y13" ))
-  \control/pc_sel<0>/CLKINV  (
+  \control/counter_selector<0>/CLKINV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\control/pc_sel<0>/CLKINVNOT )
+    .O(\control/counter_selector<0>/CLKINVNOT )
   );
   X_BUF #(
     .LOC ( "SLICE_X24Y12" ))
@@ -2991,7 +2991,7 @@ module Single_Cycle (
     .ADR0(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [16]),
     .ADR1(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [21]),
     .ADR2(\control/reg_dst [0]),
-    .ADR3(\control/regin_data [1]),
+    .ADR3(\control/reg_input_data [1]),
     .O(reg_write_addr_pack_1)
   );
   X_BUF #(
@@ -3101,7 +3101,7 @@ module Single_Cycle (
     .ADR0(\nextaddress/incr_pc [0]),
     .ADR1(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [0]),
     .ADR2(rs_val_0_OBUF_0),
-    .ADR3(\control/br_type [0]),
+    .ADR3(\control/branch_type [0]),
     .O(\nextaddress/Madd__old_mux_2_input_1_12_lut [0])
   );
   X_LATCHE #(
@@ -3339,27 +3339,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "SLICE_X30Y9" ))
-  \control/alu_imm<1>/DXMUX  (
-    .I(\control/alu_imm<1>/FXMUX_3294 ),
-    .O(\control/alu_imm<1>/DXMUX_3295 )
+  \control/immediacy<1>/DXMUX  (
+    .I(\control/immediacy<1>/FXMUX_3294 ),
+    .O(\control/immediacy<1>/DXMUX_3295 )
   );
   X_BUF #(
     .LOC ( "SLICE_X30Y9" ))
-  \control/alu_imm<1>/FXMUX  (
+  \control/immediacy<1>/FXMUX  (
     .I(\control/alu_imm_mux0000 [1]),
-    .O(\control/alu_imm<1>/FXMUX_3294 )
+    .O(\control/immediacy<1>/FXMUX_3294 )
   );
   X_BUF #(
     .LOC ( "SLICE_X30Y9" ))
-  \control/alu_imm<1>/YUSED  (
+  \control/immediacy<1>/YUSED  (
     .I(N6_pack_1),
     .O(N6)
   );
   X_INV #(
     .LOC ( "SLICE_X30Y9" ))
-  \control/alu_imm<1>/CLKINV  (
+  \control/immediacy<1>/CLKINV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\control/alu_imm<1>/CLKINVNOT )
+    .O(\control/immediacy<1>/CLKINVNOT )
   );
   X_LUT4 #(
     .INIT ( 16'h8000 ),
@@ -3385,27 +3385,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "SLICE_X31Y15" ))
-  \control/regin_data<0>/DXMUX  (
-    .I(\control/regin_data<0>/FXMUX_3349 ),
-    .O(\control/regin_data<0>/DXMUX_3350 )
+  \control/reg_input_data<0>/DXMUX  (
+    .I(\control/reg_input_data<0>/FXMUX_3349 ),
+    .O(\control/reg_input_data<0>/DXMUX_3350 )
   );
   X_BUF #(
     .LOC ( "SLICE_X31Y15" ))
-  \control/regin_data<0>/FXMUX  (
+  \control/reg_input_data<0>/FXMUX  (
     .I(\control/regin_data_mux0000 [0]),
-    .O(\control/regin_data<0>/FXMUX_3349 )
+    .O(\control/reg_input_data<0>/FXMUX_3349 )
   );
   X_BUF #(
     .LOC ( "SLICE_X31Y15" ))
-  \control/regin_data<0>/YUSED  (
+  \control/reg_input_data<0>/YUSED  (
     .I(\control/reg_write_mux0000129_pack_1 ),
     .O(\control/reg_write_mux0000129_999 )
   );
   X_INV #(
     .LOC ( "SLICE_X31Y15" ))
-  \control/regin_data<0>/CLKINV  (
+  \control/reg_input_data<0>/CLKINV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\control/regin_data<0>/CLKINVNOT )
+    .O(\control/reg_input_data<0>/CLKINVNOT )
   );
   X_LUT4 #(
     .INIT ( 16'h0008 ),
@@ -3419,21 +3419,21 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y13" ))
-  \control/br_type<0>/DXMUX  (
+  \control/branch_type<0>/DXMUX  (
     .I(\control/br_type_mux0000 [0]),
-    .O(\control/br_type<0>/DXMUX_3380 )
+    .O(\control/branch_type<0>/DXMUX_3380 )
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y13" ))
-  \control/br_type<0>/YUSED  (
+  \control/branch_type<0>/YUSED  (
     .I(N13_pack_1),
     .O(N13)
   );
   X_INV #(
     .LOC ( "SLICE_X28Y13" ))
-  \control/br_type<0>/CLKINV  (
+  \control/branch_type<0>/CLKINV  (
     .I(\control/data_read_not0001 ),
-    .O(\control/br_type<0>/CLKINVNOT )
+    .O(\control/branch_type<0>/CLKINVNOT )
   );
   X_LUT4 #(
     .INIT ( 16'h8181 ),
@@ -3453,33 +3453,33 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y14" ))
-  \control/regin_data<1>/DXMUX  (
-    .I(\control/regin_data<1>/FXMUX_3422 ),
-    .O(\control/regin_data<1>/DXMUX_3423 )
+  \control/reg_input_data<1>/DXMUX  (
+    .I(\control/reg_input_data<1>/FXMUX_3422 ),
+    .O(\control/reg_input_data<1>/DXMUX_3423 )
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y14" ))
-  \control/regin_data<1>/XUSED  (
-    .I(\control/regin_data<1>/FXMUX_3422 ),
+  \control/reg_input_data<1>/XUSED  (
+    .I(\control/reg_input_data<1>/FXMUX_3422 ),
     .O(\control/reg_dst_mux0000<1>_0 )
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y14" ))
-  \control/regin_data<1>/FXMUX  (
+  \control/reg_input_data<1>/FXMUX  (
     .I(\control/reg_dst_mux0000 [1]),
-    .O(\control/regin_data<1>/FXMUX_3422 )
+    .O(\control/reg_input_data<1>/FXMUX_3422 )
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y14" ))
-  \control/regin_data<1>/YUSED  (
+  \control/reg_input_data<1>/YUSED  (
     .I(\control/N16_pack_1 ),
     .O(\control/N16 )
   );
   X_INV #(
     .LOC ( "SLICE_X28Y14" ))
-  \control/regin_data<1>/CLKINV  (
+  \control/reg_input_data<1>/CLKINV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\control/regin_data<1>/CLKINVNOT )
+    .O(\control/reg_input_data<1>/CLKINVNOT )
   );
   X_BUF #(
     .LOC ( "SLICE_X28Y10" ))
@@ -3540,12 +3540,12 @@ module Single_Cycle (
     .LOC ( "SLICE_X28Y11" ),
     .INIT ( 1'b0 ))
   \control/alu_imm_0  (
-    .I(\control/alu_imm<0>/DXMUX_2663 ),
+    .I(\control/immediacy<0>/DXMUX_2663 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/alu_imm_0/CLK ),
     .SET(GND),
     .RST(GND),
-    .O(\control/alu_imm [0])
+    .O(\control/immediacy [0])
   );
   X_BUF #(
     .LOC ( "PAD181" ))
@@ -3578,21 +3578,21 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD168" ))
-  \alu_imm<0>/OUTPUT/OFF/O1INV  (
-    .I(\control/alu_imm<0>/FXMUX_2662 ),
-    .O(\alu_imm<0>/OUTPUT/OFF/O1INV_1150 )
+  \immediacy<0>/OUTPUT/OFF/O1INV  (
+    .I(\control/immediacy<0>/FXMUX_2662 ),
+    .O(\immediacy<0>/OUTPUT/OFF/O1INV_1150 )
   );
   X_BUF #(
     .LOC ( "PAD168" ))
-  \alu_imm<0>/OUTPUT/OFF/OMUX  (
+  \immediacy<0>/OUTPUT/OFF/OMUX  (
     .I(\control/alu_imm_0_1_1153 ),
-    .O(\alu_imm<0>/O )
+    .O(\immediacy<0>/O )
   );
   X_LATCHE #(
     .LOC ( "PAD168" ),
     .INIT ( 1'b0 ))
   \control/alu_imm_0_1  (
-    .I(\alu_imm<0>/OUTPUT/OFF/O1INV_1150 ),
+    .I(\immediacy<0>/OUTPUT/OFF/O1INV_1150 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/alu_imm_0_1/CLK ),
     .SET(GND),
@@ -3601,27 +3601,27 @@ module Single_Cycle (
   );
   X_INV #(
     .LOC ( "PAD168" ))
-  \alu_imm<0>/OUTPUT/OTCLK1INV  (
+  \immediacy<0>/OUTPUT/OTCLK1INV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\alu_imm<0>/OUTPUT/OTCLK1INVNOT )
+    .O(\immediacy<0>/OUTPUT/OTCLK1INVNOT )
   );
   X_BUF #(
     .LOC ( "PAD164" ))
-  \regin_data<0>/OUTPUT/OFF/O1INV  (
-    .I(\control/regin_data<0>/FXMUX_3349 ),
-    .O(\regin_data<0>/OUTPUT/OFF/O1INV_1182 )
+  \reg_input_data<0>/OUTPUT/OFF/O1INV  (
+    .I(\control/reg_input_data<0>/FXMUX_3349 ),
+    .O(\reg_input_data<0>/OUTPUT/OFF/O1INV_1182 )
   );
   X_BUF #(
     .LOC ( "PAD164" ))
-  \regin_data<0>/OUTPUT/OFF/OMUX  (
+  \reg_input_data<0>/OUTPUT/OFF/OMUX  (
     .I(\control/regin_data_0_1_1185 ),
-    .O(\regin_data<0>/O )
+    .O(\reg_input_data<0>/O )
   );
   X_LATCHE #(
     .LOC ( "PAD164" ),
     .INIT ( 1'b0 ))
   \control/regin_data_0_1  (
-    .I(\regin_data<0>/OUTPUT/OFF/O1INV_1182 ),
+    .I(\reg_input_data<0>/OUTPUT/OFF/O1INV_1182 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/regin_data_0_1/CLK ),
     .SET(GND),
@@ -3630,27 +3630,27 @@ module Single_Cycle (
   );
   X_INV #(
     .LOC ( "PAD164" ))
-  \regin_data<0>/OUTPUT/OTCLK1INV  (
+  \reg_input_data<0>/OUTPUT/OTCLK1INV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\regin_data<0>/OUTPUT/OTCLK1INVNOT )
+    .O(\reg_input_data<0>/OUTPUT/OTCLK1INVNOT )
   );
   X_BUF #(
     .LOC ( "PAD163" ))
-  \alu_imm<1>/OUTPUT/OFF/O1INV  (
-    .I(\control/alu_imm<1>/FXMUX_3294 ),
-    .O(\alu_imm<1>/OUTPUT/OFF/O1INV_1206 )
+  \immediacy<1>/OUTPUT/OFF/O1INV  (
+    .I(\control/immediacy<1>/FXMUX_3294 ),
+    .O(\immediacy<1>/OUTPUT/OFF/O1INV_1206 )
   );
   X_BUF #(
     .LOC ( "PAD163" ))
-  \alu_imm<1>/OUTPUT/OFF/OMUX  (
+  \immediacy<1>/OUTPUT/OFF/OMUX  (
     .I(\control/alu_imm_1_1_1209 ),
-    .O(\alu_imm<1>/O )
+    .O(\immediacy<1>/O )
   );
   X_LATCHE #(
     .LOC ( "PAD163" ),
     .INIT ( 1'b0 ))
   \control/alu_imm_1_1  (
-    .I(\alu_imm<1>/OUTPUT/OFF/O1INV_1206 ),
+    .I(\immediacy<1>/OUTPUT/OFF/O1INV_1206 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/alu_imm_1_1/CLK ),
     .SET(GND),
@@ -3659,9 +3659,9 @@ module Single_Cycle (
   );
   X_INV #(
     .LOC ( "PAD163" ))
-  \alu_imm<1>/OUTPUT/OTCLK1INV  (
+  \immediacy<1>/OUTPUT/OTCLK1INV  (
     .I(\control/reg_dst_not0001 ),
-    .O(\alu_imm<1>/OUTPUT/OTCLK1INVNOT )
+    .O(\immediacy<1>/OUTPUT/OTCLK1INVNOT )
   );
   X_BUF #(
     .LOC ( "PAD224" ))
@@ -3754,12 +3754,12 @@ module Single_Cycle (
     .LOC ( "SLICE_X33Y13" ),
     .INIT ( 1'b0 ))
   \control/pc_sel_0  (
-    .I(\control/pc_sel<0>/DXMUX_2694 ),
+    .I(\control/counter_selector<0>/DXMUX_2694 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/pc_sel_0/CLK ),
     .SET(GND),
     .RST(GND),
-    .O(\control/pc_sel [0])
+    .O(\control/counter_selector [0])
   );
   X_LUT4 #(
     .INIT ( 16'h80AA ),
@@ -3848,8 +3848,8 @@ module Single_Cycle (
     .INIT ( 16'hF5B1 ),
     .LOC ( "SLICE_X29Y11" ))
   alu_input_2_SW1 (
-    .ADR0(\control/alu_imm [1]),
-    .ADR1(\control/alu_imm [0]),
+    .ADR0(\control/immediacy [1]),
+    .ADR1(\control/immediacy [0]),
     .ADR2(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [6]),
     .ADR3(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [0]),
     .O(N23_pack_1)
@@ -3963,7 +3963,7 @@ module Single_Cycle (
     .ADR0(VCC),
     .ADR1(VCC),
     .ADR2(\nextaddress/_old_mux_2_input_1_12 [0]),
-    .ADR3(\control/pc_sel [0]),
+    .ADR3(\control/counter_selector [0]),
     .O(\nextaddress/incr_pc_mux0000 [0])
   );
   X_FF #(
@@ -4110,8 +4110,8 @@ module Single_Cycle (
     .LOC ( "SLICE_X29Y16" ))
   reg_write_data_SW2 (
     .ADR0(\nextaddress/incr_pc [0]),
-    .ADR1(\control/regin_data [0]),
-    .ADR2(\control/regin_data [1]),
+    .ADR1(\control/reg_input_data [0]),
+    .ADR2(\control/reg_input_data [1]),
     .ADR3(\data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [0]),
     .O(N27)
   );
@@ -4120,8 +4120,8 @@ module Single_Cycle (
     .LOC ( "SLICE_X29Y16" ))
   reg_write_data_SW3 (
     .ADR0(\nextaddress/incr_pc [0]),
-    .ADR1(\control/regin_data [0]),
-    .ADR2(\control/regin_data [1]),
+    .ADR1(\control/reg_input_data [0]),
+    .ADR2(\control/reg_input_data [1]),
     .ADR3(\data_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [0]),
     .O(N28)
   );
@@ -4149,12 +4149,12 @@ module Single_Cycle (
     .LOC ( "SLICE_X30Y9" ),
     .INIT ( 1'b0 ))
   \control/alu_imm_1  (
-    .I(\control/alu_imm<1>/DXMUX_3295 ),
+    .I(\control/immediacy<1>/DXMUX_3295 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/alu_imm_1/CLK ),
     .SET(GND),
     .RST(GND),
-    .O(\control/alu_imm [1])
+    .O(\control/immediacy [1])
   );
   X_LUT4 #(
     .INIT ( 16'h2A26 ),
@@ -4200,23 +4200,23 @@ module Single_Cycle (
     .LOC ( "SLICE_X31Y15" ),
     .INIT ( 1'b0 ))
   \control/regin_data_0  (
-    .I(\control/regin_data<0>/DXMUX_3350 ),
+    .I(\control/reg_input_data<0>/DXMUX_3350 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/regin_data_0/CLK ),
     .SET(GND),
     .RST(GND),
-    .O(\control/regin_data [0])
+    .O(\control/reg_input_data [0])
   );
   X_LATCHE #(
     .LOC ( "SLICE_X28Y13" ),
     .INIT ( 1'b0 ))
   \control/br_type_0  (
-    .I(\control/br_type<0>/DXMUX_3380 ),
+    .I(\control/branch_type<0>/DXMUX_3380 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/br_type_0/CLK ),
     .SET(GND),
     .RST(GND),
-    .O(\control/br_type [0])
+    .O(\control/branch_type [0])
   );
   X_LUT4 #(
     .INIT ( 16'hFFFC ),
@@ -4252,19 +4252,19 @@ module Single_Cycle (
     .LOC ( "SLICE_X28Y14" ),
     .INIT ( 1'b0 ))
   \control/regin_data_1  (
-    .I(\control/regin_data<1>/DXMUX_3423 ),
+    .I(\control/reg_input_data<1>/DXMUX_3423 ),
     .GE(VCC),
     .CLK(\NlwInverterSignal_control/regin_data_1/CLK ),
     .SET(GND),
     .RST(GND),
-    .O(\control/regin_data [1])
+    .O(\control/reg_input_data [1])
   );
   X_LUT4 #(
     .INIT ( 16'hE2C0 ),
     .LOC ( "SLICE_X28Y10" ))
   alu_input_2_SW0 (
-    .ADR0(\control/alu_imm [0]),
-    .ADR1(\control/alu_imm [1]),
+    .ADR0(\control/immediacy [0]),
+    .ADR1(\control/immediacy [1]),
     .ADR2(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [6]),
     .ADR3(\instr_cache/BU2/U0/blk_mem_generator/valid.cstr/ram_douta [0]),
     .O(N22)
@@ -4501,9 +4501,9 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD170" ))
-  \rs_val<0>/OUTPUT/OFF/OMUX  (
+  \rs_value<0>/OUTPUT/OFF/OMUX  (
     .I(rs_val_0_OBUF_0),
-    .O(\rs_val<0>/O )
+    .O(\rs_value<0>/O )
   );
   X_BUF #(
     .LOC ( "PAD37" ))
@@ -4525,15 +4525,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD106" ))
-  \rs_val<1>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<1>/OUTPUT/OFF/O1INV_1328 ),
-    .O(\rs_val<1>/O )
+  \rs_value<1>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<1>/OUTPUT/OFF/O1INV_1328 ),
+    .O(\rs_value<1>/O )
   );
   X_BUF #(
     .LOC ( "PAD106" ))
-  \rs_val<1>/OUTPUT/OFF/O1INV  (
+  \rs_value<1>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<1>/OUTPUT/OFF/O1INV_1328 )
+    .O(\rs_value<1>/OUTPUT/OFF/O1INV_1328 )
   );
   X_BUF #(
     .LOC ( "PAD128" ))
@@ -4543,27 +4543,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD136" ))
-  \rs_val<2>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<2>/OUTPUT/OFF/O1INV_1344 ),
-    .O(\rs_val<2>/O )
+  \rs_value<2>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<2>/OUTPUT/OFF/O1INV_1344 ),
+    .O(\rs_value<2>/O )
   );
   X_BUF #(
     .LOC ( "PAD136" ))
-  \rs_val<2>/OUTPUT/OFF/O1INV  (
+  \rs_value<2>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<2>/OUTPUT/OFF/O1INV_1344 )
+    .O(\rs_value<2>/OUTPUT/OFF/O1INV_1344 )
   );
   X_BUF #(
     .LOC ( "PAD254" ))
-  \rt_val<10>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<10>/OUTPUT/OFF/O1INV_1352 ),
-    .O(\rt_val<10>/O )
+  \rt_value<10>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<10>/OUTPUT/OFF/O1INV_1352 ),
+    .O(\rt_value<10>/O )
   );
   X_BUF #(
     .LOC ( "PAD254" ))
-  \rt_val<10>/OUTPUT/OFF/O1INV  (
+  \rt_value<10>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<10>/OUTPUT/OFF/O1INV_1352 )
+    .O(\rt_value<10>/OUTPUT/OFF/O1INV_1352 )
   );
   X_BUF #(
     .LOC ( "PAD124" ))
@@ -4573,27 +4573,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD215" ))
-  \rs_val<3>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<3>/OUTPUT/OFF/O1INV_1368 ),
-    .O(\rs_val<3>/O )
+  \rs_value<3>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<3>/OUTPUT/OFF/O1INV_1368 ),
+    .O(\rs_value<3>/O )
   );
   X_BUF #(
     .LOC ( "PAD215" ))
-  \rs_val<3>/OUTPUT/OFF/O1INV  (
+  \rs_value<3>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<3>/OUTPUT/OFF/O1INV_1368 )
+    .O(\rs_value<3>/OUTPUT/OFF/O1INV_1368 )
   );
   X_BUF #(
     .LOC ( "PAD253" ))
-  \rt_val<11>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<11>/OUTPUT/OFF/O1INV_1376 ),
-    .O(\rt_val<11>/O )
+  \rt_value<11>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<11>/OUTPUT/OFF/O1INV_1376 ),
+    .O(\rt_value<11>/O )
   );
   X_BUF #(
     .LOC ( "PAD253" ))
-  \rt_val<11>/OUTPUT/OFF/O1INV  (
+  \rt_value<11>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<11>/OUTPUT/OFF/O1INV_1376 )
+    .O(\rt_value<11>/OUTPUT/OFF/O1INV_1376 )
   );
   X_BUF #(
     .LOC ( "PAD116" ))
@@ -4603,39 +4603,39 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD236" ))
-  \rs_val<4>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<4>/OUTPUT/OFF/O1INV_1392 ),
-    .O(\rs_val<4>/O )
+  \rs_value<4>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<4>/OUTPUT/OFF/O1INV_1392 ),
+    .O(\rs_value<4>/O )
   );
   X_BUF #(
     .LOC ( "PAD236" ))
-  \rs_val<4>/OUTPUT/OFF/O1INV  (
+  \rs_value<4>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<4>/OUTPUT/OFF/O1INV_1392 )
+    .O(\rs_value<4>/OUTPUT/OFF/O1INV_1392 )
   );
   X_BUF #(
     .LOC ( "PAD34" ))
-  \rt_val<20>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<20>/OUTPUT/OFF/O1INV_1400 ),
-    .O(\rt_val<20>/O )
+  \rt_value<20>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<20>/OUTPUT/OFF/O1INV_1400 ),
+    .O(\rt_value<20>/O )
   );
   X_BUF #(
     .LOC ( "PAD34" ))
-  \rt_val<20>/OUTPUT/OFF/O1INV  (
+  \rt_value<20>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<20>/OUTPUT/OFF/O1INV_1400 )
+    .O(\rt_value<20>/OUTPUT/OFF/O1INV_1400 )
   );
   X_BUF #(
     .LOC ( "PAD252" ))
-  \rt_val<12>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<12>/OUTPUT/OFF/O1INV_1408 ),
-    .O(\rt_val<12>/O )
+  \rt_value<12>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<12>/OUTPUT/OFF/O1INV_1408 ),
+    .O(\rt_value<12>/O )
   );
   X_BUF #(
     .LOC ( "PAD252" ))
-  \rt_val<12>/OUTPUT/OFF/O1INV  (
+  \rt_value<12>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<12>/OUTPUT/OFF/O1INV_1408 )
+    .O(\rt_value<12>/OUTPUT/OFF/O1INV_1408 )
   );
   X_BUF #(
     .LOC ( "PAD127" ))
@@ -4645,321 +4645,321 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD171" ))
-  \rs_val<5>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<5>/OUTPUT/OFF/O1INV_1424 ),
-    .O(\rs_val<5>/O )
+  \rs_value<5>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<5>/OUTPUT/OFF/O1INV_1424 ),
+    .O(\rs_value<5>/O )
   );
   X_BUF #(
     .LOC ( "PAD171" ))
-  \rs_val<5>/OUTPUT/OFF/O1INV  (
+  \rs_value<5>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<5>/OUTPUT/OFF/O1INV_1424 )
+    .O(\rs_value<5>/OUTPUT/OFF/O1INV_1424 )
   );
   X_BUF #(
     .LOC ( "PAD235" ))
-  \rt_val<21>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<21>/OUTPUT/OFF/O1INV_1432 ),
-    .O(\rt_val<21>/O )
+  \rt_value<21>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<21>/OUTPUT/OFF/O1INV_1432 ),
+    .O(\rt_value<21>/O )
   );
   X_BUF #(
     .LOC ( "PAD235" ))
-  \rt_val<21>/OUTPUT/OFF/O1INV  (
+  \rt_value<21>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<21>/OUTPUT/OFF/O1INV_1432 )
+    .O(\rt_value<21>/OUTPUT/OFF/O1INV_1432 )
   );
   X_BUF #(
     .LOC ( "PAD251" ))
-  \rt_val<13>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<13>/OUTPUT/OFF/O1INV_1440 ),
-    .O(\rt_val<13>/O )
+  \rt_value<13>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<13>/OUTPUT/OFF/O1INV_1440 ),
+    .O(\rt_value<13>/O )
   );
   X_BUF #(
     .LOC ( "PAD251" ))
-  \rt_val<13>/OUTPUT/OFF/O1INV  (
+  \rt_value<13>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<13>/OUTPUT/OFF/O1INV_1440 )
+    .O(\rt_value<13>/OUTPUT/OFF/O1INV_1440 )
   );
   X_BUF #(
     .LOC ( "PAD174" ))
-  \rs_val<6>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<6>/OUTPUT/OFF/O1INV_1448 ),
-    .O(\rs_val<6>/O )
+  \rs_value<6>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<6>/OUTPUT/OFF/O1INV_1448 ),
+    .O(\rs_value<6>/O )
   );
   X_BUF #(
     .LOC ( "PAD174" ))
-  \rs_val<6>/OUTPUT/OFF/O1INV  (
+  \rs_value<6>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<6>/OUTPUT/OFF/O1INV_1448 )
+    .O(\rs_value<6>/OUTPUT/OFF/O1INV_1448 )
   );
   X_BUF #(
     .LOC ( "PAD203" ))
-  \rt_val<30>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<30>/OUTPUT/OFF/O1INV_1456 ),
-    .O(\rt_val<30>/O )
+  \rt_value<30>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<30>/OUTPUT/OFF/O1INV_1456 ),
+    .O(\rt_value<30>/O )
   );
   X_BUF #(
     .LOC ( "PAD203" ))
-  \rt_val<30>/OUTPUT/OFF/O1INV  (
+  \rt_value<30>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<30>/OUTPUT/OFF/O1INV_1456 )
+    .O(\rt_value<30>/OUTPUT/OFF/O1INV_1456 )
   );
   X_BUF #(
     .LOC ( "PAD234" ))
-  \rt_val<22>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<22>/OUTPUT/OFF/O1INV_1464 ),
-    .O(\rt_val<22>/O )
+  \rt_value<22>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<22>/OUTPUT/OFF/O1INV_1464 ),
+    .O(\rt_value<22>/O )
   );
   X_BUF #(
     .LOC ( "PAD234" ))
-  \rt_val<22>/OUTPUT/OFF/O1INV  (
+  \rt_value<22>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<22>/OUTPUT/OFF/O1INV_1464 )
+    .O(\rt_value<22>/OUTPUT/OFF/O1INV_1464 )
   );
   X_BUF #(
     .LOC ( "PAD250" ))
-  \rt_val<14>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<14>/OUTPUT/OFF/O1INV_1472 ),
-    .O(\rt_val<14>/O )
+  \rt_value<14>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<14>/OUTPUT/OFF/O1INV_1472 ),
+    .O(\rt_value<14>/O )
   );
   X_BUF #(
     .LOC ( "PAD250" ))
-  \rt_val<14>/OUTPUT/OFF/O1INV  (
+  \rt_value<14>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<14>/OUTPUT/OFF/O1INV_1472 )
+    .O(\rt_value<14>/OUTPUT/OFF/O1INV_1472 )
   );
   X_BUF #(
     .LOC ( "PAD175" ))
-  \rs_val<7>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<7>/OUTPUT/OFF/O1INV_1480 ),
-    .O(\rs_val<7>/O )
+  \rs_value<7>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<7>/OUTPUT/OFF/O1INV_1480 ),
+    .O(\rs_value<7>/O )
   );
   X_BUF #(
     .LOC ( "PAD175" ))
-  \rs_val<7>/OUTPUT/OFF/O1INV  (
+  \rs_value<7>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<7>/OUTPUT/OFF/O1INV_1480 )
+    .O(\rs_value<7>/OUTPUT/OFF/O1INV_1480 )
   );
   X_BUF #(
     .LOC ( "PAD217" ))
-  \rt_val<31>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<31>/OUTPUT/OFF/O1INV_1488 ),
-    .O(\rt_val<31>/O )
+  \rt_value<31>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<31>/OUTPUT/OFF/O1INV_1488 ),
+    .O(\rt_value<31>/O )
   );
   X_BUF #(
     .LOC ( "PAD217" ))
-  \rt_val<31>/OUTPUT/OFF/O1INV  (
+  \rt_value<31>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<31>/OUTPUT/OFF/O1INV_1488 )
+    .O(\rt_value<31>/OUTPUT/OFF/O1INV_1488 )
   );
   X_BUF #(
     .LOC ( "PAD233" ))
-  \rt_val<23>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<23>/OUTPUT/OFF/O1INV_1496 ),
-    .O(\rt_val<23>/O )
+  \rt_value<23>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<23>/OUTPUT/OFF/O1INV_1496 ),
+    .O(\rt_value<23>/O )
   );
   X_BUF #(
     .LOC ( "PAD233" ))
-  \rt_val<23>/OUTPUT/OFF/O1INV  (
+  \rt_value<23>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<23>/OUTPUT/OFF/O1INV_1496 )
+    .O(\rt_value<23>/OUTPUT/OFF/O1INV_1496 )
   );
   X_BUF #(
     .LOC ( "PAD249" ))
-  \rt_val<15>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<15>/OUTPUT/OFF/O1INV_1504 ),
-    .O(\rt_val<15>/O )
+  \rt_value<15>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<15>/OUTPUT/OFF/O1INV_1504 ),
+    .O(\rt_value<15>/O )
   );
   X_BUF #(
     .LOC ( "PAD249" ))
-  \rt_val<15>/OUTPUT/OFF/O1INV  (
+  \rt_value<15>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<15>/OUTPUT/OFF/O1INV_1504 )
+    .O(\rt_value<15>/OUTPUT/OFF/O1INV_1504 )
   );
   X_BUF #(
     .LOC ( "PAD135" ))
-  \rs_val<8>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<8>/OUTPUT/OFF/O1INV_1512 ),
-    .O(\rs_val<8>/O )
+  \rs_value<8>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<8>/OUTPUT/OFF/O1INV_1512 ),
+    .O(\rs_value<8>/O )
   );
   X_BUF #(
     .LOC ( "PAD135" ))
-  \rs_val<8>/OUTPUT/OFF/O1INV  (
+  \rs_value<8>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<8>/OUTPUT/OFF/O1INV_1512 )
+    .O(\rs_value<8>/OUTPUT/OFF/O1INV_1512 )
   );
   X_BUF #(
     .LOC ( "PAD221" ))
-  \rt_val<24>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<24>/OUTPUT/OFF/O1INV_1520 ),
-    .O(\rt_val<24>/O )
+  \rt_value<24>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<24>/OUTPUT/OFF/O1INV_1520 ),
+    .O(\rt_value<24>/O )
   );
   X_BUF #(
     .LOC ( "PAD221" ))
-  \rt_val<24>/OUTPUT/OFF/O1INV  (
+  \rt_value<24>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<24>/OUTPUT/OFF/O1INV_1520 )
+    .O(\rt_value<24>/OUTPUT/OFF/O1INV_1520 )
   );
   X_BUF #(
     .LOC ( "PAD240" ))
-  \rt_val<16>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<16>/OUTPUT/OFF/O1INV_1528 ),
-    .O(\rt_val<16>/O )
+  \rt_value<16>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<16>/OUTPUT/OFF/O1INV_1528 ),
+    .O(\rt_value<16>/O )
   );
   X_BUF #(
     .LOC ( "PAD240" ))
-  \rt_val<16>/OUTPUT/OFF/O1INV  (
+  \rt_value<16>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<16>/OUTPUT/OFF/O1INV_1528 )
+    .O(\rt_value<16>/OUTPUT/OFF/O1INV_1528 )
   );
   X_BUF #(
     .LOC ( "PAD134" ))
-  \rs_val<9>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<9>/OUTPUT/OFF/O1INV_1536 ),
-    .O(\rs_val<9>/O )
+  \rs_value<9>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<9>/OUTPUT/OFF/O1INV_1536 ),
+    .O(\rs_value<9>/O )
   );
   X_BUF #(
     .LOC ( "PAD134" ))
-  \rs_val<9>/OUTPUT/OFF/O1INV  (
+  \rs_value<9>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<9>/OUTPUT/OFF/O1INV_1536 )
+    .O(\rs_value<9>/OUTPUT/OFF/O1INV_1536 )
   );
   X_BUF #(
     .LOC ( "PAD268" ))
-  \rt_val<25>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<25>/OUTPUT/OFF/O1INV_1544 ),
-    .O(\rt_val<25>/O )
+  \rt_value<25>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<25>/OUTPUT/OFF/O1INV_1544 ),
+    .O(\rt_value<25>/O )
   );
   X_BUF #(
     .LOC ( "PAD268" ))
-  \rt_val<25>/OUTPUT/OFF/O1INV  (
+  \rt_value<25>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<25>/OUTPUT/OFF/O1INV_1544 )
+    .O(\rt_value<25>/OUTPUT/OFF/O1INV_1544 )
   );
   X_BUF #(
     .LOC ( "PAD239" ))
-  \rt_val<17>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<17>/OUTPUT/OFF/O1INV_1552 ),
-    .O(\rt_val<17>/O )
+  \rt_value<17>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<17>/OUTPUT/OFF/O1INV_1552 ),
+    .O(\rt_value<17>/O )
   );
   X_BUF #(
     .LOC ( "PAD239" ))
-  \rt_val<17>/OUTPUT/OFF/O1INV  (
+  \rt_value<17>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<17>/OUTPUT/OFF/O1INV_1552 )
+    .O(\rt_value<17>/OUTPUT/OFF/O1INV_1552 )
   );
   X_BUF #(
     .LOC ( "PAD220" ))
-  \rt_val<26>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<26>/OUTPUT/OFF/O1INV_1560 ),
-    .O(\rt_val<26>/O )
+  \rt_value<26>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<26>/OUTPUT/OFF/O1INV_1560 ),
+    .O(\rt_value<26>/O )
   );
   X_BUF #(
     .LOC ( "PAD220" ))
-  \rt_val<26>/OUTPUT/OFF/O1INV  (
+  \rt_value<26>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<26>/OUTPUT/OFF/O1INV_1560 )
+    .O(\rt_value<26>/OUTPUT/OFF/O1INV_1560 )
   );
   X_BUF #(
     .LOC ( "PAD35" ))
-  \rt_val<18>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<18>/OUTPUT/OFF/O1INV_1568 ),
-    .O(\rt_val<18>/O )
+  \rt_value<18>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<18>/OUTPUT/OFF/O1INV_1568 ),
+    .O(\rt_value<18>/O )
   );
   X_BUF #(
     .LOC ( "PAD35" ))
-  \rt_val<18>/OUTPUT/OFF/O1INV  (
+  \rt_value<18>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<18>/OUTPUT/OFF/O1INV_1568 )
+    .O(\rt_value<18>/OUTPUT/OFF/O1INV_1568 )
   );
   X_BUF #(
     .LOC ( "PAD238" ))
-  \rt_val<27>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<27>/OUTPUT/OFF/O1INV_1576 ),
-    .O(\rt_val<27>/O )
+  \rt_value<27>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<27>/OUTPUT/OFF/O1INV_1576 ),
+    .O(\rt_value<27>/O )
   );
   X_BUF #(
     .LOC ( "PAD238" ))
-  \rt_val<27>/OUTPUT/OFF/O1INV  (
+  \rt_value<27>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<27>/OUTPUT/OFF/O1INV_1576 )
+    .O(\rt_value<27>/OUTPUT/OFF/O1INV_1576 )
   );
   X_BUF #(
     .LOC ( "PAD237" ))
-  \rt_val<19>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<19>/OUTPUT/OFF/O1INV_1584 ),
-    .O(\rt_val<19>/O )
+  \rt_value<19>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<19>/OUTPUT/OFF/O1INV_1584 ),
+    .O(\rt_value<19>/O )
   );
   X_BUF #(
     .LOC ( "PAD237" ))
-  \rt_val<19>/OUTPUT/OFF/O1INV  (
+  \rt_value<19>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<19>/OUTPUT/OFF/O1INV_1584 )
+    .O(\rt_value<19>/OUTPUT/OFF/O1INV_1584 )
   );
   X_BUF #(
     .LOC ( "PAD218" ))
-  \rt_val<28>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<28>/OUTPUT/OFF/O1INV_1592 ),
-    .O(\rt_val<28>/O )
+  \rt_value<28>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<28>/OUTPUT/OFF/O1INV_1592 ),
+    .O(\rt_value<28>/O )
   );
   X_BUF #(
     .LOC ( "PAD218" ))
-  \rt_val<28>/OUTPUT/OFF/O1INV  (
+  \rt_value<28>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<28>/OUTPUT/OFF/O1INV_1592 )
+    .O(\rt_value<28>/OUTPUT/OFF/O1INV_1592 )
   );
   X_BUF #(
     .LOC ( "PAD196" ))
-  \rt_val<29>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<29>/OUTPUT/OFF/O1INV_1600 ),
-    .O(\rt_val<29>/O )
+  \rt_value<29>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<29>/OUTPUT/OFF/O1INV_1600 ),
+    .O(\rt_value<29>/O )
   );
   X_BUF #(
     .LOC ( "PAD196" ))
-  \rt_val<29>/OUTPUT/OFF/O1INV  (
+  \rt_value<29>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<29>/OUTPUT/OFF/O1INV_1600 )
+    .O(\rt_value<29>/OUTPUT/OFF/O1INV_1600 )
   );
   X_BUF #(
     .LOC ( "PAD222" ))
-  \rt_val<0>/OUTPUT/OFF/OMUX  (
+  \rt_value<0>/OUTPUT/OFF/OMUX  (
     .I(rt_val_0_OBUF_0),
-    .O(\rt_val<0>/O )
+    .O(\rt_value<0>/O )
   );
   X_BUF #(
     .LOC ( "PAD267" ))
-  \rt_val<1>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<1>/OUTPUT/OFF/O1INV_1616 ),
-    .O(\rt_val<1>/O )
+  \rt_value<1>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<1>/OUTPUT/OFF/O1INV_1616 ),
+    .O(\rt_value<1>/O )
   );
   X_BUF #(
     .LOC ( "PAD267" ))
-  \rt_val<1>/OUTPUT/OFF/O1INV  (
+  \rt_value<1>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<1>/OUTPUT/OFF/O1INV_1616 )
+    .O(\rt_value<1>/OUTPUT/OFF/O1INV_1616 )
   );
   X_BUF #(
     .LOC ( "PAD264" ))
-  \rt_val<2>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<2>/OUTPUT/OFF/O1INV_1624 ),
-    .O(\rt_val<2>/O )
+  \rt_value<2>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<2>/OUTPUT/OFF/O1INV_1624 ),
+    .O(\rt_value<2>/O )
   );
   X_BUF #(
     .LOC ( "PAD264" ))
-  \rt_val<2>/OUTPUT/OFF/O1INV  (
+  \rt_value<2>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<2>/OUTPUT/OFF/O1INV_1624 )
+    .O(\rt_value<2>/OUTPUT/OFF/O1INV_1624 )
   );
   X_BUF #(
     .LOC ( "PAD263" ))
-  \rt_val<3>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<3>/OUTPUT/OFF/O1INV_1632 ),
-    .O(\rt_val<3>/O )
+  \rt_value<3>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<3>/OUTPUT/OFF/O1INV_1632 ),
+    .O(\rt_value<3>/O )
   );
   X_BUF #(
     .LOC ( "PAD263" ))
-  \rt_val<3>/OUTPUT/OFF/O1INV  (
+  \rt_value<3>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<3>/OUTPUT/OFF/O1INV_1632 )
+    .O(\rt_value<3>/OUTPUT/OFF/O1INV_1632 )
   );
   X_BUF #(
     .LOC ( "PAD122" ))
@@ -4969,15 +4969,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD260" ))
-  \rt_val<4>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<4>/OUTPUT/OFF/O1INV_1648 ),
-    .O(\rt_val<4>/O )
+  \rt_value<4>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<4>/OUTPUT/OFF/O1INV_1648 ),
+    .O(\rt_value<4>/O )
   );
   X_BUF #(
     .LOC ( "PAD260" ))
-  \rt_val<4>/OUTPUT/OFF/O1INV  (
+  \rt_value<4>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<4>/OUTPUT/OFF/O1INV_1648 )
+    .O(\rt_value<4>/OUTPUT/OFF/O1INV_1648 )
   );
   X_BUF #(
     .LOC ( "PAD121" ))
@@ -4987,15 +4987,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD259" ))
-  \rt_val<5>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<5>/OUTPUT/OFF/O1INV_1664 ),
-    .O(\rt_val<5>/O )
+  \rt_value<5>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<5>/OUTPUT/OFF/O1INV_1664 ),
+    .O(\rt_value<5>/O )
   );
   X_BUF #(
     .LOC ( "PAD259" ))
-  \rt_val<5>/OUTPUT/OFF/O1INV  (
+  \rt_value<5>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<5>/OUTPUT/OFF/O1INV_1664 )
+    .O(\rt_value<5>/OUTPUT/OFF/O1INV_1664 )
   );
   X_BUF #(
     .LOC ( "PAD167" ))
@@ -5011,15 +5011,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD258" ))
-  \rt_val<6>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<6>/OUTPUT/OFF/O1INV_1688 ),
-    .O(\rt_val<6>/O )
+  \rt_value<6>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<6>/OUTPUT/OFF/O1INV_1688 ),
+    .O(\rt_value<6>/O )
   );
   X_BUF #(
     .LOC ( "PAD258" ))
-  \rt_val<6>/OUTPUT/OFF/O1INV  (
+  \rt_value<6>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<6>/OUTPUT/OFF/O1INV_1688 )
+    .O(\rt_value<6>/OUTPUT/OFF/O1INV_1688 )
   );
   X_BUF #(
     .LOC ( "PAD126" ))
@@ -5035,15 +5035,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD257" ))
-  \rt_val<7>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<7>/OUTPUT/OFF/O1INV_1712 ),
-    .O(\rt_val<7>/O )
+  \rt_value<7>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<7>/OUTPUT/OFF/O1INV_1712 ),
+    .O(\rt_value<7>/O )
   );
   X_BUF #(
     .LOC ( "PAD257" ))
-  \rt_val<7>/OUTPUT/OFF/O1INV  (
+  \rt_value<7>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<7>/OUTPUT/OFF/O1INV_1712 )
+    .O(\rt_value<7>/OUTPUT/OFF/O1INV_1712 )
   );
   X_BUF #(
     .LOC ( "PAD185" ))
@@ -5065,15 +5065,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD256" ))
-  \rt_val<8>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<8>/OUTPUT/OFF/O1INV_1744 ),
-    .O(\rt_val<8>/O )
+  \rt_value<8>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<8>/OUTPUT/OFF/O1INV_1744 ),
+    .O(\rt_value<8>/O )
   );
   X_BUF #(
     .LOC ( "PAD256" ))
-  \rt_val<8>/OUTPUT/OFF/O1INV  (
+  \rt_value<8>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<8>/OUTPUT/OFF/O1INV_1744 )
+    .O(\rt_value<8>/OUTPUT/OFF/O1INV_1744 )
   );
   X_BUF #(
     .LOC ( "PAD216" ))
@@ -5095,15 +5095,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD255" ))
-  \rt_val<9>/OUTPUT/OFF/OMUX  (
-    .I(\rt_val<9>/OUTPUT/OFF/O1INV_1776 ),
-    .O(\rt_val<9>/O )
+  \rt_value<9>/OUTPUT/OFF/OMUX  (
+    .I(\rt_value<9>/OUTPUT/OFF/O1INV_1776 ),
+    .O(\rt_value<9>/O )
   );
   X_BUF #(
     .LOC ( "PAD255" ))
-  \rt_val<9>/OUTPUT/OFF/O1INV  (
+  \rt_value<9>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rt_val<9>/OUTPUT/OFF/O1INV_1776 )
+    .O(\rt_value<9>/OUTPUT/OFF/O1INV_1776 )
   );
   X_BUF #(
     .LOC ( "PAD118" ))
@@ -5143,15 +5143,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD71" ))
-  \rs_val<10>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<10>/OUTPUT/OFF/O1INV_1832 ),
-    .O(\rs_val<10>/O )
+  \rs_value<10>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<10>/OUTPUT/OFF/O1INV_1832 ),
+    .O(\rs_value<10>/O )
   );
   X_BUF #(
     .LOC ( "PAD71" ))
-  \rs_val<10>/OUTPUT/OFF/O1INV  (
+  \rs_value<10>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<10>/OUTPUT/OFF/O1INV_1832 )
+    .O(\rs_value<10>/OUTPUT/OFF/O1INV_1832 )
   );
   X_BUF #(
     .LOC ( "PAD184" ))
@@ -5167,15 +5167,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD105" ))
-  \rs_val<11>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<11>/OUTPUT/OFF/O1INV_1856 ),
-    .O(\rs_val<11>/O )
+  \rs_value<11>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<11>/OUTPUT/OFF/O1INV_1856 ),
+    .O(\rs_value<11>/O )
   );
   X_BUF #(
     .LOC ( "PAD105" ))
-  \rs_val<11>/OUTPUT/OFF/O1INV  (
+  \rs_value<11>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<11>/OUTPUT/OFF/O1INV_1856 )
+    .O(\rs_value<11>/OUTPUT/OFF/O1INV_1856 )
   );
   X_BUF #(
     .LOC ( "PAD156" ))
@@ -5185,27 +5185,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD88" ))
-  \rs_val<20>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<20>/OUTPUT/OFF/O1INV_1872 ),
-    .O(\rs_val<20>/O )
+  \rs_value<20>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<20>/OUTPUT/OFF/O1INV_1872 ),
+    .O(\rs_value<20>/O )
   );
   X_BUF #(
     .LOC ( "PAD88" ))
-  \rs_val<20>/OUTPUT/OFF/O1INV  (
+  \rs_value<20>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<20>/OUTPUT/OFF/O1INV_1872 )
+    .O(\rs_value<20>/OUTPUT/OFF/O1INV_1872 )
   );
   X_BUF #(
     .LOC ( "PAD104" ))
-  \rs_val<12>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<12>/OUTPUT/OFF/O1INV_1880 ),
-    .O(\rs_val<12>/O )
+  \rs_value<12>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<12>/OUTPUT/OFF/O1INV_1880 ),
+    .O(\rs_value<12>/O )
   );
   X_BUF #(
     .LOC ( "PAD104" ))
-  \rs_val<12>/OUTPUT/OFF/O1INV  (
+  \rs_value<12>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<12>/OUTPUT/OFF/O1INV_1880 )
+    .O(\rs_value<12>/OUTPUT/OFF/O1INV_1880 )
   );
   X_BUF #(
     .LOC ( "PAD154" ))
@@ -5215,123 +5215,123 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD87" ))
-  \rs_val<21>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<21>/OUTPUT/OFF/O1INV_1896 ),
-    .O(\rs_val<21>/O )
+  \rs_value<21>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<21>/OUTPUT/OFF/O1INV_1896 ),
+    .O(\rs_value<21>/O )
   );
   X_BUF #(
     .LOC ( "PAD87" ))
-  \rs_val<21>/OUTPUT/OFF/O1INV  (
+  \rs_value<21>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<21>/OUTPUT/OFF/O1INV_1896 )
+    .O(\rs_value<21>/OUTPUT/OFF/O1INV_1896 )
   );
   X_BUF #(
     .LOC ( "PAD103" ))
-  \rs_val<13>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<13>/OUTPUT/OFF/O1INV_1904 ),
-    .O(\rs_val<13>/O )
+  \rs_value<13>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<13>/OUTPUT/OFF/O1INV_1904 ),
+    .O(\rs_value<13>/O )
   );
   X_BUF #(
     .LOC ( "PAD103" ))
-  \rs_val<13>/OUTPUT/OFF/O1INV  (
+  \rs_value<13>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<13>/OUTPUT/OFF/O1INV_1904 )
+    .O(\rs_value<13>/OUTPUT/OFF/O1INV_1904 )
   );
   X_BUF #(
     .LOC ( "PAD78" ))
-  \rs_val<30>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<30>/OUTPUT/OFF/O1INV_1912 ),
-    .O(\rs_val<30>/O )
+  \rs_value<30>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<30>/OUTPUT/OFF/O1INV_1912 ),
+    .O(\rs_value<30>/O )
   );
   X_BUF #(
     .LOC ( "PAD78" ))
-  \rs_val<30>/OUTPUT/OFF/O1INV  (
+  \rs_value<30>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<30>/OUTPUT/OFF/O1INV_1912 )
+    .O(\rs_value<30>/OUTPUT/OFF/O1INV_1912 )
   );
   X_BUF #(
     .LOC ( "PAD86" ))
-  \rs_val<22>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<22>/OUTPUT/OFF/O1INV_1920 ),
-    .O(\rs_val<22>/O )
+  \rs_value<22>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<22>/OUTPUT/OFF/O1INV_1920 ),
+    .O(\rs_value<22>/O )
   );
   X_BUF #(
     .LOC ( "PAD86" ))
-  \rs_val<22>/OUTPUT/OFF/O1INV  (
+  \rs_value<22>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<22>/OUTPUT/OFF/O1INV_1920 )
+    .O(\rs_value<22>/OUTPUT/OFF/O1INV_1920 )
   );
   X_BUF #(
     .LOC ( "PAD102" ))
-  \rs_val<14>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<14>/OUTPUT/OFF/O1INV_1928 ),
-    .O(\rs_val<14>/O )
+  \rs_value<14>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<14>/OUTPUT/OFF/O1INV_1928 ),
+    .O(\rs_value<14>/O )
   );
   X_BUF #(
     .LOC ( "PAD102" ))
-  \rs_val<14>/OUTPUT/OFF/O1INV  (
+  \rs_value<14>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<14>/OUTPUT/OFF/O1INV_1928 )
+    .O(\rs_value<14>/OUTPUT/OFF/O1INV_1928 )
   );
   X_BUF #(
     .LOC ( "PAD72" ))
-  \rs_val<31>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<31>/OUTPUT/OFF/O1INV_1936 ),
-    .O(\rs_val<31>/O )
+  \rs_value<31>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<31>/OUTPUT/OFF/O1INV_1936 ),
+    .O(\rs_value<31>/O )
   );
   X_BUF #(
     .LOC ( "PAD72" ))
-  \rs_val<31>/OUTPUT/OFF/O1INV  (
+  \rs_value<31>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<31>/OUTPUT/OFF/O1INV_1936 )
+    .O(\rs_value<31>/OUTPUT/OFF/O1INV_1936 )
   );
   X_BUF #(
     .LOC ( "PAD85" ))
-  \rs_val<23>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<23>/OUTPUT/OFF/O1INV_1944 ),
-    .O(\rs_val<23>/O )
+  \rs_value<23>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<23>/OUTPUT/OFF/O1INV_1944 ),
+    .O(\rs_value<23>/O )
   );
   X_BUF #(
     .LOC ( "PAD85" ))
-  \rs_val<23>/OUTPUT/OFF/O1INV  (
+  \rs_value<23>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<23>/OUTPUT/OFF/O1INV_1944 )
+    .O(\rs_value<23>/OUTPUT/OFF/O1INV_1944 )
   );
   X_BUF #(
     .LOC ( "PAD101" ))
-  \rs_val<15>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<15>/OUTPUT/OFF/O1INV_1952 ),
-    .O(\rs_val<15>/O )
+  \rs_value<15>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<15>/OUTPUT/OFF/O1INV_1952 ),
+    .O(\rs_value<15>/O )
   );
   X_BUF #(
     .LOC ( "PAD101" ))
-  \rs_val<15>/OUTPUT/OFF/O1INV  (
+  \rs_value<15>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<15>/OUTPUT/OFF/O1INV_1952 )
+    .O(\rs_value<15>/OUTPUT/OFF/O1INV_1952 )
   );
   X_BUF #(
     .LOC ( "PAD84" ))
-  \rs_val<24>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<24>/OUTPUT/OFF/O1INV_1966 ),
-    .O(\rs_val<24>/O )
+  \rs_value<24>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<24>/OUTPUT/OFF/O1INV_1966 ),
+    .O(\rs_value<24>/O )
   );
   X_BUF #(
     .LOC ( "PAD84" ))
-  \rs_val<24>/OUTPUT/OFF/O1INV  (
+  \rs_value<24>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<24>/OUTPUT/OFF/O1INV_1966 )
+    .O(\rs_value<24>/OUTPUT/OFF/O1INV_1966 )
   );
   X_BUF #(
     .LOC ( "PAD100" ))
-  \rs_val<16>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<16>/OUTPUT/OFF/O1INV_1974 ),
-    .O(\rs_val<16>/O )
+  \rs_value<16>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<16>/OUTPUT/OFF/O1INV_1974 ),
+    .O(\rs_value<16>/O )
   );
   X_BUF #(
     .LOC ( "PAD100" ))
-  \rs_val<16>/OUTPUT/OFF/O1INV  (
+  \rs_value<16>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<16>/OUTPUT/OFF/O1INV_1974 )
+    .O(\rs_value<16>/OUTPUT/OFF/O1INV_1974 )
   );
   X_BUF #(
     .LOC ( "PAD219" ))
@@ -5341,27 +5341,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD83" ))
-  \rs_val<25>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<25>/OUTPUT/OFF/O1INV_1990 ),
-    .O(\rs_val<25>/O )
+  \rs_value<25>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<25>/OUTPUT/OFF/O1INV_1990 ),
+    .O(\rs_value<25>/O )
   );
   X_BUF #(
     .LOC ( "PAD83" ))
-  \rs_val<25>/OUTPUT/OFF/O1INV  (
+  \rs_value<25>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<25>/OUTPUT/OFF/O1INV_1990 )
+    .O(\rs_value<25>/OUTPUT/OFF/O1INV_1990 )
   );
   X_BUF #(
     .LOC ( "PAD99" ))
-  \rs_val<17>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<17>/OUTPUT/OFF/O1INV_1998 ),
-    .O(\rs_val<17>/O )
+  \rs_value<17>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<17>/OUTPUT/OFF/O1INV_1998 ),
+    .O(\rs_value<17>/O )
   );
   X_BUF #(
     .LOC ( "PAD99" ))
-  \rs_val<17>/OUTPUT/OFF/O1INV  (
+  \rs_value<17>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<17>/OUTPUT/OFF/O1INV_1998 )
+    .O(\rs_value<17>/OUTPUT/OFF/O1INV_1998 )
   );
   X_BUF #(
     .LOC ( "PAD223" ))
@@ -5371,27 +5371,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD82" ))
-  \rs_val<26>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<26>/OUTPUT/OFF/O1INV_2014 ),
-    .O(\rs_val<26>/O )
+  \rs_value<26>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<26>/OUTPUT/OFF/O1INV_2014 ),
+    .O(\rs_value<26>/O )
   );
   X_BUF #(
     .LOC ( "PAD82" ))
-  \rs_val<26>/OUTPUT/OFF/O1INV  (
+  \rs_value<26>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<26>/OUTPUT/OFF/O1INV_2014 )
+    .O(\rs_value<26>/OUTPUT/OFF/O1INV_2014 )
   );
   X_BUF #(
     .LOC ( "PAD90" ))
-  \rs_val<18>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<18>/OUTPUT/OFF/O1INV_2022 ),
-    .O(\rs_val<18>/O )
+  \rs_value<18>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<18>/OUTPUT/OFF/O1INV_2022 ),
+    .O(\rs_value<18>/O )
   );
   X_BUF #(
     .LOC ( "PAD90" ))
-  \rs_val<18>/OUTPUT/OFF/O1INV  (
+  \rs_value<18>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<18>/OUTPUT/OFF/O1INV_2022 )
+    .O(\rs_value<18>/OUTPUT/OFF/O1INV_2022 )
   );
   X_BUF #(
     .LOC ( "PAD33" ))
@@ -5407,27 +5407,27 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD81" ))
-  \rs_val<27>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<27>/OUTPUT/OFF/O1INV_2038 ),
-    .O(\rs_val<27>/O )
+  \rs_value<27>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<27>/OUTPUT/OFF/O1INV_2038 ),
+    .O(\rs_value<27>/O )
   );
   X_BUF #(
     .LOC ( "PAD81" ))
-  \rs_val<27>/OUTPUT/OFF/O1INV  (
+  \rs_value<27>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<27>/OUTPUT/OFF/O1INV_2038 )
+    .O(\rs_value<27>/OUTPUT/OFF/O1INV_2038 )
   );
   X_BUF #(
     .LOC ( "PAD89" ))
-  \rs_val<19>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<19>/OUTPUT/OFF/O1INV_2046 ),
-    .O(\rs_val<19>/O )
+  \rs_value<19>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<19>/OUTPUT/OFF/O1INV_2046 ),
+    .O(\rs_value<19>/O )
   );
   X_BUF #(
     .LOC ( "PAD89" ))
-  \rs_val<19>/OUTPUT/OFF/O1INV  (
+  \rs_value<19>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<19>/OUTPUT/OFF/O1INV_2046 )
+    .O(\rs_value<19>/OUTPUT/OFF/O1INV_2046 )
   );
   X_BUF #(
     .LOC ( "PAD32" ))
@@ -5443,15 +5443,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD80" ))
-  \rs_val<28>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<28>/OUTPUT/OFF/O1INV_2062 ),
-    .O(\rs_val<28>/O )
+  \rs_value<28>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<28>/OUTPUT/OFF/O1INV_2062 ),
+    .O(\rs_value<28>/O )
   );
   X_BUF #(
     .LOC ( "PAD80" ))
-  \rs_val<28>/OUTPUT/OFF/O1INV  (
+  \rs_value<28>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<28>/OUTPUT/OFF/O1INV_2062 )
+    .O(\rs_value<28>/OUTPUT/OFF/O1INV_2062 )
   );
   X_BUF #(
     .LOC ( "PAD31" ))
@@ -5467,15 +5467,15 @@ module Single_Cycle (
   );
   X_BUF #(
     .LOC ( "PAD79" ))
-  \rs_val<29>/OUTPUT/OFF/OMUX  (
-    .I(\rs_val<29>/OUTPUT/OFF/O1INV_2078 ),
-    .O(\rs_val<29>/O )
+  \rs_value<29>/OUTPUT/OFF/OMUX  (
+    .I(\rs_value<29>/OUTPUT/OFF/O1INV_2078 ),
+    .O(\rs_value<29>/O )
   );
   X_BUF #(
     .LOC ( "PAD79" ))
-  \rs_val<29>/OUTPUT/OFF/O1INV  (
+  \rs_value<29>/OUTPUT/OFF/O1INV  (
     .I(1'b0),
-    .O(\rs_val<29>/OUTPUT/OFF/O1INV_2078 )
+    .O(\rs_value<29>/OUTPUT/OFF/O1INV_2078 )
   );
   X_BUF #(
     .LOC ( "PAD30" ))
@@ -5612,12 +5612,12 @@ module Single_Cycle (
   X_LUT4 #(
     .INIT ( 16'h0000 ),
     .LOC ( "SLICE_X33Y13" ))
-  \control/pc_sel<0>/F/X_LUT4  (
+  \control/counter_selector<0>/F/X_LUT4  (
     .ADR0(VCC),
     .ADR1(VCC),
     .ADR2(VCC),
     .ADR3(VCC),
-    .O(\control/pc_sel<0>/F )
+    .O(\control/counter_selector<0>/F )
   );
   X_LUT4 #(
     .INIT ( 16'h0000 ),
@@ -5653,7 +5653,7 @@ module Single_Cycle (
     .O(VCC)
   );
   X_INV   \NlwInverterBlock_control/regin_data_1_1/CLK  (
-    .I(\regin_data<1>/OUTPUT/OTCLK1INVNOT ),
+    .I(\reg_input_data<1>/OUTPUT/OTCLK1INVNOT ),
     .O(\NlwInverterSignal_control/regin_data_1_1/CLK )
   );
   X_ZERO   NlwBlock_Single_Cycle_GND (
@@ -5672,7 +5672,7 @@ module Single_Cycle (
     .O(\NlwInverterSignal_control/fn_class/CLK )
   );
   X_INV   \NlwInverterBlock_control/alu_imm_0/CLK  (
-    .I(\control/alu_imm<0>/CLKINVNOT ),
+    .I(\control/immediacy<0>/CLKINVNOT ),
     .O(\NlwInverterSignal_control/alu_imm_0/CLK )
   );
   X_INV   \NlwInverterBlock_control/regin_data_1_2/CLK  (
@@ -5680,15 +5680,15 @@ module Single_Cycle (
     .O(\NlwInverterSignal_control/regin_data_1_2/CLK )
   );
   X_INV   \NlwInverterBlock_control/alu_imm_0_1/CLK  (
-    .I(\alu_imm<0>/OUTPUT/OTCLK1INVNOT ),
+    .I(\immediacy<0>/OUTPUT/OTCLK1INVNOT ),
     .O(\NlwInverterSignal_control/alu_imm_0_1/CLK )
   );
   X_INV   \NlwInverterBlock_control/regin_data_0_1/CLK  (
-    .I(\regin_data<0>/OUTPUT/OTCLK1INVNOT ),
+    .I(\reg_input_data<0>/OUTPUT/OTCLK1INVNOT ),
     .O(\NlwInverterSignal_control/regin_data_0_1/CLK )
   );
   X_INV   \NlwInverterBlock_control/alu_imm_1_1/CLK  (
-    .I(\alu_imm<1>/OUTPUT/OTCLK1INVNOT ),
+    .I(\immediacy<1>/OUTPUT/OTCLK1INVNOT ),
     .O(\NlwInverterSignal_control/alu_imm_1_1/CLK )
   );
   X_INV   \NlwInverterBlock_control/reg_write/CLK  (
@@ -5696,7 +5696,7 @@ module Single_Cycle (
     .O(\NlwInverterSignal_control/reg_write/CLK )
   );
   X_INV   \NlwInverterBlock_control/pc_sel_0/CLK  (
-    .I(\control/pc_sel<0>/CLKINVNOT ),
+    .I(\control/counter_selector<0>/CLKINVNOT ),
     .O(\NlwInverterSignal_control/pc_sel_0/CLK )
   );
   X_INV   \NlwInverterBlock_control/data_read/CLK  (
@@ -5716,19 +5716,19 @@ module Single_Cycle (
     .O(\NlwInverterSignal_control/reg_dst_0/CLK )
   );
   X_INV   \NlwInverterBlock_control/alu_imm_1/CLK  (
-    .I(\control/alu_imm<1>/CLKINVNOT ),
+    .I(\control/immediacy<1>/CLKINVNOT ),
     .O(\NlwInverterSignal_control/alu_imm_1/CLK )
   );
   X_INV   \NlwInverterBlock_control/regin_data_0/CLK  (
-    .I(\control/regin_data<0>/CLKINVNOT ),
+    .I(\control/reg_input_data<0>/CLKINVNOT ),
     .O(\NlwInverterSignal_control/regin_data_0/CLK )
   );
   X_INV   \NlwInverterBlock_control/br_type_0/CLK  (
-    .I(\control/br_type<0>/CLKINVNOT ),
+    .I(\control/branch_type<0>/CLKINVNOT ),
     .O(\NlwInverterSignal_control/br_type_0/CLK )
   );
   X_INV   \NlwInverterBlock_control/regin_data_1/CLK  (
-    .I(\control/regin_data<1>/CLKINVNOT ),
+    .I(\control/reg_input_data<1>/CLKINVNOT ),
     .O(\NlwInverterSignal_control/regin_data_1/CLK )
   );
 endmodule

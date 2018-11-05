@@ -34,7 +34,7 @@ module next_address_test;
 	reg [31:0] jmp_ra;
 	reg [25:0] jmp_label;
 	reg [31:0] pc;
-	reg [1:0] pc_sel;
+	reg [1:0] counter_selector;
 
 	// Outputs
 	wire [31:0] incr_pc;
@@ -50,7 +50,7 @@ module next_address_test;
 		.jmp_ra(jmp_ra), 
 		.jmp_label(jmp_label), 
 		.pc(pc), 
-		.pc_sel(pc_sel), 
+		.counter_selector(counter_selector), 
 		.incr_pc(incr_pc)
 	);
 	always
@@ -70,7 +70,7 @@ module next_address_test;
 		jmp_ra = 0;
 		jmp_label = 0;
 		pc = 0;
-		pc_sel = 0;
+		counter_selector = 0;
 
 		// Wait 100 ns for global reset to finish
 		#10;
@@ -82,7 +82,7 @@ module next_address_test;
 		jmp_ra = 0;
 		jmp_label = 26;
 		pc = 0;
-		pc_sel = 1;
+		counter_selector = 1;
 		
 		#10;
 		zero_flag = 1;
@@ -93,7 +93,7 @@ module next_address_test;
 		jmp_ra = 1045;
 		jmp_label = 26;
 		pc = 0;
-		pc_sel = 2;
+		counter_selector = 2;
 		
       #10;
 		zero_flag = 1;
@@ -104,7 +104,7 @@ module next_address_test;
 		jmp_ra = 1045;
 		jmp_label = 26;
 		pc = 0;
-		pc_sel = 0;
+		counter_selector = 0;
         
 		// Add stimulus here
 

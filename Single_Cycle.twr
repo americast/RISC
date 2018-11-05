@@ -89,9 +89,9 @@ instruction_out<28>|   10.692(R)|clk_BUFGP         |   0.000|
 instruction_out<29>|   10.402(R)|clk_BUFGP         |   0.000|
 instruction_out<30>|   11.676(R)|clk_BUFGP         |   0.000|
 instruction_out<31>|   11.837(R)|clk_BUFGP         |   0.000|
-rs_val<0>          |   12.520(R)|clk_BUFGP         |   0.000|
+rs_value<0>          |   12.520(R)|clk_BUFGP         |   0.000|
                    |   10.250(F)|clk_BUFGP         |   0.000|
-rt_val<0>          |   13.815(R)|clk_BUFGP         |   0.000|
+rt_value<0>          |   13.815(R)|clk_BUFGP         |   0.000|
                    |   11.381(F)|clk_BUFGP         |   0.000|
 -------------------+------------+------------------+--------+
 

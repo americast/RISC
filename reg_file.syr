@@ -173,7 +173,7 @@ INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_registers> will be implemented on LU
     | Port B                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     addrB          | connected to signal <rs_add>        |          |
-    |     doB            | connected to signal <rs_val>        |          |
+    |     doB            | connected to signal <rs_value>        |          |
     -----------------------------------------------------------------------
 INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_registers_ren> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
@@ -189,7 +189,7 @@ INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_registers_ren> will be implemented o
     | Port B                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     addrB          | connected to signal <rt_add>        |          |
-    |     doB            | connected to signal <rt_val>        |          |
+    |     doB            | connected to signal <rt_value>        |          |
     -----------------------------------------------------------------------
 Unit <reg_file> synthesized (advanced).
 
@@ -338,16 +338,16 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
 -------------------------------------------------------------------------
 Offset:              8.472ns (Levels of Logic = 2)
   Source:            Mram_registers63 (RAM)
-  Destination:       rs_val<31> (PAD)
+  Destination:       rs_value<31> (PAD)
   Source Clock:      clk falling
 
-  Data Path: Mram_registers63 to rs_val<31>
+  Data Path: Mram_registers63 to rs_value<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      RAM16X1D:WCLK->DPO    1   1.552   0.851  Mram_registers63 (N129)
      LUT3:I1->O            1   0.479   0.681  inst_LPM_MUX31111 (rs_val_31_OBUF)
-     OBUF:I->O                 4.909          rs_val_31_OBUF (rs_val<31>)
+     OBUF:I->O                 4.909          rs_val_31_OBUF (rs_value<31>)
     ----------------------------------------
     Total                      8.472ns (6.940ns logic, 1.532ns route)
                                        (81.9% logic, 18.1% route)
@@ -358,16 +358,16 @@ Timing constraint: Default path analysis
 -------------------------------------------------------------------------
 Delay:               9.845ns (Levels of Logic = 4)
   Source:            rs_add<0> (PAD)
-  Destination:       rs_val<31> (PAD)
+  Destination:       rs_value<31> (PAD)
 
-  Data Path: rs_add<0> to rs_val<31>
+  Data Path: rs_add<0> to rs_value<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            64   0.715   1.731  rs_add_0_IBUF (rs_add_0_IBUF)
      RAM16X1D:DPRA0->DPO    1   0.479   0.851  Mram_registers1 (N5)
      LUT3:I1->O            1   0.479   0.681  inst_LPM_MUX11 (rs_val_0_OBUF)
-     OBUF:I->O                 4.909          rs_val_0_OBUF (rs_val<0>)
+     OBUF:I->O                 4.909          rs_val_0_OBUF (rs_value<0>)
     ----------------------------------------
     Total                      9.845ns (6.582ns logic, 3.263ns route)
                                        (66.9% logic, 33.1% route)

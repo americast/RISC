@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test_isim_beh.wdb 
+Running: /home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cycle_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cycle_test_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -7,8 +7,8 @@ WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for 
 This is a Lite version of ISim.
 WARNING:  For instance uut/instr_cache/, width 1 of formal port ena is not equal to width 32 of actual constant.
 WARNING:  For instance uut/instr_cache/, width 1 of formal port wea is not equal to width 32 of actual constant.
-WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 7.  For instance uut/instr_cache/, width 11 of formal port addra is not equal to width 32 of actual signal read_addr_pc.
-WARNING: File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle.v" Line 31.  For instance uut/data_cache/, width 11 of formal port addra is not equal to width 32 of actual signal alu_out.
+WARNING: File "/home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cycle.v" Line 7.  For instance uut/instr_cache/, width 11 of formal port addra is not equal to width 32 of actual signal read_addr_pc.
+WARNING: File "/home/ss/Downloads/Group28_Assign6/kgprisc/Single_Cycle.v" Line 31.  For instance uut/data_cache/, width 11 of formal port addra is not equal to width 32 of actual signal alu_out.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
@@ -21,6 +21,4 @@ Block Memory Generator CORE Generator module Single_Cycle_test.uut.instr_cache.i
  Block Memory Generator data initialization complete.
 Block Memory Generator CORE Generator module Single_Cycle_test.uut.data_cache.inst.blk_mem_gen_v4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Finished circuit initialization process.
-# run all
-Stopped at time : 703785360 ns : File "/home/ss/Downloads/Group39_Assign6/kgprisc/Single_Cycle_test.v" Line 50
 # exit 0

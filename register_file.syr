@@ -124,9 +124,9 @@ Analysis of file <"register_file.prj"> succeeded.
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-ERROR:HDLCompilers:246 - "register_file.v" line 87 Reference to vector reg 'rs_val' is not a legal net lvalue
+ERROR:HDLCompilers:246 - "register_file.v" line 87 Reference to vector reg 'rs_value' is not a legal net lvalue
 ERROR:HDLCompilers:102 - "register_file.v" line 87 Connection to output port 'output_mux' must be a net lvalue
-ERROR:HDLCompilers:246 - "register_file.v" line 124 Reference to vector reg 'rt_val' is not a legal net lvalue
+ERROR:HDLCompilers:246 - "register_file.v" line 124 Reference to vector reg 'rt_value' is not a legal net lvalue
 ERROR:HDLCompilers:102 - "register_file.v" line 124 Connection to output port 'output_mux' must be a net lvalue
 --> 
 

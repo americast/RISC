@@ -9,7 +9,7 @@ module next_address(
     input [31:0] jmp_ra,
     input [25:0] jmp_label,
     input [31:0] pc,
-	 input [1:0] pc_sel,
+	 input [1:0] counter_selector,
 	 input reset,
     output reg [31:0] incr_pc,
 	 input overflow
@@ -59,14 +59,14 @@ begin
 		jmp_label_extended[27:2] = jmp_label;
 		jmp_label_extended[1:0] = 0;
 		
-		if (pc_sel == 0)
+		if (counter_selector == 0)
 			incr_pc = mux_2_input_1;
-		else if (pc_sel == 1)
+		else if (counter_selector == 1)
 			incr_pc = jmp_label_extended;
 		else
 			incr_pc = jmp_ra;
 			
-//		case(pc_sel)
+//		case(counter_selector)
 //		 0: incr_pc = mux_2_input_1;
 //		 1: incr_pc = jmp_label_extended;
 //		 2: incr_pc = jmp_ra;

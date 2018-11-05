@@ -1,10 +1,10 @@
 MO adder NULL adder.v vlg54/adder.bin 1541385894
 MO half_adder NULL half_adder.v vlg5A/half__adder.bin 1541385894
-MO control_file NULL control_file.v vlg14/control__file.bin 1541406646
-MO next_address NULL next_address.v vlg2C/next__address.bin 1541406646
-MO reg_file NULL reg_file.v vlg69/reg__file.bin 1541406646
-MO KGPRISC NULL ipcore_dir/KGPRISC.v vlg33/_k_g_p_r_i_s_c.bin 1541406646
+MO control_file NULL control_file.v vlg14/control__file.bin 1541410344
+MO next_address NULL next_address.v vlg2C/next__address.bin 1541410343
+MO reg_file NULL reg_file.v vlg69/reg__file.bin 1541410343
+MO KGPRISC NULL ipcore_dir/KGPRISC.v vlg33/_k_g_p_r_i_s_c.bin 1541410343
 MO full_adder NULL full_adder.v vlg5A/full__adder.bin 1541385894
 MO alu_logic NULL alu_logic.v vlg63/alu__logic.bin 1541386363
-MO Single_Cycle NULL Single_Cycle.v vlg3D/_single___cycle.bin 1541406646
-MO alu NULL alu.v vlg0A/alu.bin 1541406646
+MO Single_Cycle NULL Single_Cycle.v vlg3D/_single___cycle.bin 1541410344
+MO alu NULL alu.v vlg0A/alu.bin 1541410344
